@@ -24,11 +24,17 @@ class GuestController extends Controller
     public function create(Request $request){
         $this->validate($request,Guest::$rules);
         $request->validate([
-            'icon' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'icon' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $uploadedFile = $request->file('icon');
-        $fileName = $uploadedFile->getClientOriginalName();
+        if($uploadedFile){
+            $fileName = $uploadedFile->getClientOriginalName();
         $uploadedFile->storeAs('public/images',$fileName,);
+        }else{
+            $fileName = 'default.png';
+        }
+        
+        
         
         $guest = new Guest;
         $form = $request->all();
