@@ -19,4 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/guest/index',[GuestController::class, 'index']);
-Route::post('/guest/index',[GuestController::class, 'index']);
+Route::get('/guest/add',[GuestController::class, 'add']);
+Route::post('/guest/add',[GuestController::class, 'create']);
+
+
+
+

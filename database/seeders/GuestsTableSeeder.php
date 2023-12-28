@@ -17,7 +17,7 @@ class GuestsTableSeeder extends Seeder
         for ($i = 0; $i < 10; $i++){
         $param = [
             'name' => $faker->name(),
-            'icon' => 'default',
+            'icon' => 'default.png',
             'guest_name' => $faker->userName(),
             'mail' => $faker->email(),
             'tel' => $faker->phoneNumber(),

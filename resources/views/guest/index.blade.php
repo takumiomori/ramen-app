@@ -20,7 +20,7 @@
         <th scope="row">{{$item->id}}</th>
         <td>{{$item->name}}</td>
         <td>{{$item->guest_name}}</td>
-        <td>{{$item->icon}}</td>
+        <td><img src="{{ url('storage', ['images', $item->icon]) }}" alt="" class="icon"></td>
         <td>{{$item->mail}}</td>
         <td>{{$item->tel}}</td>
       </tr>

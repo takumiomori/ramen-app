@@ -9,6 +9,7 @@
         td{border: 1px solid gainsboro; border-collapse:collapse; padding: 10px;}
         .footer{text-align: right; color: thistle; margin-right: 20px}
         .alert_message{font-size: 20px; border: 2px solid red; color: red; font-weight: bold; padding: 10px;}
+        .icon{width:50px;}
     </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
