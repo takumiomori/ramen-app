@@ -16,7 +16,7 @@ class Guest extends Model
         'name' => 'required',
         'guest_name' => 'required',
         'mail' => 'required',
-        'tel' => 'required',
+        'tel' => ['required', 'regex:/^[0-9-]+$/'],
         'password' => 'required',
     );
 

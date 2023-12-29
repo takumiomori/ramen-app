@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Place extends Model
 {
     use HasFactory;
+
+    protected $guarded = array('id');
+
+    public static $rules = array(
+        'name' => 'required',
+    );
+
 }

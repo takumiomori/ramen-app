@@ -1,6 +1,6 @@
 @extends('layouts.ramen')
 
-@section('title','ユーザー登録')
+@section('title','ユーザー削除')
 
 @section('content')
 <div class="content_area">
