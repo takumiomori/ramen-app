@@ -35,6 +35,10 @@ Route::post('/place/index',[PlaceController::class, 'create']);
 Route::get('/place/del',[PlaceController::class, 'delete']);
 Route::post('/place/del',[PlaceController::class, 'remove']);
 
+Route::get('/shopcategory/index',[ShopcategoryController::class, 'index']);
+Route::post('/shopcategory/index',[ShopcategoryController::class, 'create']);
+Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete']);
+Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove']);
 
 
 
