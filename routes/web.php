@@ -40,5 +40,10 @@ Route::post('/shopcategory/index',[ShopcategoryController::class, 'create']);
 Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete']);
 Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove']);
 
+Route::get('/favorite/index',[FavoriteController::class, 'index']);
+Route::post('/shop/?',[FavoriteController::class, 'create']);
+Route::get('/favorite/del',[FavoriteController::class, 'delete']);
+Route::post('/favorite/del',[FavoritegoryController::class, 'remove']);
+
 
 
