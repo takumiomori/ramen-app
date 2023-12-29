@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::get('/guest/index',[GuestController::class, 'index']);
 Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
+Route::get('/guest/del',[GuestController::class, 'delete']);
+Route::post('/guest/del',[GuestController::class, 'remove']);
+
 
 
 

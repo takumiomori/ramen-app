@@ -3,6 +3,9 @@
 @section('title','利用者一覧')
 
 @section('content')
+@if(isset($msg))
+<div class="alert alert-primary" role="alert">{{$msg}}</div>
+@endif
 <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -12,6 +15,7 @@
         <th scope="col">アイコン</th>
         <th scope="col">メールアドレス</th>
         <th scope="col">電話番号</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +27,7 @@
         <td><img src="{{ url('storage', ['images', $item->icon]) }}" alt="" class="icon"></td>
         <td>{{$item->mail}}</td>
         <td>{{$item->tel}}</td>
+        <td><button><a href="/guest/del?id={{$item->id}}">削除</a></button></td>
       </tr>
       @endforeach
     </tbody>

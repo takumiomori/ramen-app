@@ -13,7 +13,8 @@ class GuestController extends Controller
 {
     public function index(Request $request):View{
         $items = Guest::all();
-        return view('guest.index',['items' => $items]);
+        $msg = session('msg');
+        return view('guest.index',['items' => $items,'msg'=>$msg,]);
     }
 
     public function add(Request $request):View{
@@ -34,8 +35,6 @@ class GuestController extends Controller
             $fileName = 'default.png';
         }
         
-        
-        
         $guest = new Guest;
         $form = $request->all();
         unset($form['_token'],$form['icon']);
@@ -44,5 +43,15 @@ class GuestController extends Controller
 
         return view('guest.add',['msg'=>'登録が完了しました']);
 
+    }
+
+    public function delete(Request $request){
+        $guest=Guest::find($request->id);
+        return view('guest.del',['form'=>$guest]);
+    }
+
+    public function remove(Request $request){
+        Guest::find($request->id)->delete();
+        return  redirect('/guest/index')->with(['msg'=>'削除が完了しました']);
     }
 }
