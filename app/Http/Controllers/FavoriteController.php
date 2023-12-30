@@ -29,7 +29,7 @@ class FavoriteController extends Controller
         $reservation->fill($form)->save();
 
         $reservation->shop()->attach($shop_id);
-        return view('favorite.add',['msg'=>'予約が完了しました']);
+        return view('favorite.add',['msg'=>'お気に入り登録が完了しました']);
 
     }
 
