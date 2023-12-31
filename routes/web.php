@@ -51,5 +51,18 @@ Route::post('/post/add',[PostController::class, 'create']);
 Route::get('/post/del',[PostController::class, 'delete']);
 Route::post('/post/del',[PostController::class, 'remove']);
 
+Route::get('/shop/index',[ShopController::class, 'index']);
+Route::post('/shop/index',[ShopController::class, 'create']);
+Route::get('/shop/del',[ShopController::class, 'delete']);
+Route::post('/shop/del',[ShopController::class, 'remove']);
+Route::get('/shop/search',[ShopController::class, 'search']);
 
+Route::get('/shop/findplace',[ShopController::class, 'findplace']);
+Route::post('/shop/findplace',[ShopController::class, 'searchplace']);
+Route::get('/shop/findcategory',[ShopController::class, 'findcategory']);
+Route::post('/shop/findcategory',[ShopController::class, 'searchcategory']);
+Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex']);
+Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex']);
+Route::get('/shop/edit',[ShopController::class, 'edit']);
+Route::post('/shop/edit',[ShopController::class, 'update']);
 

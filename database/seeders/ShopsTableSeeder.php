@@ -16,7 +16,7 @@ class ShopsTableSeeder extends Seeder
         $param = [
             'name' => '麺屋NOROMA',
             'place_id' => 1,
-            'image' => 'shop_default',
+            'image' => 'shop_default.png',
             'holiday' => '水曜日',
             'tel' => '0742-63-5338',
             'address' => '	

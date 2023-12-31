@@ -27,7 +27,7 @@ class FavoriteController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $reservation->fill($form)->save();
-
+        
         $reservation->shop()->attach($shop_id);
         return view('favorite.add',['msg'=>'お気に入り登録が完了しました']);
 

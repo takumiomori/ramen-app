@@ -12,11 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('shopcategory_shop', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('shopcategory_id');
-            $table->unsignedInteger('shop_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('shop_id');
+            $table->unsignedBigInteger('shopcategory_id');
             $table->timestamps();
+
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
+            $table->foreign('shopcategory_id')->references('id')->on('shopcategories')->onDelete('cascade');
         });
+
     }
 
     /**

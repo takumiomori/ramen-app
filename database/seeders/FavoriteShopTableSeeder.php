@@ -17,6 +17,8 @@ class FavoriteShopTableSeeder extends Seeder
             'favorite_id' => 1,
             'shop_id' => 1,
         ];
+        DB::table('favorite_shop')->delete();
+        DB::unprepared("ALTER TABLE favorite_shop AUTO_INCREMENT = 1 ");
         DB::table('favorite_shop')->insert($param);
     }
 }
