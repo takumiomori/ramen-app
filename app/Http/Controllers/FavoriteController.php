@@ -14,12 +14,6 @@ class FavoriteController extends Controller
         return view('favorite.index',['items' => $items]);
     }
 
-    public function add(Request $request):View{
-        $items = session('items');
-        $msg = session('msg');
-        return view('favorite.add',['items' => $items,'msg'=>$msg]);
-    }
-
     public function create(Request $request){
         $this->validate($request,Favorite::$rules);
         
@@ -29,7 +23,7 @@ class FavoriteController extends Controller
         $reservation->fill($form)->save();
         
         $reservation->shop()->attach($shop_id);
-        return view('favorite.add',['msg'=>'お気に入り登録が完了しました']);
+        return  redirect('/shop/shoppage')->with(['msg'=>'お気に入り登録が完了しました']);
 
     }
 

@@ -41,7 +41,6 @@ Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete']);
 Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove']);
 
 Route::get('/favorite/index',[FavoriteController::class, 'index']);
-Route::post('/shop/?',[FavoriteController::class, 'create']);
 Route::get('/favorite/del',[FavoriteController::class, 'delete']);
 Route::post('/favorite/del',[FavoriteController::class, 'remove']);
 
@@ -65,4 +64,6 @@ Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex']);
 Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex']);
 Route::get('/shop/edit',[ShopController::class, 'edit']);
 Route::post('/shop/edit',[ShopController::class, 'update']);
+Route::get('/shop/shoppage',[ShopController::class, 'show']);
+Route::post('/shop/shoppage',[FavoriteController::class, 'create']);
 

@@ -17,7 +17,8 @@ class PostController extends Controller
     public function add(Request $request):View{
         $items = session('items');
         $msg = session('msg');
-        return view('post.add',['items' => $items,'msg'=>$msg]);
+        $shop_id = $request->shop_id;
+        return view('post.add',['items' => $items,'msg'=>$msg,'shop_id'=>$shop_id]);
     }
 
     public function create(Request $request){

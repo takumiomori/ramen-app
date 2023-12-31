@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Shop;
 use App\Models\Place;
 use App\Models\Shopcategory;
+use App\Models\Post;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -61,8 +62,8 @@ class ShopController extends Controller
     }
 
     public function delete(Request $request){
-        $guest=Shop::find($request->id);
-        return view('shop.del',['form'=>$guest]);
+        $shop=Shop::find($request->id);
+        return view('shop.del',['form'=>$shop]);
     }
 
     public function remove(Request $request){
@@ -171,5 +172,16 @@ class ShopController extends Controller
         }
 
     }
+
+    public function show(Request $request){
+        $msg = session('msg');
+        $shop_id = $request->id;
+        $shop = Shop::find($shop_id);
+        $posts = Post::whereHas('shop', function ($query) use ($shop_id) {
+            $query->where('shop_id', $shop_id);
+        })->get();
+        return view('shop.shoppage',['item'=>$shop,'posts'=>$posts,'msg'=>$msg]);
+    }
+
 
 }

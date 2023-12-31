@@ -1,6 +1,6 @@
 @extends('layouts.ramen')
 
-@section('title','ユーザー登録')
+@section('title','口コミ投稿')
 
 @section('content')
 @if(count($errors)>0)
@@ -16,8 +16,8 @@
     <form action="/post/add" method="post" enctype="multipart/form-data">
     @csrf
     <input class="form-control form-control-lg" type="text" placeholder="投稿内容" name="post_text" value="{{old('post_text')}}"><br>
-    <input class="form-control form-control-lg" type="hidden" name="guest_id" value="{{$form->guest_id}}"><br>
-    <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$form->shop_id}}"><br>
+    <input class="form-control form-control-lg" type="hidden" name="guest_id" value=""><br>
+    <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$shop_id}}"><br>
     <input class="submit_btn" type="submit" value="投稿">
 </form>
 </div>
