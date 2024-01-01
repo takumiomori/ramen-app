@@ -44,6 +44,7 @@ class ShopController extends Controller
             'address' => $request->input('address'), 
             'open_time' => $request->input('open_time'), 
             'menu' => $request->input('menu'), 
+            'star' => 0.00,
         ];
 
         $selectedCategories = $request->input('shopcategory_id',[]);
@@ -81,6 +82,9 @@ class ShopController extends Controller
     public function update(Request $request){
         $this->validate($request,Shop::$rules);
 
+        $id = $request->id;
+        $shop = Shop::find($id);
+
         $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
@@ -89,8 +93,10 @@ class ShopController extends Controller
             $fileName = $uploadedFile->getClientOriginalName();
         $uploadedFile->storeAs('public/images/shop',$fileName,);
         }else{
-            $fileName = Shop::find($request->id)->image;
+            $fileName = $shop->image;
         }
+
+        $starValue = $shop->star;
 
         $shopData = [
             'name' => $request->input('name'), 
@@ -101,14 +107,13 @@ class ShopController extends Controller
             'address' => $request->input('address'), 
             'open_time' => $request->input('open_time'), 
             'menu' => $request->input('menu'), 
+            'star' => $starValue,
         ];
 
         $selectedCategories = $request->input('shopcategory_id',[]);
-        $id = $request->id;
 
+        DB::transaction(function () use ($id, $shopData, $shop, $selectedCategories) {
 
-        DB::transaction(function () use ($id, $shopData, $selectedCategories) {
-            $shop=Shop::find($id);
             $shop->fill($shopData)->save();
             $shop->shopcategory()->detach();
 

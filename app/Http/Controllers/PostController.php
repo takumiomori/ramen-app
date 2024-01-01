@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Shop;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -21,16 +22,35 @@ class PostController extends Controller
         return view('post.add',['items' => $items,'msg'=>$msg,'shop_id'=>$shop_id]);
     }
 
+    public function addresult(Request $request):View{
+        $msg = session('msg');
+        return view('post.addresult',['msg'=>$msg]);
+    }
+
     public function create(Request $request){
         $this->validate($request,Post::$rules);
+
+        $shop_id = $request->shop_id;
         
-        $reservation = new Post;
+        $post = new Post;
         $form = $request->all();
         unset($form['_token']);
-        $reservation->fill($form)->save();
+        $post->fill($form)->save();
 
-        $reservation->shop()->attach($shop_id);
-        return view('post.add',['msg'=>'投稿しました']);
+        $post->shop()->attach($shop_id);
+
+        $newStarValue = $request->star;
+
+        $postsData = Post::whereHas('shop', function ($query) use ($shop_id) {
+            $query->where('shop_id', $shop_id);
+        })->get();
+        $currentTotalStar = $postsData->sum('star');
+        $currentStarCount = $postsData->count();
+        $newTotalStar = $currentTotalStar + $newStarValue;
+        $newAvgStar = $newTotalStar / ($currentStarCount + 1);
+        Shop::where('id', $shop_id)->update(['star' => $newAvgStar]);
+
+        return  redirect('/post/addresult')->with(['msg'=>'投稿が完了しました']);
 
     }
 

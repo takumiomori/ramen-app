@@ -11,6 +11,7 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">店舗名</th>
+        <th scope="col">星評価</th>
         <th scope="col">画像</th>
         <th scope="col">カテゴリー</th>
         <th scope="col">所在地</th>
@@ -25,6 +26,7 @@
 
       <tr>
         <td scope="row">{{$item->name}}</td>
+        <td scope="row">{{$item->star}}</td>
         <td scope="row"><img src="{{ url('storage', ['images','shop', $item->image]) }}" alt="" class="icon"></td>
         <td scope="row">@foreach($item->shopcategory as $obj){{$obj->name}}@endforeach</td>
         <td scope="row">{{$item->place->name}}</td>
@@ -49,9 +51,9 @@
 
     <div>お店の口コミ</div>
     <table>
-        <tr><th></th><th>ユーザー名</th><th>口コミ</th></tr>
+        <tr><th></th><th>ユーザー名</th><th>星評価</th><th>口コミ</th></tr>
         @foreach($posts as $post)
-        <tr><td><img src="{{ url('storage', ['images', $post->guest->icon]) }}" alt="" class="icon"></td><td>{{$post->guest->guest_name}}</td><td>{{$post->post_text}}</td></tr>
+        <tr><td><img src="{{ url('storage', ['images', $post->guest->icon]) }}" alt="" class="icon"></td><td>{{$post->guest->guest_name}}</td><td>{{$post->star}}</td><td>{{$post->post_text}}</td></tr>
         @endforeach
     </table>
     

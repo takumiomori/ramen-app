@@ -46,6 +46,7 @@ Route::post('/favorite/del',[FavoriteController::class, 'remove']);
 
 Route::get('/post/index',[PostController::class, 'index']);
 Route::get('/post/add',[PostController::class, 'add']);
+Route::get('/post/addresult',[PostController::class, 'addresult']);
 Route::post('/post/add',[PostController::class, 'create']);
 Route::get('/post/del',[PostController::class, 'delete']);
 Route::post('/post/del',[PostController::class, 'remove']);

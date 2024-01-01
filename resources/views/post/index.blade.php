@@ -14,6 +14,7 @@
         <th scope="col">氏名</th>
         <th scope="col">投稿内容</th>
         <th scope="col">店舗名</th>
+        <th scope="col">星評価</th>
         <th></th>
       </tr>
     </thead>
@@ -25,6 +26,7 @@
         <td scope="row">{{$item->guest->name}}</td>
         <td scope="row">{{$item->post_text}}</td>
         <td scope="row">{{$item->shop->first()->name}}</td>
+        <td scope="row">{{$item->star}}</td>
         <td scope="row"><button><a href="/post/del?id={{$item->id}}">削除</a></button></td>
       </tr>
       @endforeach

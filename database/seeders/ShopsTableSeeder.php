@@ -24,6 +24,7 @@ class ShopsTableSeeder extends Seeder
             'open_time' => '11:30～15:00,
             18:00～21:30',
             'menu' => '鶏そば：850円　ほか',
+            'star' => '0',
         ];
         DB::table('shops')->insert($param);
     }

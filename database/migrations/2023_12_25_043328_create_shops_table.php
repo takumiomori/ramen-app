@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('open_time');
             $table->text('menu');
+            $table->double('star', 8, 2);
             $table->timestamps();
         });
     }

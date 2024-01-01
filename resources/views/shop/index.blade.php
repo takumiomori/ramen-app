@@ -42,6 +42,7 @@
         <th scope="col">住所</th>
         <th scope="col">営業時間</th>
         <th scope="col">メニュー</th>
+        <th scope="col">星評価</th>
         <th></th>
         <th></th>
       </tr>
@@ -59,6 +60,7 @@
         <td scope="row">{{$item->address}}</td>
         <td scope="row">{{$item->open_time}}</td>
         <td scope="row">{{$item->menu}}</td>
+        <td scope="row">{{$item->star}}</td>
         <td scope="row"><button><a href="/shop/del?id={{$item->id}}">削除</a></button></td>
         <td scope="row"><button><a href="/shop/edit?id={{$item->id}}">更新</a></button></td>
       </tr>

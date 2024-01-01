@@ -10,6 +10,7 @@
         <tr><th scope="col">投稿ID</th><td>{{$form->id}}</td></tr>
         <tr><th scope="col">ユーザID</th><td>{{$form->guest->id}}</td></tr>
         <tr><th scope="col">氏名</th><td>{{$form->guest->name}}</td></tr>
+        <tr><th scope="col">星評価</th><td>{{$form->star}}</td></tr>
         <tr><th scope="col">投稿内容</th><td>{{$form->post_text}}</td></tr>
         <tr><th>投稿店名</th><td>{{$form->shop->first()->name}}</td></tr>
     </table>
