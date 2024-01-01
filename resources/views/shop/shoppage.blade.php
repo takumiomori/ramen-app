@@ -47,13 +47,13 @@
     <input class="form-control form-control-lg" type="hidden" name="guest_id" value=""><br>
     <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$item->id}}"><br>
     <input class="submit_btn" type="submit" value="お気に入り登録">
-
+  </form>
 
     <div>お店の口コミ</div>
     <table>
         <tr><th></th><th>ユーザー名</th><th>星評価</th><th>口コミ</th></tr>
         @foreach($posts as $post)
-        <tr><td><img src="{{ url('storage', ['images', $post->guest->icon]) }}" alt="" class="icon"></td><td>{{$post->guest->guest_name}}</td><td>{{$post->star}}</td><td>{{$post->post_text}}</td></tr>
+        <tr><td><img src="{{ url('storage', ['images', 'icon', $post->guest->icon]) }}" alt="" class="icon"></td><td>{{$post->guest->guest_name}}</td><td>{{$post->star}}</td><td>{{$post->post_text}}</td></tr>
         @endforeach
     </table>
     

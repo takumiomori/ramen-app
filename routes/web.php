@@ -29,6 +29,9 @@ Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
 Route::get('/guest/del',[GuestController::class, 'delete']);
 Route::post('/guest/del',[GuestController::class, 'remove']);
+Route::get('/guest/edit',[GuestController::class, 'edit']);
+Route::post('/guest/edit',[GuestController::class, 'update']);
+Route::get('/guest/guestpage',[GuestController::class, 'show']);
 
 Route::get('/place/index',[PlaceController::class, 'index']);
 Route::post('/place/index',[PlaceController::class, 'create']);

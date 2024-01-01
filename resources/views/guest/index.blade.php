@@ -24,7 +24,7 @@
         <th scope="row">{{$item->id}}</th>
         <td>{{$item->name}}</td>
         <td>{{$item->guest_name}}</td>
-        <td><img src="{{ url('storage', ['images', $item->icon]) }}" alt="" class="icon"></td>
+        <td><img src="{{ url('storage', ['images', 'icon', $item->icon]) }}" alt="" class="icon"></td>
         <td>{{$item->mail}}</td>
         <td>{{$item->tel}}</td>
         <td><button><a href="/guest/del?id={{$item->id}}">削除</a></button></td>
