@@ -71,3 +71,4 @@ Route::post('/shop/edit',[ShopController::class, 'update']);
 Route::get('/shop/shoppage',[ShopController::class, 'show']);
 Route::post('/shop/shoppage',[FavoriteController::class, 'create']);
 
+Route::get('/shop/top',[ShopController::class, 'ranking']);

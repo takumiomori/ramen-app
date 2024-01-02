@@ -188,5 +188,10 @@ class ShopController extends Controller
         return view('shop.shoppage',['item'=>$shop,'posts'=>$posts,'msg'=>$msg]);
     }
 
+    public function ranking(Request $request){
+        $top5Shops = Shop::orderBy('star', 'desc')->take(5)->get();
+        $i = 0;
+        return view('shop.top',['items'=>$top5Shops, 'i'=>$i]);
+    }
 
 }
