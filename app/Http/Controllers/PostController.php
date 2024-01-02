@@ -41,7 +41,6 @@ class PostController extends Controller
         $post->shop()->attach($shop_id);
 
         $newStarValue = $request->star;
-
         $postsData = Post::whereHas('shop', function ($query) use ($shop_id) {
             $query->where('shop_id', $shop_id);
         })->get();
@@ -53,12 +52,13 @@ class PostController extends Controller
 
         $postsCount = Post::where('guest_id', '=', $request->guest_id)->count();
         $newPostsCount = $postsCount + 1;
+        $updateGuest = Guest::find($request->guest_id);
         if($newPostsCount >= 10 && $newPostsCount < 30){
-            Guest::find($request->guest_id)->update(['status' => 'ブロンズ']);
+            $updateGuest->update(['status' => 'ブロンズ']);
         }elseif ($newPostsCount >= 30 && $newPostsCount < 50) {
-            Guest::find($request->guest_id)->update(['status' => 'シルバー']);
+            $updateGuest->update(['status' => 'シルバー']);
         }elseif ($newPostsCount >= 50) {
-            Guest::find($request->guest_id)->update(['status' => 'ゴールド']);
+            $updateGuest->update(['status' => 'ゴールド']);
         }
 
         return  redirect('/post/addresult')->with(['msg'=>'投稿が完了しました']);
