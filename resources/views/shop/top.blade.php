@@ -22,6 +22,7 @@
         <th scope="col">カテゴリー</th>
         <th scope="col">所在地</th>
         <th scope="col">星評価</th>
+        <th scope="col">店舗ページ</th>
       </tr>
     </thead>
     <tbody>
@@ -33,6 +34,8 @@
         <td scope="row">@foreach($item->shopcategory as $obj){{$obj->name}}@endforeach</td>
         <td scope="row">{{$item->place->name}}</td>
         <td scope="row">{{$item->star}}</td>
+        <td scope="row"><button><a href="/shop/shoppage?id={{$item->id}}">店舗ページ</a></button></td>
+
       </tr>
       @endforeach
     </tbody>
