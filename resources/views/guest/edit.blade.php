@@ -16,6 +16,7 @@
     <form action="/guest/edit" method="post" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="id" value="{{$form->id}}">
+    <input type="hidden" name="status" value="{{$form->status}}">
     <input class="form-control form-control-lg" type="text" placeholder="お名前" name="name" value="{{$form->name}}"><br>
     <input class="form-control form-control-lg" type="text" placeholder="ユーザーID" name="guest_name" value="{{$form->guest_name}}"><br>
     <input class="form-control form-control-lg" type="file" placeholder="アイコン画像データをアップロード" name="icon" accept="image/*"><br>

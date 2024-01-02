@@ -13,6 +13,7 @@
         <th scope="col">ユーザID</th>
         <th scope="col">ユーザ名</th>
         <th scope="col">アイコン</th>
+        <th scope="col">ユーザステータス</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
         <th scope="row">{{$item->id}}</th>
         <td scope="row">{{$item->name}}</td>
         <td scope="row"><img src="{{ url('storage', ['images','icon', $item->icon]) }}" alt="" class="icon"></td>
+        <td scope="row">{{$item->status}}</td>
       </tr>
 
     </tbody>

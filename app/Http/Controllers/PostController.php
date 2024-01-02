@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Shop;
+use App\Models\Guest;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -48,7 +49,17 @@ class PostController extends Controller
         $currentStarCount = $postsData->count();
         $newTotalStar = $currentTotalStar + $newStarValue;
         $newAvgStar = $newTotalStar / ($currentStarCount + 1);
-        Shop::where('id', $shop_id)->update(['star' => $newAvgStar]);
+        Shop::find($shop_id)->update(['star' => $newAvgStar]);
+
+        $postsCount = Post::where('guest_id', '=', $request->guest_id)->count();
+        $newPostsCount = $postsCount + 1;
+        if($newPostsCount >= 10 && $newPostsCount < 30){
+            Guest::find($request->guest_id)->update(['status' => 'ブロンズ']);
+        }elseif ($newPostsCount >= 30 && $newPostsCount < 50) {
+            Guest::find($request->guest_id)->update(['status' => 'シルバー']);
+        }elseif ($newPostsCount >= 50) {
+            Guest::find($request->guest_id)->update(['status' => 'ゴールド']);
+        }
 
         return  redirect('/post/addresult')->with(['msg'=>'投稿が完了しました']);
 

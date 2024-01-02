@@ -41,6 +41,7 @@ class GuestController extends Controller
         $form = $request->all();
         unset($form['_token'],$form['icon']);
         $guest->icon = $fileName;
+        $guest->status = 'ノーマル';
         $guest->fill($form)->save();
 
         return view('guest.add',['msg'=>'登録が完了しました']);

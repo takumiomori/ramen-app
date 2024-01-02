@@ -22,6 +22,7 @@ class GuestsTableSeeder extends Seeder
             'mail' => $faker->email(),
             'tel' => $faker->phoneNumber(),
             'password' => $faker->password(),
+            'status' => 'ノーマル',
             'created_at' => now(),
             'updated_at' => now(),
         ];
