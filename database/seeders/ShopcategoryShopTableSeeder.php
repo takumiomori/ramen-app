@@ -13,10 +13,13 @@ class ShopcategoryShopTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $param = [
-            'shopcategory_id' => 5,
-            'shop_id' => 1,
+        $shops = DB::table('shops')->get();
+        foreach ($shops as $shop) {
+            $param = [
+            'shopcategory_id' => 14,
+            'shop_id' => $shop->id,
         ];
         DB::table('shopcategory_shop')->insert($param);
+        }
     }
 }

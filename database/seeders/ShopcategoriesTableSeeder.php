@@ -39,12 +39,37 @@ class ShopcategoriesTableSeeder extends Seeder
         DB::table('shopcategories')->insert($param);
 
         $param = [
-            'name' => '油そば',
+            'name' => '天理',
+        ];
+        DB::table('shopcategories')->insert($param);
+
+        $param = [
+            'name' => '家系',
+        ];
+        DB::table('shopcategories')->insert($param);
+
+        $param = [
+            'name' => '二郎系・二郎インスパイア系',
+        ];
+        DB::table('shopcategories')->insert($param);
+
+        $param = [
+            'name' => '魚介',
         ];
         DB::table('shopcategories')->insert($param);
 
         $param = [
             'name' => 'つけ麺',
+        ];
+        DB::table('shopcategories')->insert($param);
+
+        $param = [
+            'name' => '油そば',
+        ];
+        DB::table('shopcategories')->insert($param);
+
+        $param = [
+            'name' => '担々麺',
         ];
         DB::table('shopcategories')->insert($param);
 

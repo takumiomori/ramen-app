@@ -14,6 +14,7 @@
     @foreach($categories as $category)
     <input type="checkbox" name="shopcategory_id[]" value="{{$category->id}}">{{$category->name}}
     @endforeach
+    <br>
     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="place_id">
     <option selected>所在市町村を選択</option>
         @foreach($places as $place)

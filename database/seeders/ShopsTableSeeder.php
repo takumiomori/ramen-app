@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class ShopsTableSeeder extends Seeder
 {
@@ -13,19 +14,26 @@ class ShopsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $param = [
-            'name' => '麺屋NOROMA',
-            'place_id' => 1,
-            'image' => 'shop_default.png',
-            'holiday' => '水曜日',
-            'tel' => '0742-63-5338',
-            'address' => '	
-            奈良県奈良市南京終町3-1531',
-            'open_time' => '11:30～15:00,
-            18:00～21:30',
-            'menu' => '鶏そば：850円　ほか',
-            'star' => '0',
-        ];
-        DB::table('shops')->insert($param);
+        $response = Http::get('http://webservice.recruit.co.jp/hotpepper/gourmet/v1/', [
+            'key' => '31540da67f7a1427',
+            'large_area' => 'Z025',
+            'genre' => 'G013', 
+            'count' => '100',
+            'format' => 'json'
+        ]);
+
+        foreach ($response['results']['shop'] as $shop) {
+            DB::table('shops')->insert([
+                'name' => $shop['name'],
+                'place_id' => 1,
+                'image' => 'shop_default.png',
+                'holiday' => $shop['close'],
+                'tel' => 'なし',
+                'address' => $shop['address'],
+                'open_time' => $shop['open'],
+                'menu' => '料理名：価格',
+                'star' => '0',
+            ]);
+        }
     }
 }
