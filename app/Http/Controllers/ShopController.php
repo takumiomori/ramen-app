@@ -6,6 +6,7 @@ use App\Models\Shop;
 use App\Models\Place;
 use App\Models\Shopcategory;
 use App\Models\Post;
+use App\Models\Favorite;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -185,7 +186,10 @@ class ShopController extends Controller
         $posts = Post::whereHas('shop', function ($query) use ($shop_id) {
             $query->where('shop_id', $shop_id);
         })->get();
-        return view('shop.shoppage',['item'=>$shop,'posts'=>$posts,'msg'=>$msg]);
+        $favoritesCount = Favorite::whereHas('shop', function ($query) use ($shop_id) {
+            $query->where('shop_id', $shop_id);
+        })->count();
+        return view('shop.shoppage',['item'=>$shop,'posts'=>$posts,'favoritesCount'=>$favoritesCount,'msg'=>$msg,]);
     }
 
     public function ranking(Request $request){

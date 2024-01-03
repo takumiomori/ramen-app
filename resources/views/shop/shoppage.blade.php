@@ -13,8 +13,8 @@
         <th scope="col">店舗名</th>
         <th scope="col">星評価</th>
         <th scope="col">画像</th>
+        <th scope="col">お気に入り登録数</th>
         <th scope="col">カテゴリー</th>
-        <th scope="col">所在地</th>
         <th scope="col">定休日</th>
         <th scope="col">電話番号</th>
         <th scope="col">住所</th>
@@ -28,8 +28,8 @@
         <td scope="row">{{$item->name}}</td>
         <td scope="row">{{$item->star}}</td>
         <td scope="row"><img src="{{ url('storage', ['images','shop', $item->image]) }}" alt="" class="icon"></td>
+        <td scope="row">{{$favoritesCount}}</td>
         <td scope="row">@foreach($item->shopcategory as $obj){{$obj->name}}@endforeach</td>
-        <td scope="row">{{$item->place->name}}</td>
         <td scope="row">{{$item->holiday}}</td>
         <td scope="row">{{$item->tel}}</td>
         <td scope="row">{{$item->address}}</td>

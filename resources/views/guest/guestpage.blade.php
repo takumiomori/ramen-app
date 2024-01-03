@@ -11,6 +11,7 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">ユーザID</th>
+        <th scope="col">氏名</th>
         <th scope="col">ユーザ名</th>
         <th scope="col">アイコン</th>
         <th scope="col">ユーザステータス</th>
@@ -21,6 +22,7 @@
       <tr>
         <th scope="row">{{$item->id}}</th>
         <td scope="row">{{$item->name}}</td>
+        <td scope="row">{{$item->guest_name}}</td>
         <td scope="row"><img src="{{ url('storage', ['images','icon', $item->icon]) }}" alt="" class="icon"></td>
         <td scope="row">{{$item->status}}</td>
       </tr>
