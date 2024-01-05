@@ -10,6 +10,7 @@
         .footer{text-align: right; color: thistle; margin-right: 20px}
         .alert_message{font-size: 20px; border: 2px solid red; color: red; font-weight: bold; padding: 10px;}
         .icon{width:50px;}
+        .shop_image{width:100px;}
     </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

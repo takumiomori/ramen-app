@@ -54,7 +54,7 @@
       <tr>
         <th scope="row">{{$item->id}}</th>
         <td scope="row">{{$item->name}}</td>
-        <td scope="row"><img src="{{ url('storage', ['images','shop', $item->image]) }}" alt="" class="icon"></td>
+        <td scope="row"><img src="{{ url('storage', ['images','shop', $item->image]) }}" alt="" class="shop_image"></td>
         <td scope="row">@foreach($item->shopcategory as $obj){{$obj->name}}@endforeach</td>
         <td scope="row">{{$item->place->name}}</td>
         <td scope="row">{{$item->holiday}}</td>
