@@ -32,6 +32,7 @@ class PostController extends Controller
         $this->validate($request,Post::$rules);
 
         $shop_id = $request->shop_id;
+        $newStarValue = $request->star;
         
         $post = new Post;
         $form = $request->all();
@@ -39,15 +40,17 @@ class PostController extends Controller
         $post->fill($form)->save();
 
         $post->shop()->attach($shop_id);
-
-        $newStarValue = $request->star;
         $postsData = Post::whereHas('shop', function ($query) use ($shop_id) {
             $query->where('shop_id', $shop_id);
         })->get();
-        $currentTotalStar = $postsData->sum('star');
-        $currentStarCount = $postsData->count();
-        $newTotalStar = $currentTotalStar + $newStarValue;
-        $newAvgStar = $newTotalStar / ($currentStarCount + 1);
+
+        $averageStar = $postsData->avg('star');
+        $averageStar = bcmul($averageStar, $count = $postsData->count(), 2);
+        $newStarValue = bcmul($newStarValue, 1, 2);
+
+        $totalStar = bcadd($averageStar, $newStarValue, 2);
+        $count = bcadd($count, 1);
+        $newAvgStar = bcdiv($totalStar, $count, 2);
         Shop::find($shop_id)->update(['star' => $newAvgStar]);
 
         $postsCount = Post::where('guest_id', '=', $request->guest_id)->count();
