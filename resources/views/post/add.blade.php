@@ -17,11 +17,11 @@
     @csrf
     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="star">
         <option selected>星評価を選択</option>
-        <option value="1">１つ星：☆</option>
-        <option value="2">２つ星：☆☆</option>
-        <option value="3">３つ星：☆☆☆</option>
-        <option value="4">４つ星：☆☆☆☆</option>
-        <option value="5">５つ星：☆☆☆☆☆</option>
+        <option value="1.00">１つ星：☆</option>
+        <option value="2.00">２つ星：☆☆</option>
+        <option value="3.00">３つ星：☆☆☆</option>
+        <option value="4.00">４つ星：☆☆☆☆</option>
+        <option value="5.00">５つ星：☆☆☆☆☆</option>
       </select><br>
     <input class="form-control form-control-lg" type="text" placeholder="投稿内容" name="post_text" value="{{old('post_text')}}"><br>
     <input class="form-control form-control-lg" type="number" name="guest_id"><br>
