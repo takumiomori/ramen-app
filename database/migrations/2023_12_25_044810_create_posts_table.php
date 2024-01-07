@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->integer('guest_id');
             $table->text('post_text');
-            $table->double('star', 8, 2);
+            $table->decimal('star', 3, 2);
             $table->timestamps();
         });
     }

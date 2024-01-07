@@ -16,7 +16,7 @@ class PostsTableSeeder extends Seeder
         $param = [
             'guest_id' => 1,
             'post_text'=> '美味しい。とにかく美味しい。',
-            'star' => 5,
+            'star' => 5.00,
         ];
         DB::table('posts')->insert($param);
     }

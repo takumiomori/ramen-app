@@ -32,7 +32,6 @@ class PostController extends Controller
         $this->validate($request,Post::$rules);
 
         $shop_id = $request->shop_id;
-        $newStarValue = $request->star;
         
         $post = new Post;
         $form = $request->all();
@@ -44,13 +43,11 @@ class PostController extends Controller
             $query->where('shop_id', $shop_id);
         })->get();
 
-        $averageStar = $postsData->avg('star');
-        $averageStar = bcmul($averageStar, $count = $postsData->count(), 2);
-        $newStarValue = bcmul($newStarValue, 1, 2);
+        $count = $postsData->count();
+        $totalStar = $postsData->sum('star');
 
-        $totalStar = bcadd($averageStar, $newStarValue, 2);
-        $count = bcadd($count, 1);
-        $newAvgStar = bcdiv($totalStar, $count, 2);
+        $newAvgStar = round($totalStar / $count, 2);
+
         Shop::find($shop_id)->update(['star' => $newAvgStar]);
 
         $postsCount = Post::where('guest_id', '=', $request->guest_id)->count();
