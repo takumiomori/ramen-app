@@ -51,13 +51,12 @@ class PostController extends Controller
         Shop::find($shop_id)->update(['star' => $newAvgStar]);
 
         $postsCount = Post::where('guest_id', '=', $request->guest_id)->count();
-        $newPostsCount = $postsCount + 1;
         $updateGuest = Guest::find($request->guest_id);
-        if($newPostsCount >= 10 && $newPostsCount < 30){
+        if($postsCount >= 10 && $postsCount < 30){
             $updateGuest->update(['status' => 'ブロンズ']);
-        }elseif ($newPostsCount >= 30 && $newPostsCount < 50) {
+        }elseif ($postsCount >= 30 && $postsCount < 50) {
             $updateGuest->update(['status' => 'シルバー']);
-        }elseif ($newPostsCount >= 50) {
+        }elseif ($postsCount >= 50) {
             $updateGuest->update(['status' => 'ゴールド']);
         }
 
