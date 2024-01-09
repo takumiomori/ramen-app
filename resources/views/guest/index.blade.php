@@ -7,7 +7,7 @@
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th scope="col">利用者ID</th>
         <th scope="col">氏名</th>
@@ -22,7 +22,7 @@
     <tbody>
         @foreach($items as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
+        <td scope="row">{{$item->id}}</td>
         <td>{{$item->name}}</td>
         <td>{{$item->guest_name}}</td>
         <td><img src="{{ url('storage', ['images', 'icon', $item->icon]) }}" alt="" class="icon"></td>

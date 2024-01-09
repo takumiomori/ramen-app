@@ -15,7 +15,7 @@
 </form>
 
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th scope="col">市町村ID</th>
         <th scope="col">市町村名</th>
@@ -25,7 +25,7 @@
     <tbody>
         @foreach($items as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
+        <td scope="row">{{$item->id}}</td>
         <td>{{$item->name}}</td>
         <td><button><a href="/place/del?id={{$item->id}}">削除</a></button></td>
       </tr>

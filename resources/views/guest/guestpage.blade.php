@@ -8,7 +8,7 @@
 @endif
 
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th scope="col">ユーザID</th>
         <th scope="col">氏名</th>
@@ -20,7 +20,7 @@
     <tbody>
 
       <tr>
-        <th scope="row">{{$item->id}}</th>
+        <td scope="row">{{$item->id}}</td>
         <td scope="row">{{$item->name}}</td>
         <td scope="row">{{$item->guest_name}}</td>
         <td scope="row"><img src="{{ url('storage', ['images','icon', $item->icon]) }}" alt="" class="icon"></td>

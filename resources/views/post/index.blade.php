@@ -7,7 +7,7 @@
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th scope="col">投稿ID</th>
         <th scope="col">ユーザID</th>
@@ -21,7 +21,7 @@
     <tbody>
         @foreach($items as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
+        <td scope="row">{{$item->id}}</td>
         <td scope="row">{{$item->guest->id}}</td>
         <td scope="row">{{$item->guest->name}}</td>
         <td scope="row">{{$item->post_text}}</td>

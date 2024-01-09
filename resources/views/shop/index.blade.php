@@ -52,7 +52,7 @@
     <tbody>
         @foreach($items as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
+        <td scope="row">{{$item->id}}</td>
         <td scope="row">{{$item->name}}</td>
         <td scope="row"><img src="{{ url('storage', ['images','shop', $item->image]) }}" alt="" class="shop_image"></td>
         <td scope="row">@foreach($item->shopcategory as $obj){{$obj->name}}@endforeach</td>
