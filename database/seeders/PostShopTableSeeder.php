@@ -13,10 +13,16 @@ class PostShopTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $param = [
-            'post_id' => 1,
-            'shop_id' => 1,
-        ];
-        DB::table('post_shop')->insert($param);
+        $post_id = 1;
+        for ($shopId = 1; $shopId <= 17; $shopId++) {
+            for ($i = 1; $i <= 10; $i++) {
+                $param = [
+                    'post_id' => $post_id++,
+                    'shop_id' => $shopId,
+                ];
+
+                DB::table('post_shop')->insert($param);
+            }
+        }
     }
 }

@@ -13,9 +13,14 @@ class FavoritesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $param = [
-            'guest_id' => 1,
-        ];
-        DB::table('favorites')->insert($param);
+        for ($guestId = 1; $guestId <= 10; $guestId++) {
+            for ($i = 1; $i <= 10; $i++) {
+                $param = [
+                    'guest_id' => $guestId,
+                ];
+
+                DB::table('favorites')->insert($param);
+            }
+        }
     }
 }

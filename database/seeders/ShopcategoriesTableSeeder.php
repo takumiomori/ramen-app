@@ -69,6 +69,11 @@ class ShopcategoriesTableSeeder extends Seeder
         DB::table('shopcategories')->insert($param);
 
         $param = [
+            'name' => 'まぜそば',
+        ];
+        DB::table('shopcategories')->insert($param);
+
+        $param = [
             'name' => '担々麺',
         ];
         DB::table('shopcategories')->insert($param);

@@ -13,12 +13,29 @@ class FavoriteShopTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $param = [
-            'favorite_id' => 1,
-            'shop_id' => 1,
-        ];
         DB::table('favorite_shop')->delete();
         DB::unprepared("ALTER TABLE favorite_shop AUTO_INCREMENT = 1 ");
-        DB::table('favorite_shop')->insert($param);
+        $favoriteId = 1;
+        for ($i = 1; $i <= 10; $i++) {
+            $selectedShops = $this->getRandomShops(17, 10);
+
+            foreach ($selectedShops as $shopId) {
+                $param = [
+                    'favorite_id' => $favoriteId++,
+                    'shop_id' => $shopId,
+                ];
+
+                DB::table('favorite_shop')->insert($param);
+            }
+
+            }
+    }
+
+    private function getRandomShops($totalShops, $count)
+    {
+        $shops = range(1, $totalShops);
+        shuffle($shops);
+
+        return array_slice($shops, 0, $count);
     }
 }
