@@ -14,7 +14,7 @@
 
 <div>星評価ランキングTOP5</div>
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th></th>
         <th scope="col">店舗名</th>

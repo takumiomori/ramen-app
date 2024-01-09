@@ -1,6 +1,6 @@
 @extends('layouts.ramen')
 
-@section('title','投稿一覧')
+@section('title','店舗一覧')
 
 @section('content')
 @if(isset($msg))
@@ -31,7 +31,7 @@
 </form>
 
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th scope="col">店舗ID</th>
         <th scope="col">店舗名</th>

@@ -8,7 +8,7 @@
 @endif
 
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th scope="col">店舗名</th>
         <th scope="col">星評価</th>
