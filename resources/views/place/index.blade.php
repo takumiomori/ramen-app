@@ -7,11 +7,11 @@
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
 
-    <div>市町村情報の新規登録</div>
+    <div class="label">市町村情報の新規登録</div>
     <form action="/place/index" method="post">
     @csrf
     <input class="form-control form-control-lg" type="text" placeholder="市町村名" name="name" value="{{old('name')}}"><br>
-    <input class="submit_btn" type="submit" value="登録">
+    <input class="btn" type="submit" value="登録">
 </form>
 
 <table class="table">
@@ -27,7 +27,7 @@
       <tr>
         <td scope="row">{{$item->id}}</td>
         <td>{{$item->name}}</td>
-        <td><button><a href="/place/del?id={{$item->id}}">削除</a></button></td>
+        <td><a href="/place/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
       </tr>
       @endforeach
     </tbody>

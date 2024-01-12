@@ -13,7 +13,7 @@
     
     <input class="form-control form-control-lg" type="hidden" name="id" value="{{$form->id}}"><br>
     <p>上記の店舗カテゴリー情報を削除しますか？</p>
-    <input class="submit_btn" type="submit" value="削除する"></td>
+    <input class="btn" type="submit" value="削除する"></td>
 </form>
 </div>
 

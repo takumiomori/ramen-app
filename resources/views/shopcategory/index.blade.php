@@ -7,15 +7,15 @@
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
 
-    <div>店舗カテゴリーの新規登録</div>
+    <div class="label">店舗カテゴリーの新規登録</div>
     <form action="/shopcategory/index" method="post">
     @csrf
-    <input class="form-control form-control-lg" type="text" placeholder="店舗カテゴリー名" name="name" value="{{old('name')}}"><br>
-    <input class="submit_btn" type="submit" value="登録">
+    <input class="form-control form-control-lg" type="text" placeholder="店舗カテゴリー名" name="name" value="{{old('name')}}">
+    <input class="btn" type="submit" value="登録">
 </form>
 
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-dark">
       <tr>
         <th scope="col">店舗カテゴリーID</th>
         <th scope="col">店舗カテゴリー名</th>
@@ -25,9 +25,9 @@
     <tbody>
         @foreach($items as $item)
       <tr>
-        <th scope="row">{{$item->id}}</th>
+        <td>{{$item->id}}</td>
         <td>{{$item->name}}</td>
-        <td><button><a href="/shopcategory/del?id={{$item->id}}">削除</a></button></td>
+        <td><a href="/shopcategory/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
       </tr>
       @endforeach
     </tbody>

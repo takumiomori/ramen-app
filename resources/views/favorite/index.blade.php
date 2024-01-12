@@ -23,7 +23,7 @@
         <td scope="row">{{$item->guest->id}}</td>
         <td scope="row">{{$item->guest->name}}</td>
         <td scope="row">{{$item->shop->first()->name}}</td>
-        <td scope="row"><button><a href="/favorite/del?id={{$item->id}}">削除</a></button></td>
+        <td scope="row"><a href="/favorite/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
       </tr>
       @endforeach
     </tbody>
