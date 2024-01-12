@@ -14,7 +14,7 @@
         .footer{text-align: right; color: thistle; margin-right: 20px}
         .alert_message{font-size: 20px; border: 2px solid red; color: red; font-weight: bold; padding: 10px;}
         .icon{width:50px;}
-        .prof_space{display:flex;flex-wrap:wrap; margin-top: 50px;}
+        .prof_space,.ranking_space{display:flex;flex-wrap:wrap; margin-top: 50px;}
         .prof_info{width:70%; display:flex; flex-flow: column;margin-left: 30px;}
         .image_sp{width:20%;}
         .prof_icon{width:100%; border-radius: 200px;}
@@ -40,6 +40,12 @@
         .star_space{display: inline-block;}
         .card-label{display: inline-block;}
         .star{display: inline-block;font-weight: bold;color: red;}
+        .rank{width:100px; display:flex; flex-flow: column;margin-left: 30px;}
+        .rank_img{width:30%; display:flex; flex-flow: column;margin-left: 30px;}
+        .rank_info{width:30%; display:flex; flex-flow: column;margin-left: 30px;}
+        .rank_num{font-size: 90px; font-style: italic; font-weight: bold; position: relative;}
+        .rankshop_image{width: 100%;}
+        .rank_txt{position: absolute; top: 70px; right: 10px; font-size: 30px; font-style: normal; color: gray;}
     </style>
     
 
