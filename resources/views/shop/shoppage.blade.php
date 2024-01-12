@@ -49,11 +49,26 @@
     <input class="btn" type="submit" value="お気に入り登録">
   </form>
 
-    <div>お店の口コミ</div>
+    <div class="label_front">お店の口コミ</div>
+    <div class="card_group">
+      @foreach($posts as $post)
+      <div class="card" style="width: 40rem;">
+        <div class="card_userimg"><img src="{{ url('storage', ['images', 'icon', $post->guest->icon]) }}" alt="" class="icon"></div>
+        <div class="card-body">
+          <div class="user_name">{{$post->guest->guest_name}}</div>
+          <p class="card-text">
+            <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$post->star}}</div><br>
+          </p></div>
+            <br>
+            <div class="post_content">{{$post->post_text}}</div>
+          </a>
+        </div>
+      </div>
+    @endforeach
     <table>
         <tr><th></th><th>ユーザー名</th><th>星評価</th><th>口コミ</th></tr>
         @foreach($posts as $post)
-        <tr><td><img src="{{ url('storage', ['images', 'icon', $post->guest->icon]) }}" alt="" class="icon"></td><td>{{$post->guest->guest_name}}</td><td>{{$post->star}}</td><td>{{$post->post_text}}</td></tr>
+        <tr><td></td><td>{{$post->guest->guest_name}}</td><td>{{$post->star}}</td><td>{{$post->post_text}}</td></tr>
         @endforeach
     </table>
     
