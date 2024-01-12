@@ -6,6 +6,7 @@ use App\Models\Favorite;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
@@ -16,14 +17,16 @@ class FavoriteController extends Controller
 
     public function create(Request $request){
         $this->validate($request,Favorite::$rules);
-        
-        $reservation = new Favorite;
+        $guest_id = Auth::id();;
+        $shop_id = $request->shop_id;
+        $favorite = new Favorite;
         $form = $request->all();
         unset($form['_token']);
-        $reservation->fill($form)->save();
+        $favorite->guest_id = $guest_id;
+        $favorite->fill($form)->save();
         
-        $reservation->shop()->attach($shop_id);
-        return  redirect('/shop/shoppage')->with(['msg'=>'お気に入り登録が完了しました']);
+        $favorite->shop()->attach($shop_id);
+        return  redirect('/shop/shoppage?id=$shop_id')->with(['msg'=>'お気に入り登録が完了しました']);
 
     }
 

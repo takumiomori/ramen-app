@@ -12,11 +12,11 @@
     <table>
         <input type="hidden" name="id" value="{{$form->id}}">
     <tr><th>店舗名</th><td><input class="form-control form-control-lg" type="text" name="name" value="{{$form->name}}"></td></tr>
-    <label for="shopcategory_id">現在登録されている店舗カテゴリー</label><br>
+    <label for="shopcategory_id" class="label">現在登録されている店舗カテゴリー</label><br>
     @foreach($form->shopcategory as $obj)<input type="checkbox" name="shopcategory_id[]" value="{{$obj->id}}" checked>{{$obj->name}}
     @endforeach
     <br>
-    <label for="shopcategory_id">追加の店舗カテゴリーを選択</label><br>
+    <label for="shopcategory_id" class="label mt">追加の店舗カテゴリーを選択</label><br>
     @foreach($categories as $category)
     <input type="checkbox" name="shopcategory_id[]" value="{{$category->id}}">{{$category->name}}
     @endforeach

@@ -39,7 +39,7 @@
     <div class="label_front">投稿した口コミ</div>
       <div class="card_group">
         @foreach($posts as $post)
-        <div class="card" style="width: 40rem;">
+        <div class="card" style="width: 30rem;">
           <div class="card-body">
             <h5 class="card-title">{{$post->shop->first()->name}}</h5>
             <p class="card-text">
