@@ -40,13 +40,13 @@
     </tbody>
   </table>
 
-  <button><a href="/post/add?shop_id={{$item->id}}">口コミを書く</a></button>
+  <a href="/post/add?shop_id={{$item->id}}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">口コミを書く</button></div></a>
 
   <form action="/shop/shoppage" method="post" enctype="multipart/form-data">
     @csrf
     <input class="form-control form-control-lg" type="hidden" name="guest_id" value=""><br>
     <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$item->id}}"><br>
-    <input class="submit_btn" type="submit" value="お気に入り登録">
+    <input class="btn" type="submit" value="お気に入り登録">
   </form>
 
     <div>お店の口コミ</div>

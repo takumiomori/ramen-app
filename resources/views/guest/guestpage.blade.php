@@ -7,46 +7,50 @@
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
 
-<table class="table">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">ユーザID</th>
-        <th scope="col">氏名</th>
-        <th scope="col">ユーザ名</th>
-        <th scope="col">アイコン</th>
-        <th scope="col">ユーザステータス</th>
-      </tr>
-    </thead>
-    <tbody>
 
-      <tr>
-        <td scope="row">{{$item->id}}</td>
-        <td scope="row">{{$item->name}}</td>
-        <td scope="row">{{$item->guest_name}}</td>
-        <td scope="row"><img src="{{ url('storage', ['images','icon', $item->icon]) }}" alt="" class="icon"></td>
-        <td scope="row">{{$item->status}}</td>
-      </tr>
+      <div class="prof_space">
+        <div class="image_sp"><img src="{{ url('storage', ['images','icon', $item->icon]) }}" alt="" class="prof_icon"></div>
+        <div class="prof_info">
+          <div class="user_name">{{$item->name}}</div>
+          <div class="user_id">@ {{$item->guest_name}}</div>
+          <div class="user_status">{{$item->status}}</div>
+        <div class="prof_btn"><a href="/guest/edit?id={{$item->id}}"><button class="btn mb">ユーザ登録情報を変更</button></a></div>
+        </div>
+        
+        
+      </div>
 
-    </tbody>
-  </table>
+  <div class="label_front">お気に入り店舗一覧</div>
+  <div class="card_group">
+    @foreach($favorites as $favorite)
+    <div class="card" style="width: 18rem;">
+      <img src="{{ url('storage', ['images','shop', $favorite->shop->first()->image]) }}" class="card-img-top" alt="" >
+      <div class="card-body">
+        <h5 class="card-title">{{$favorite->shop->first()->name}}</h5>
+        <p class="card-text">
+          <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$favorite->shop->first()->star}}</div><br>
+        </p></div>
+          <br>
+        <a href="/shop/shoppage?id={{$favorite->shop->first()->id}}" class="btn ">店舗ページ</a>
+      </div>
+    </div>
+  @endforeach
 
-  <button><a href="/guest/edit?id={{$item->id}}">ユーザ登録情報を変更</a></button>
-
-  <div>お気に入り店舗一覧</div>
-    <table>
-        <tr><th>店舗名</th><th>店舗画像</th><th>星評価</th><th>店舗ページ</th></tr>
-        @foreach($favorites as $favorite)
-        <tr><td>{{$favorite->shop->first()->name}}</td><td><img src="{{ url('storage', ['images', 'shop', $favorite->shop->first()->image]) }}" alt="" class="icon"></td><td>{{$favorite->shop->first()->star}}</td><td><button><a href="/shop/shoppage?id={{$favorite->shop->first()->id}}">店舗ページ</a></button></td></tr>
-        @endforeach
-    </table>
-
-    <div>投稿した口コミ</div>
-    <table>
-        <tr><th>店舗名</th><th>星評価</th><th>投稿内容</th></tr>
+    <div class="label_front">投稿した口コミ</div>
+      <div class="card_group">
         @foreach($posts as $post)
-        <tr><td>{{$post->shop->first()->name}}</td><td>{{$post->star}}</td><td>{{$post->post_text}}</td></tr>
-        @endforeach
-    </table>
+        <div class="card" style="width: 40rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{$post->shop->first()->name}}</h5>
+            <p class="card-text">
+              <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$post->star}}</div><br>
+            </p></div>
+              <br>
+              <div class="post_content">{{$post->post_text}}</div>
+            </a>
+          </div>
+        </div>
+      @endforeach
     
 @endsection
 

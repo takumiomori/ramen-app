@@ -33,7 +33,7 @@
       <tr><th>営業時間</th><td><input class="form-control form-control-lg" type="text" name="open_time" value="{{$form->open_time}}"></td></tr>
       <tr><th>メニュー</th><td><input class="form-control form-control-lg" type="text" name="menu" value="{{$form->menu}}"></td></tr>
       </table>
-    <input class="submit_btn" type="submit" value="更新">
+    <input class="btn" type="submit" value="更新">
 </form>
 
 @endsection

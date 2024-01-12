@@ -9,34 +9,25 @@
 @if(isset($result))
 <div class="alert alert-primary" role="alert">{{$result}}件お店が見つかりました。</div>
 @endif
-<table class="table">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">店舗名</th>
-        <th scope="col">星評価</th>
-        <th scope="col">画像</th>
-        <th scope="col">カテゴリー</th>
-        <th scope="col">定休日</th>
-        <th scope="col">電話番号</th>
-        <th scope="col">住所</th>
-        <th scope="col">店舗ページ</th>
-      </tr>
-    </thead>
-    <tbody>
+      <div class="card_group">
         @foreach($items as $item)
-      <tr>
-        <td scope="row">{{$item->name}}</td>
-        <td scope="row">{{$item->star}}</td>
-        <td scope="row"><img src="{{ url('storage', ['images','shop', $item->image]) }}" alt="" class="icon"></td>
-        <td scope="row">@foreach($item->shopcategory as $obj){{$obj->name}}@endforeach</td>
-        <td scope="row">{{$item->holiday}}</td>
-        <td scope="row">{{$item->tel}}</td>
-        <td scope="row">{{$item->address}}</td>
-        <td scope="row"><button><a href="/shop/shoppage?id={{$item->id}}">店舗ページ</a></button></td>
-      </tr>
+        <div class="card" style="width: 18rem;">
+          <img src="{{ url('storage', ['images','shop', $item->image]) }}" class="card-img-top" alt="" >
+          <div class="card-body">
+            <h5 class="card-title">{{$item->name}}</h5>
+            <p class="card-text">
+              <div class="place">{{$item->place->name}}</div><br>
+              <div class="category_space">
+              @foreach($item->shopcategory as $obj)<div class="category">{{$obj->name}}</div>@endforeach
+            </div>
+              <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$item->star}}</div><br>
+            </p></div>
+              <br>
+            <a href="/shop/shoppage?id={{$item->id}}" class="btn ">店舗ページ</a>
+          </div>
+        </div>
       @endforeach
-    </tbody>
-  </table>
+    
 @endsection
 
 @section('footer')

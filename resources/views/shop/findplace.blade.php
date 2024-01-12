@@ -21,7 +21,7 @@
         <option value="{{$place->id}}">{{$place->name}}</option>
         @endforeach
       </select><br>
-    <input class="submit_btn" type="submit" value="検索">
+    <input class="btn" type="submit" value="検索">
 </form>
 </div>
 

@@ -10,24 +10,25 @@
 <form action="/shop/index" method="post" enctype="multipart/form-data">
     @csrf
     <input class="form-control form-control-lg" type="text" placeholder="店舗名" name="name" value="{{old('name')}}"><br>
-    <label for="shopcategory_id">店舗カテゴリーを選択</label>
+    <label for="shopcategory_id" class="label">店舗カテゴリーを選択</label><br>
     @foreach($categories as $category)
     <input type="checkbox" name="shopcategory_id[]" value="{{$category->id}}">{{$category->name}}
     @endforeach
     <br>
-    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="place_id">
+    <select class="custom-select mr-sm-2 mb mt" id="inlineFormCustomSelect" name="place_id">
     <option selected>所在市町村を選択</option>
         @foreach($places as $place)
         <option value="{{$place->id}}">{{$place->name}}</option>
         @endforeach
       </select><br>
-    <input class="form-control form-control-lg" type="file" placeholder="店舗画像データをアップロード" name="image" accept="image/*"><br>
+      <div class="label">店舗画像データをアップロード</div>
+    <input class="form-control form-control-lg" type="file" name="image" accept="image/*"><br>
     <input class="form-control form-control-lg" type="text" placeholder="定休日 " name="holiday" value="{{old('holiday')}}"><br>
     <input class="form-control form-control-lg" type="tel" placeholder="電話番号" name="tel" value="{{old('tel')}}"><br>
     <input class="form-control form-control-lg" type="text" placeholder="住所" name="address" value="{{old('address')}}"><br>
     <input class="form-control form-control-lg" type="text" placeholder="営業時間" name="open_time" value="{{old('open_time')}}"><br>
     <input class="form-control form-control-lg" type="text" placeholder="メニュー" name="menu" value="{{old('menu')}}"><br>
-    <input class="submit_btn" type="submit" value="登録">
+    <input class="btn" type="submit" value="登録">
 </form>
 
 <table class="table">
@@ -63,9 +64,9 @@
         <td scope="row">{{$item->open_time}}</td>
         <td scope="row">{{$item->menu}}</td>
         <td scope="row">{{$item->star}}</td>
-        <td scope="row"><button><a href="/shop/shoppage?id={{$item->id}}">店舗ページ</a></button></td>
-        <td scope="row"><button><a href="/shop/del?id={{$item->id}}">削除</a></button></td>
-        <td scope="row"><button><a href="/shop/edit?id={{$item->id}}">更新</a></button></td>
+        <td scope="row"><a href="/shop/shoppage?id={{$item->id}}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">店舗ページ</button></a></td>
+        <td scope="row"><a href="/shop/del?id={{$item->id}}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">削除</button></div></a></td>
+        <td scope="row"><a href="/shop/edit?id={{$item->id}}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">更新</button></div></a></td>
       </tr>
       @endforeach
     </tbody>
