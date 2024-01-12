@@ -21,7 +21,7 @@
     <input class="form-control form-control-lg" type="email" placeholder="メールアドレス " name="mail" value="{{old('mail')}}"><br>
     <input class="form-control form-control-lg" type="tel" placeholder="電話番号" name="tel" value="{{old('tel')}}"><br>
     <input class="form-control form-control-lg" type="password" placeholder="パスワード" name="password" value="{{old('password')}}"><br>
-    <input class="submit_btn" type="submit" value="登録">
+    <input class="btn" type="submit" value="登録">
 </form>
 </div>
 

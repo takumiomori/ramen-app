@@ -23,7 +23,7 @@
     <input class="form-control form-control-lg" type="email" placeholder="メールアドレス " name="mail" value="{{$form->mail}}"><br>
     <input class="form-control form-control-lg" type="tel" placeholder="電話番号" name="tel" value="{{$form->tel}}"><br>
     <input class="form-control form-control-lg" type="password" placeholder="パスワード" name="password" value="{{$form->password}}"><br>
-    <input class="submit_btn" type="submit" value="更新">
+    <input class="btn" type="submit" value="更新">
 </form>
 </div>
 
