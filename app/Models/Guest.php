@@ -14,10 +14,10 @@ class Guest extends Model
 
     public static $rules = array(
         'name' => 'required',
-        'guest_name' => 'required',
-        'mail' => 'required',
+        'guest_name' => ['required','string','min:8','regex:/^[A-Za-z0-9!@#$%^&*()_+]+$/'],
+        'mail' => ['required','regex:/^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/'],
         'tel' => ['required', 'regex:/^[0-9-]+$/'],
-        'password' => 'required',
+        'password' => ['required','string','min:8','regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/']
     );
 
     public function favorite(){

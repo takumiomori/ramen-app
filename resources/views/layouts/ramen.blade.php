@@ -60,6 +60,7 @@
         .btn_area{display:flex;flex-wrap:wrap;}
         .post_btn,.favo_btn{display:flex; flex-flow: column; margin:30px 15px 0 0; font-size:18px;}
         a{text-decoration:none;}
+        span{font-size:16px;}
 
     </style>
     
