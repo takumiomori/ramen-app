@@ -95,7 +95,7 @@ return [
     'numeric'              => ':attributeには、数字を指定してください。',
     'password'             => ':attributeが間違っています',
     'present'              => ':attributeが存在している必要があります。',
-    'regex'                => ':attributeは、半角英大文字・半角英小文字・半角数字（0〜9）・半角記号のみ入力可能です。',
+    'regex'                => ':attributeの入力内容が適切ではありません。入力条件をご確認の上、再度記入してください。',
     'required'             => ':attributeは、必ず指定してください。',
     'required_if'          => ':otherが:valueの場合、:attributeを指定してください。',
     'required_unless'      => ':otherが:values以外の場合、:attributeを指定してください。',
