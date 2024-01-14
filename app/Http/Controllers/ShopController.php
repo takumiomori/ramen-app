@@ -151,7 +151,7 @@ class ShopController extends Controller
 
       public function searchplace(Request $request){
         $place = $request->place_id;
-        $items = Shop::matchPlace($place)->get();
+        $items = Shop::matchPlace($place)->orderBy('star', 'desc')->get();
         $result = $items->count();
 
         return redirect('/shop/search')->with(['items'=>$items,'result'=>$result]);
@@ -159,7 +159,7 @@ class ShopController extends Controller
 
     public function searchcategory(Request $request){
         $category = $request->shopcategory_id;
-        $items = Shop::matchCategory($category)->get();
+        $items = Shop::matchCategory($category)->orderBy('star', 'desc')->get();
         $result = $items->count();
 
         return redirect('/shop/search')->with(['items'=>$items,'result'=>$result]);
@@ -168,7 +168,7 @@ class ShopController extends Controller
     public function searchcomplex(Request $request){
         $category = $request->shopcategory_id;
         $place = $request->place_id;
-        $items = Shop::matchCategory($category)->matchPlace($place)->get();
+        $items = Shop::matchCategory($category)->matchPlace($place)->orderBy('star', 'desc')->get();
         $result = $items->count();
 
         if($result > 0){
