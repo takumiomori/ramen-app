@@ -1,4 +1,4 @@
-@extends('layouts.ramen')
+@extends('toppage')
 
 @section('title','カテゴリー検索')
 

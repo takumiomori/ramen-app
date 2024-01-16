@@ -19,8 +19,9 @@ class PostController extends Controller
     public function add(Request $request):View{
         $items = session('items');
         $msg = session('msg');
+        $shop =Shop::find($request->shop_id);
         $shop_id = $request->shop_id;
-        return view('post.add',['items' => $items,'msg'=>$msg,'shop_id'=>$shop_id]);
+        return view('post.add',['items' => $items,'msg'=>$msg,'shop_id'=>$shop_id,'shop'=>$shop]);
     }
 
     public function addresult(Request $request):View{

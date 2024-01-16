@@ -1,4 +1,4 @@
-@extends('layouts.ramen')
+@extends('toppage')
 
 @section('title','ユーザー情報更新')
 

@@ -13,7 +13,7 @@ class Post extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'post_text' => 'required',
+        'post_text' => ['required','string','max:400'],
     );
 
     public function guest()

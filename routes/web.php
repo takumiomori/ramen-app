@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/top', function () {
+    return view('toppage');
+});
+
 Route::get('/guest/index',[GuestController::class, 'index']);
 Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
@@ -71,4 +75,4 @@ Route::post('/shop/edit',[ShopController::class, 'update']);
 Route::get('/shop/shoppage',[ShopController::class, 'show']);
 Route::post('/shop/shoppage',[FavoriteController::class, 'create']);
 
-Route::get('/shop/top',[ShopController::class, 'ranking']);
+Route::get('/top',[ShopController::class, 'ranking']);
