@@ -3,6 +3,7 @@
 @section('title','市町村検索')
 
 @section('content')
+<div class="label_front">市町村検索</div>
 @if(count($errors)>0)
 <div>
     <ul>
@@ -21,7 +22,7 @@
         <option value="{{$place->id}}">{{$place->name}}</option>
         @endforeach
       </select><br>
-    <input class="btn" type="submit" value="検索">
+    <input class="btn mt" type="submit" value="検索">
 </form>
 </div>
 
