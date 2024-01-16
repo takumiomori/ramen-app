@@ -151,7 +151,7 @@
 
           <div class="row flex-center pb-3">
             <div class="col-md-6 order-0">
-              <p class="text-200 text-center text-md-start">All rights Reserved &copy; Your Company, 2021</p>
+              <p class="text-200 text-center text-md-start">All rights Reserved &copy; mencomi, 2024</p>
             </div>
             <div class="col-md-6 order-1">
               <p class="text-200 text-center text-md-end"> Made with&nbsp;
