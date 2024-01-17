@@ -12,6 +12,20 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Guest extends Model
 {
+    protected $guarded = array('id');
+
+    public function favorite(){
+        return $this->hasMany('App\Models\Favorite');
+    }
+
+    public function post(){
+        return $this->hasMany('App\Models\Post');
+    }
+
+}
+
+class Guest extends Authenticatable
+{
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $guarded = array('id');
@@ -40,14 +54,4 @@ class Guest extends Model
         'tel' => ['required', 'regex:/^[0-9-]+$/'],
         'password' => ['required','string','min:8','regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/']
     );
-
-    public function favorite(){
-        return $this->hasMany('App\Models\Favorite');
-    }
-
-    public function post(){
-        return $this->hasMany('App\Models\Post');
-    }
-
-
 }
