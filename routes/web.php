@@ -51,7 +51,7 @@ Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
 
 
-
+Route::get('/shop/index',[ShopController::class, 'index']);
 
 Route::get('/shop/search',[ShopController::class, 'search']);
 
@@ -89,7 +89,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::get('/post/del',[PostController::class, 'delete']);
     Route::post('/post/del',[PostController::class, 'remove']);
 
-    Route::get('/shop/index',[ShopController::class, 'index']);
+    
     Route::post('/shop/index',[ShopController::class, 'create']);
     Route::get('/shop/del',[ShopController::class, 'delete']);
     Route::post('/shop/del',[ShopController::class, 'remove']);

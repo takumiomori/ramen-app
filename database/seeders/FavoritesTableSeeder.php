@@ -14,7 +14,7 @@ class FavoritesTableSeeder extends Seeder
     public function run(): void
     {
         for ($guestId = 1; $guestId <= 10; $guestId++) {
-            for ($i = 1; $i <= 10; $i++) {
+            for ($i = 1; $i <= 30; $i++) {
                 $param = [
                     'user_id' => $guestId,
                 ];

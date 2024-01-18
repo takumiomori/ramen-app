@@ -69,7 +69,8 @@
         .star{display: inline-block;font-weight: bold;color: red;}
         .ranking_space{width:70vw;}
         .rank{width:100px; display:flex; flex-flow: column;margin-left: 30px;}
-        .rank_img,.rank_info{width:30%; display:flex; flex-flow: column;margin-left: 30px;}
+        .rank_img{width:30%; display:flex; flex-flow: column;margin-left: 30px;}
+        .rank_info{width:35%; display:flex; flex-flow: column;margin-left: 30px;}
         .rank_num{font-size: 90px; font-style: italic; font-weight: bold; position: relative;}
         .rankshop_image{width: 100%;}
         .rank_txt{position: absolute; top: 70px; right: 10px; font-size: 30px; font-style: normal; color: gray;}
@@ -102,6 +103,7 @@
         .footer{margin-top: 150px;}
         .login{color: gainsboro;text-align: right; font-size: 14px;}
         .login:hover{opacity: 0.5 ;}
+        .credit{color: gainsboro;text-align: left;}
         .login_btn{color: ghostwhite; margin-top: 20px;}
         .login_btn:hover{opacity: 0.5 ;}
         .register_btn{margin-right: 10px;}
@@ -119,7 +121,7 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-inline-flex" href="/top"><img class="d-inline-block logo" src="/assets/img/gallery/NARAmencomi_logo02.png" alt="logo" /></a>
+        <div class="container"><a class="navbar-brand d-inline-flex" href="/"><img class="d-inline-block logo" src="/assets/img/gallery/NARAmencomi_logo02.png" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
@@ -174,6 +176,7 @@
           <div class="row flex-center pb-3">
             <div class="col-md-6 order-0">
               <p class="text-200 text-center text-md-start">All rights Reserved &copy; mencomi, 2024</p>
+              <br><span style="margin:15px 15px 15px 15px"><a href="https://developer.yahoo.co.jp/sitemap/" class="credit">Web Services by Yahoo! JAPAN</a></span>
             </div>
             <div class="col-md-6 order-1">
               <p class="text-200 text-center text-md-end"> Made with&nbsp;

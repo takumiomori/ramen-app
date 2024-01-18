@@ -14,7 +14,7 @@ class PostShopTableSeeder extends Seeder
     public function run(): void
     {
         $post_id = 1;
-        for ($shopId = 1; $shopId <= 17; $shopId++) {
+        for ($shopId = 1; $shopId <= 100; $shopId++) {
             for ($i = 1; $i <= 10; $i++) {
                 $param = [
                     'post_id' => $post_id++,

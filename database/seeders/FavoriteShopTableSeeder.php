@@ -17,7 +17,7 @@ class FavoriteShopTableSeeder extends Seeder
         DB::unprepared("ALTER TABLE favorite_shop AUTO_INCREMENT = 1 ");
         $favoriteId = 1;
         for ($i = 1; $i <= 10; $i++) {
-            $selectedShops = $this->getRandomShops(17, 10);
+            $selectedShops = $this->getRandomShops(100, 30);
 
             foreach ($selectedShops as $shopId) {
                 $param = [

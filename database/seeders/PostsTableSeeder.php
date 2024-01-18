@@ -13,7 +13,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 1; $i <= 17; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             for ($guestId = 1; $guestId <= 10; $guestId++) {
                 $param = [
                     'user_id' => $guestId,
