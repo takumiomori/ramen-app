@@ -66,7 +66,7 @@ Route::post('/shop/shoppage',[FavoriteController::class, 'create']);
 
 Route::get('/',[ShopController::class, 'ranking']);
 
-Route::middleware(['auth', 'admin'])->group(function() {
+Route::middleware(['auth:admin'])->group(function() {
     Route::get('/guest/index',[GuestController::class, 'index']);
     Route::get('/guest/del',[GuestController::class, 'delete']);
     Route::post('/guest/del',[GuestController::class, 'remove']);
@@ -97,7 +97,7 @@ Route::middleware(['auth', 'admin'])->group(function() {
     Route::post('/shop/edit',[ShopController::class, 'update']);
 });
 
-Route::middleware(['auth', 'user'])->group(function () {
+Route::middleware(['auth:user'])->group(function () {
     Route::get('/guest/edit',[GuestController::class, 'edit']);
     Route::post('/guest/edit',[GuestController::class, 'update']);
     Route::get('/guest/guestpage',[GuestController::class, 'show']);
