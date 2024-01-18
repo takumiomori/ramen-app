@@ -3,6 +3,11 @@
 @section('title','お店ページ')
 
 @section('content')
+@if(count($errors)>0)
+<div class="alert alert-danger" role="alert">
+    お気に入り登録はログインが必要です
+</div>
+@endif
 @if(isset($msg))
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
@@ -42,9 +47,9 @@
     <div class="card_group">
       @foreach($posts as $post)
       <div class="card card_wrap" style="width: 30rem;">
-        <div class="card_userimg"><img src="{{ url('storage', ['images', 'icon', $post->guest->icon]) }}" alt="" class="user_icon"></div>
+        <div class="card_userimg"><img src="{{ url('storage', ['images', 'icon', $post->user->icon]) }}" alt="" class="user_icon"></div>
         <div class="card-body card_rightcontent">
-          <div class="post_user">{{$post->guest->guest_name}}</div>
+          <div class="post_user">{{$post->user->guest_name}}</div>
           <p class="card-text">
             <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$post->star}}</div>
           </p></div>

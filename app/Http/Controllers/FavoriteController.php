@@ -17,16 +17,16 @@ class FavoriteController extends Controller
 
     public function create(Request $request){
         $this->validate($request,Favorite::$rules);
-        $guest_id = Auth::id();;
         $shop_id = $request->shop_id;
+        $user_id = Auth::id();
         $favorite = new Favorite;
         $form = $request->all();
         unset($form['_token']);
-        $favorite->guest_id = $guest_id;
+        $favorite->user_id = $user_id;
         $favorite->fill($form)->save();
         
         $favorite->shop()->attach($shop_id);
-        return  redirect('/shop/shoppage?id=$shop_id')->with(['msg'=>'お気に入り登録が完了しました']);
+        return  redirect('/guest/guestpage')->with(['msg'=>'お気に入り登録が完了しました']);
 
     }
 

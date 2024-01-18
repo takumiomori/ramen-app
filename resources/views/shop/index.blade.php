@@ -1,3 +1,7 @@
+@auth
+    @if(auth()->user()->is_admin)
+        <!-- 管理者専用のコンテンツ -->
+        
 @extends('layouts.ramen')
 
 @section('title','店舗一覧')
@@ -79,3 +83,6 @@
     </tbody>
   </table>
 @endsection
+
+@endif
+@endauth

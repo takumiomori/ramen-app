@@ -16,9 +16,9 @@ class Post extends Model
         'post_text' => ['required','string','max:400'],
     );
 
-    public function guest()
+    public function user()
     {
-        return $this->belongsTo(Guest::class);
+        return $this->belongsTo(User::class);
     }
 
     public function shop():BelongsToMany

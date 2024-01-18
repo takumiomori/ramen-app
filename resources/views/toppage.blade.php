@@ -89,8 +89,10 @@
         a{text-decoration:none;}
         span{font-size:16px;}
         .logo{width:250px;}
+        .logo:hover{opacity: 0.5 ;}
         .nav_area_wrap{display:flex;flex-wrap:wrap; margin-top: 20px;}
         .nav_info{display:flex; flex-flow: column; flex-direction: row; margin-left: 30px; }
+        .nav_info:hover{opacity: 0.5 ;}
         .top_text{font-size: 22px; color: #616161;}
         .center{margin: 0 auto 0 auto;}
         .col-md-3{width:33%;}
@@ -98,7 +100,13 @@
         .center_contents{margin:0px auto 20px auto;}
         .main{margin-bottom: 150px;}
         .footer{margin-top: 150px;}
-        
+        .login{color: gainsboro;text-align: right; font-size: 14px;}
+        .login:hover{opacity: 0.5 ;}
+        .login_btn{color: ghostwhite; margin-top: 20px;}
+        .login_btn:hover{opacity: 0.5 ;}
+        .register_btn{margin-right: 10px;}
+        .search_nav:hover{opacity: 0.5 ;}
+
 
     </style>
 
@@ -117,12 +125,26 @@
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
               <div class="nav_area_wrap">
               <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/top#search"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
-              <p class="mb-0 fw-bold text-lg-center nav_info"><a href=""><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
+              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/guest/guestpage"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
             </div>
             </div>
+            @guest
+            <!-- ログインしていない場合の表示 -->
             <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-              <button class="btn btn-white shadow-warning text-warning" type="submit"> <i class="fas fa-user me-2"></i>Login</button>
+              <a href="register">
+              <button class="shadow-warning btn-white btn login_btn register_btn" type="submit"> 会員登録</button></a>
             </form>
+
+            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
+              <a href="login">
+              <button class="shadow-warning btn-white btn login_btn " type="submit"> <i class="fas fa-user me-2"></i>Login</button></a>
+            </form>
+            @else
+            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0" method="POST" action="{{ route('logout') }}">
+                @csrf
+              <button class="shadow-warning btn-white btn login_btn " type="submit"> <i class="fas fa-user me-2"></i>Logout</button>
+            </form>
+            @endguest
           </div>
         </div>
       </nav>
@@ -159,6 +181,7 @@
                   <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
                 </svg>&nbsp;by&nbsp;<a class="text-200 fw-bold" href="https://themewagon.com/" target="_blank">ThemeWagon </a>
               </p>
+              <a href="/admin/login"><div class="login">管理者ログイン</div></a>
             </div>
           </div>
         </div><!-- end of .container-->

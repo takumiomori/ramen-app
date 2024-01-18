@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Shop;
-use App\Models\Guest;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -51,8 +51,8 @@ class PostController extends Controller
 
         Shop::find($shop_id)->update(['star' => $newAvgStar]);
 
-        $postsCount = Post::where('guest_id', '=', $request->guest_id)->count();
-        $updateGuest = Guest::find($request->guest_id);
+        $postsCount = Post::where('user_id', '=', $request->user_id)->count();
+        $updateGuest = User::find($request->user_id);
         if($postsCount >= 10 && $postsCount < 30){
             $updateGuest->update(['status' => 'ブロンズ']);
         }elseif ($postsCount >= 30 && $postsCount < 50) {

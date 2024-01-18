@@ -20,8 +20,8 @@
         @foreach($items as $item)
       <tr>
         <td scope="row">{{$item->id}}</td>
-        <td scope="row">{{$item->guest->id}}</td>
-        <td scope="row">{{$item->guest->name}}</td>
+        <td scope="row">{{$item->user->id}}</td>
+        <td scope="row">{{$item->user->name}}</td>
         <td scope="row">{{$item->shop->first()->name}}</td>
         <td scope="row"><a href="/favorite/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
       </tr>

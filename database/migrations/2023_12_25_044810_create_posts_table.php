@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('guest_id');
+            $table->integer('user_id');
             $table->text('post_text');
             $table->decimal('star', 3, 2);
             $table->timestamps();

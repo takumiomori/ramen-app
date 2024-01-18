@@ -22,8 +22,8 @@
         @foreach($items as $item)
       <tr>
         <td scope="row">{{$item->id}}</td>
-        <td scope="row">{{$item->guest->id}}</td>
-        <td scope="row">{{$item->guest->name}}</td>
+        <td scope="row">{{$item->user->id}}</td>
+        <td scope="row">{{$item->user->name}}</td>
         <td scope="row">{{$item->post_text}}</td>
         <td scope="row">{{$item->shop->first()->name}}</td>
         <td scope="row">{{$item->star}}</td>

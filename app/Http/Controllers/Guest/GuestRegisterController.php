@@ -52,6 +52,6 @@ class GuestRegisterController extends Controller
         event(new Registered($guest));
 
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/guest/guestpage');
     }
 }

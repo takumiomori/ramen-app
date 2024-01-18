@@ -40,9 +40,9 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'guest' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'guests',
+            'provider' => 'admins',
         ],
     ],
 
@@ -69,9 +69,9 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'guests' => [
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Guest::class,
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [
@@ -106,6 +106,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
     ],
 
     /*

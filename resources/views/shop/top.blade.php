@@ -32,7 +32,7 @@
               </div>
               <div class="row center">
                 
-                <div class="col-sm-6 col-md-3 mb-6">
+                <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findcategory">
                   <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/ramen_icon.png" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">カテゴリーで探す</h5>
@@ -42,7 +42,7 @@
                 </div>
               
               
-                <div class="col-sm-6 col-md-3 mb-6">
+                <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findplace">
                   <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/nara_icon.png" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">市町村で探す</h5>
@@ -51,7 +51,7 @@
                   </a>
                 </div>
               
-                <div class="col-sm-6 col-md-3 mb-6">
+                <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findcomplex">
                   <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/complex_icon.png" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">複合検索</h5>

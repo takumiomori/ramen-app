@@ -26,7 +26,7 @@ class GuestsTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ];
-        DB::table('guests')->insert($param);
+        DB::table('users')->insert($param);
         }
     }
 }

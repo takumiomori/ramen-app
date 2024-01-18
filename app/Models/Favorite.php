@@ -12,9 +12,13 @@ class Favorite extends Model
 
     protected $guarded = array('id');
 
-    public function guest()
+    public static $rules = array(
+        'user_id' => 'required',
+    );
+
+    public function user()
     {
-        return $this->belongsTo(Guest::class);
+        return $this->belongsTo(User::class);
     }
 
     public function shop():BelongsToMany

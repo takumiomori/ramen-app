@@ -16,7 +16,7 @@ class PostsTableSeeder extends Seeder
         for ($i = 1; $i <= 17; $i++) {
             for ($guestId = 1; $guestId <= 10; $guestId++) {
                 $param = [
-                    'guest_id' => $guestId,
+                    'user_id' => $guestId,
                     'post_text' => $this->generateRandomComment(),
                     'star' => rand(1.00, 5.00),
                 ];

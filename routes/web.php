@@ -3,14 +3,15 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopcategoryController;
 use App\Http\Controllers\PlaceController;
-use App\Http\Controllers\Guest\GuestLoginController;
-use App\Http\Controllers\Guest\GuestRegisterController;
-use Laravel\Jetstream\Jetstream;
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminRegisterController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ use Laravel\Jetstream\Jetstream;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/shop/top');
 });
 
 Route::get('/dashboard', function () {
@@ -35,52 +36,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+                ->name('logout');
 });
 
 require __DIR__.'/auth.php';
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/top', function () {
     return view('toppage');
 });
 
-Route::get('/guest/index',[GuestController::class, 'index'])->middleware(['auth']);
+
 Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
-Route::get('/guest/del',[GuestController::class, 'delete'])->middleware(['auth']);
-Route::post('/guest/del',[GuestController::class, 'remove'])->middleware(['auth']);
-Route::get('/guest/edit',[GuestController::class, 'edit']);
-Route::post('/guest/edit',[GuestController::class, 'update']);
-Route::get('/guest/guestpage',[GuestController::class, 'show']);
 
-Route::get('/place/index',[PlaceController::class, 'index'])->middleware(['auth']);
-Route::post('/place/index',[PlaceController::class, 'create'])->middleware(['auth']);
-Route::get('/place/del',[PlaceController::class, 'delete'])->middleware(['auth']);
-Route::post('/place/del',[PlaceController::class, 'remove'])->middleware(['auth']);
 
-Route::get('/shopcategory/index',[ShopcategoryController::class, 'index'])->middleware(['auth']);
-Route::post('/shopcategory/index',[ShopcategoryController::class, 'create'])->middleware(['auth']);
-Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete'])->middleware(['auth']);
-Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove'])->middleware(['auth']);
 
-Route::get('/favorite/index',[FavoriteController::class, 'index'])->middleware(['auth']);
-Route::get('/favorite/del',[FavoriteController::class, 'delete'])->middleware(['auth']);
-Route::post('/favorite/del',[FavoriteController::class, 'remove'])->middleware(['auth']);
 
-Route::get('/post/index',[PostController::class, 'index'])->middleware(['auth']);
-Route::get('/post/add',[PostController::class, 'add']);
-Route::get('/post/addresult',[PostController::class, 'addresult']);
-Route::post('/post/add',[PostController::class, 'create']);
-Route::get('/post/del',[PostController::class, 'delete'])->middleware(['auth']);
-Route::post('/post/del',[PostController::class, 'remove'])->middleware(['auth']);
-
-Route::get('/shop/index',[ShopController::class, 'index'])->middleware(['auth']);
-Route::post('/shop/index',[ShopController::class, 'create'])->middleware(['auth']);
-Route::get('/shop/del',[ShopController::class, 'delete'])->middleware(['auth']);
-Route::post('/shop/del',[ShopController::class, 'remove'])->middleware(['auth']);
 Route::get('/shop/search',[ShopController::class, 'search']);
 
 Route::get('/shop/findplace',[ShopController::class, 'findplace']);
@@ -89,16 +61,54 @@ Route::get('/shop/findcategory',[ShopController::class, 'findcategory']);
 Route::post('/shop/findcategory',[ShopController::class, 'searchcategory']);
 Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex']);
 Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex']);
-Route::get('/shop/edit',[ShopController::class, 'edit'])->middleware(['auth']);
-Route::post('/shop/edit',[ShopController::class, 'update'])->middleware(['auth']);
 Route::get('/shop/shoppage',[ShopController::class, 'show']);
 Route::post('/shop/shoppage',[FavoriteController::class, 'create']);
 
-Route::get('/top',[ShopController::class, 'ranking']);
+Route::get('/',[ShopController::class, 'ranking']);
+
+Route::middleware(['auth', 'admin'])->group(function() {
+    Route::get('/guest/index',[GuestController::class, 'index']);
+    Route::get('/guest/del',[GuestController::class, 'delete']);
+    Route::post('/guest/del',[GuestController::class, 'remove']);
+
+    Route::get('/place/index',[PlaceController::class, 'index']);
+    Route::post('/place/index',[PlaceController::class, 'create']);
+    Route::get('/place/del',[PlaceController::class, 'delete']);
+    Route::post('/place/del',[PlaceController::class, 'remove']);
+
+    Route::get('/shopcategory/index',[ShopcategoryController::class, 'index']);
+    Route::post('/shopcategory/index',[ShopcategoryController::class, 'create']);
+    Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete']);
+    Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove']); 
+
+    Route::get('/favorite/index',[FavoriteController::class, 'index']);
+    Route::get('/favorite/del',[FavoriteController::class, 'delete']);
+    Route::post('/favorite/del',[FavoriteController::class, 'remove']);
+
+    Route::get('/post/index',[PostController::class, 'index']);
+    Route::get('/post/del',[PostController::class, 'delete']);
+    Route::post('/post/del',[PostController::class, 'remove']);
+
+    Route::get('/shop/index',[ShopController::class, 'index']);
+    Route::post('/shop/index',[ShopController::class, 'create']);
+    Route::get('/shop/del',[ShopController::class, 'delete']);
+    Route::post('/shop/del',[ShopController::class, 'remove']);
+    Route::get('/shop/edit',[ShopController::class, 'edit']);
+    Route::post('/shop/edit',[ShopController::class, 'update']);
+});
+
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('/guest/edit',[GuestController::class, 'edit']);
+    Route::post('/guest/edit',[GuestController::class, 'update']);
+    Route::get('/guest/guestpage',[GuestController::class, 'show']);
+    Route::get('/post/add',[PostController::class, 'add']);
+    Route::get('/post/addresult',[PostController::class, 'addresult']);
+    Route::post('/post/add',[PostController::class, 'create']);
+});
 
 /*
 |--------------------------------------------------------------------------
-| 利用者用ルーティング
+| 管理者用ルーティング
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix' => 'admin'], function () {
@@ -117,26 +127,9 @@ Route::group(['prefix' => 'admin'], function () {
     // 以下の中は認証必須のエンドポイントとなる
     Route::middleware(['auth:admin'])->group(function () {
         // ダッシュボード
-        Route::get('dashboard', fn() => view('admin.dashboard'))
+        Route::get('dashboard', fn() => view('admin.auth.dashboard'))
             ->name('admin.dashboard');
+
+            
     });
 });
-
-/*
-|--------------------------------------------------------------------------
-| 管理者用ルーティング
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-
-require __DIR__.'/auth.php';

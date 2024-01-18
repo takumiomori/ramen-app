@@ -13,7 +13,7 @@
 </div>
 @endif
 <div class="content_area">
-    <form action="/guest/add" method="post" enctype="multipart/form-data">
+    <form action="register" method="post" enctype="multipart/form-data">
     @csrf
     <label for="name" class="label">お名前</label><br>
     <input class="form-control form-control-lg" type="text" placeholder="例）田中太郎" name="name" value="{{old('name')}}"><br>

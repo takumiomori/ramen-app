@@ -28,7 +28,7 @@
     <label for="post_text" class="label mt">口コミ</label><br>
     <span>400文字以内で入力してください。</span><br>
     <textarea class="posttext mb" placeholder="投稿内容を入力"  rows="5" cols="80" name="post_text" value="{{old('post_text')}}" ></textarea><br>
-    <input class="form-control form-control-lg" type="number" name="guest_id"><br>
+    <input class="form-control form-control-lg" type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br>
     <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$shop_id}}"><br>
     <input class="btn" type="submit" value="投稿">
 </form>

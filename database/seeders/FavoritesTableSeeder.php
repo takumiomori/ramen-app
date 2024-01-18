@@ -16,7 +16,7 @@ class FavoritesTableSeeder extends Seeder
         for ($guestId = 1; $guestId <= 10; $guestId++) {
             for ($i = 1; $i <= 10; $i++) {
                 $param = [
-                    'guest_id' => $guestId,
+                    'user_id' => $guestId,
                 ];
 
                 DB::table('favorites')->insert($param);
