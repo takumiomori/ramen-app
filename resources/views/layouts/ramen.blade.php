@@ -8,7 +8,7 @@
         .mt{margin-top: 15px;}
         .mb{margin-bottom: 15px;}
         .mr{margin-right: 15px;}
-        h1{background-color: #1c1087;color: white; padding: 14px 0 14px 14px;}
+        h1{background-color: #f5c338; color: black; padding: 14px 0 14px 80px; font-weight:bold; margin-top:15px;}
         .content{width: 70vw; margin: 20px auto 20px auto;}
         th{border: 1px solid gainsboro; background-color: #1c1087; color: white; padding: 10px; border-collapse:collapse;}
         td{border: 1px solid gainsboro; border-collapse:collapse; padding: 10px;}
@@ -61,12 +61,32 @@
         .post_btn,.favo_btn{display:flex; flex-flow: column; margin:30px 15px 0 0; font-size:18px;}
         a{text-decoration:none;}
         span{font-size:16px;}
+        .head_nav{display:flex;flex-wrap:wrap;}
+        .head_logo{width:250px; margin-right:20px;}
+        .logo{width:100%; display:flex; flex-flow: column; margin-left: 30px;}
+        .head_title{color:black; border:1px solid black; padding:10px 30px 10px 30px; border-radius: 100px;text-align: center;  font-weight:bold; font-size:20px; display: table-cell; vertical-align: middle; margin:auto 10px auto 20px;} 
+        .btn-group{margin:auto 10px auto 20px;}
+        .head_menu{font-size:20px; border:0.5px solid gainsboro;}
 
     </style>
     
 
 </head>
 <body>
+  <div class="head_nav">
+    <div class="head_logo"><img class="d-inline-block logo" src="/assets/img/gallery/NARAmencomi_logo02.png" alt="logo" /></div>
+  
+  <p class="head_title">サイト管理</p>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <a href="/guest/index"><button type="button" class="btn head_menu">利用者</button></a>
+      <a href="/post/index"><button type="button" class="btn head_menu">投稿</button></a>
+      <a href="/favorite/index"><button type="button" class="btn head_menu">お気に入り</button></a>
+      <a href="/shop/index"><button type="button" class="btn head_menu">店舗一覧</button></a>
+      <a href="/shopcategory/index"><button type="button" class="btn head_menu">カテゴリー
+      </button></a>
+      <a href="/place/index"><button type="button" class="btn head_menu">市町村</button></a>
+    </div>
+  </div>
     <h1>@yield('title')</h1>
     <div class="content">
         @yield('content')

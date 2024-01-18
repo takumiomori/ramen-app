@@ -124,7 +124,7 @@
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
               <div class="nav_area_wrap">
-              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/top#search"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
+              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/#search"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
               <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/guest/guestpage"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
             </div>
             </div>
