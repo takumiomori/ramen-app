@@ -126,6 +126,21 @@ class ShopController extends Controller
         return redirect('/shop/index')->with(['msg'=>'更新が完了しました']);
     }
 
+
+
+    public function adminsearch(Request $request){
+        $name = $request->name;
+        $items = Shop::where('name', 'like', "%$name%")->get();
+
+        return redirect('/shop/searchresult')->with(['items'=>$items,'name'=>$name]);
+    }
+
+    public function searchresult(Request $request){
+        $items = session('items');
+        $name = session('name');
+        return view('shop.searchresult',['items'=>$items, 'name'=>$name]);
+    }
+
     public function findplace(Request $request){
         $places = Place::all();
         return view('shop.findplace',['input'=>'','places'=>$places]);
@@ -146,7 +161,16 @@ class ShopController extends Controller
     public function search(Request $request){
         $items = session('items');
         $result = session('result');
-        return view('shop.search',['items'=>$items,'result'=>$result]);
+        $name = session('name');
+        return view('shop.search',['items'=>$items,'result'=>$result, 'name'=>$name]);
+    }
+
+    public function searchname(Request $request){
+        $name = $request->name;
+        $items = Shop::where('name', 'like', "%$name%")->orderBy('star', 'desc')->get();
+        $result = $items->count();
+
+        return redirect('/shop/search')->with(['items'=>$items,'result'=>$result,'name'=>$name]);
     }
 
       public function searchplace(Request $request){

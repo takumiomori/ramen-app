@@ -31,6 +31,15 @@
                 <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">お店を探す</h5>
               </div>
               <div class="row center">
+
+                <div class="col-sm-6 col-md-3 mb-6 search_nav">
+                  <a href="/shop/findname">
+                  <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/shop_icon.png" height="112" alt="..." />
+                    <h5 class="mt-4 fw-bold">店名で探す</h5>
+                    <p class="mb-md-0">気になる店舗名を入力して検索できます</p>
+                  </div>
+                  </a>
+                </div>
                 
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findcategory">

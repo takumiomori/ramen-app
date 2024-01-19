@@ -81,7 +81,8 @@
       <a href="/guest/index"><button type="button" class="btn head_menu">利用者</button></a>
       <a href="/post/index"><button type="button" class="btn head_menu">投稿</button></a>
       <a href="/favorite/index"><button type="button" class="btn head_menu">お気に入り</button></a>
-      <a href="/shop/index"><button type="button" class="btn head_menu">店舗一覧</button></a>
+      <a href="/shop/index"><button type="button" class="btn head_menu">店舗一覧・新規追加</button></a>
+      <a href="/shop/adminsearch"><button type="button" class="btn head_menu">店舗検索</button></a>
       <a href="/shopcategory/index"><button type="button" class="btn head_menu">カテゴリー
       </button></a>
       <a href="/place/index"><button type="button" class="btn head_menu">市町村</button></a>

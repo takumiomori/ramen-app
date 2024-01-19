@@ -6,6 +6,9 @@
 @if(isset($msg))
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
+@if(isset($name))
+<div class="label_front">{{$name}}の検索結果</div>
+@endif
 @if(isset($result))
 <div class="alert alert-primary" role="alert">{{$result}}件お店が見つかりました。</div>
 @endif

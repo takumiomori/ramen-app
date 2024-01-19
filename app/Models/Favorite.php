@@ -13,7 +13,7 @@ class Favorite extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'user_id' => 'required',
+        'shop_id' => 'required',
     );
 
     public function user()

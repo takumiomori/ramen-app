@@ -12,6 +12,8 @@ use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminRegisterController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,37 +26,44 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
+require __DIR__.'/auth.php';
+
 Route::get('/', function () {
     return view('/shop/top');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('guest.guestpage');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
-});
-
-require __DIR__.'/auth.php';
-
-Route::get('/', function () {
-    return view('toppage');
+    
+    
 });
 
 
+
+//Route::get('/', function () {
+//    return view('toppage');
+//});
+
+Route::get('/guest/index',[GuestController::class, 'index']);
 Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
 
-
-Route::get('/shop/index',[ShopController::class, 'index']);
+Route::get('/shop/adminsearch',function(){return view('shop.adminsearch');});
+Route::post('/shop/adminsearch',[ShopController::class, 'adminsearch']);
+Route::get('/shop/searchresult',[ShopController::class, 'searchresult']);
 
 Route::get('/shop/search',[ShopController::class, 'search']);
-
+Route::get('/shop/findname',function(){return view('shop.findname');});
+Route::post('/shop/findname',[ShopController::class, 'searchname']);
 Route::get('/shop/findplace',[ShopController::class, 'findplace']);
 Route::post('/shop/findplace',[ShopController::class, 'searchplace']);
 Route::get('/shop/findcategory',[ShopController::class, 'findcategory']);
@@ -66,8 +75,8 @@ Route::post('/shop/shoppage',[FavoriteController::class, 'create']);
 
 Route::get('/',[ShopController::class, 'ranking']);
 
-Route::middleware(['auth:admin'])->group(function() {
-    Route::get('/guest/index',[GuestController::class, 'index']);
+Route::middleware(['admin'])->group(function() {
+
     Route::get('/guest/del',[GuestController::class, 'delete']);
     Route::post('/guest/del',[GuestController::class, 'remove']);
 
@@ -89,7 +98,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::get('/post/del',[PostController::class, 'delete']);
     Route::post('/post/del',[PostController::class, 'remove']);
 
-    
+    Route::get('/shop/index',[ShopController::class, 'index']);
     Route::post('/shop/index',[ShopController::class, 'create']);
     Route::get('/shop/del',[ShopController::class, 'delete']);
     Route::post('/shop/del',[ShopController::class, 'remove']);
@@ -97,7 +106,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::post('/shop/edit',[ShopController::class, 'update']);
 });
 
-Route::middleware(['auth:user'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/guest/edit',[GuestController::class, 'edit']);
     Route::post('/guest/edit',[GuestController::class, 'update']);
     Route::get('/guest/guestpage',[GuestController::class, 'show']);
@@ -132,4 +141,6 @@ Route::group(['prefix' => 'admin'], function () {
 
             
     });
+
+    
 });

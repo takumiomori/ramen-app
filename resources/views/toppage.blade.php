@@ -96,7 +96,7 @@
         .nav_info:hover{opacity: 0.5 ;}
         .top_text{font-size: 22px; color: #616161;}
         .center{margin: 0 auto 0 auto;}
-        .col-md-3{width:33%;}
+        .col-md-3{width:25%;}
         .footer{width: 100vw;}
         .center_contents{margin:0px auto 20px auto;}
         .main{margin-bottom: 150px;}
@@ -132,15 +132,19 @@
             </div>
             @guest
             <!-- ログインしていない場合の表示 -->
-            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-              <a href="register">
-              <button class="shadow-warning btn-white btn login_btn register_btn" type="submit"> 会員登録</button></a>
-            </form>
+            
+            
+            <div class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
+              <a href="{{ route('register') }}">
+              <button class="shadow-warning btn-white btn login_btn register_btn"> 会員登録</button></a>
+            </div>
 
-            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-              <a href="login">
-              <button class="shadow-warning btn-white btn login_btn " type="submit"> <i class="fas fa-user me-2"></i>Login</button></a>
-            </form>
+            <div class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
+              <a href="{{ route('login') }}">
+              <button class="shadow-warning btn-white btn login_btn" > <i class="fas fa-user me-2"></i>Login</button></a>
+            </div>
+            
+            
             @else
             <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0" method="POST" action="{{ route('logout') }}">
                 @csrf
