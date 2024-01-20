@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Shop;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -13,6 +14,12 @@ class FavoriteController extends Controller
     public function index(Request $request):View{
         $items = Favorite::all();
         return view('favorite.index',['items' => $items]);
+    }
+
+    public function add(Request $request):View{
+        $shop_id = $request->shop_id;
+        $item = shop::find($shop_id);
+        return view('favorite.add',['item' => $item]);
     }
 
     public function create(Request $request){

@@ -6,7 +6,7 @@
 @if(isset($msg))
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
-
+<div class="label_front">店舗情報 新規登録</div>
 <form action="/shop/index" method="post" enctype="multipart/form-data">
     @csrf
     <label for="name" class="label">店舗名を記入</label><br>
@@ -38,6 +38,7 @@
     <input class="btn" type="submit" value="登録">
 </form>
 
+<div class="label_front">店舗情報一覧</div>
 <table class="table">
     <thead class="table-dark">
       <tr>

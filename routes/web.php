@@ -71,7 +71,6 @@ Route::post('/shop/findcategory',[ShopController::class, 'searchcategory']);
 Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex']);
 Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex']);
 Route::get('/shop/shoppage',[ShopController::class, 'show']);
-Route::post('/shop/shoppage',[FavoriteController::class, 'create']);
 
 Route::get('/',[ShopController::class, 'ranking']);
 
@@ -111,8 +110,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/guest/edit',[GuestController::class, 'update']);
     Route::get('/guest/guestpage',[GuestController::class, 'show']);
     Route::get('/post/add',[PostController::class, 'add']);
-    Route::get('/post/addresult',[PostController::class, 'addresult']);
     Route::post('/post/add',[PostController::class, 'create']);
+    Route::get('/post/addresult',[PostController::class, 'addresult']);
+    Route::get('/favorite/add',[FavoriteController::class, 'add']);
+    Route::post('/favorite/add',[FavoriteController::class, 'create']);
 });
 
 /*
