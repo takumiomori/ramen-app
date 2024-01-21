@@ -16,7 +16,7 @@ class GuestController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin')->only(['guest.del']);
+        $this->middleware('admin')->only(['guest.index','guest.del']);
 
         $this->middleware('auth')->only(['guest.edit', 'guest.page']);
         $this->middleware('user')->only(['guest.edit', 'guest.page']);

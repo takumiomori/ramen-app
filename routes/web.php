@@ -51,7 +51,7 @@ Route::middleware('auth')->group(function () {
 //    return view('toppage');
 //});
 
-Route::get('/guest/index',[GuestController::class, 'index']);
+
 Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
 
@@ -72,6 +72,9 @@ Route::get('/shop/shoppage',[ShopController::class, 'show']);
 
 Route::get('/',[ShopController::class, 'ranking']);
 
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/guest/index',[GuestController::class, 'index'])->name('guest.index');
+});
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/guest/del',[GuestController::class, 'delete'])->name('guest.del');
 });
