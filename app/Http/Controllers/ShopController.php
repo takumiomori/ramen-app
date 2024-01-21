@@ -14,6 +14,11 @@ use Illuminate\View\View;
 
 class ShopController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin')->only(['shop.index','shop.del','shop.edit']);
+    }
+
     public function index(Request $request):View{
         $items = Shop::all();
         $places = Place::all();

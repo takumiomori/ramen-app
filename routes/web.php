@@ -43,8 +43,6 @@ Route::middleware('auth')->group(function () {
     
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
-    
-    
 });
 
 
@@ -74,47 +72,77 @@ Route::get('/shop/shoppage',[ShopController::class, 'show']);
 
 Route::get('/',[ShopController::class, 'ranking']);
 
-Route::middleware(['admin'])->group(function() {
-
-    Route::get('/guest/del',[GuestController::class, 'delete']);
-    Route::post('/guest/del',[GuestController::class, 'remove']);
-
-    Route::get('/place/index',[PlaceController::class, 'index']);
-    Route::post('/place/index',[PlaceController::class, 'create']);
-    Route::get('/place/del',[PlaceController::class, 'delete']);
-    Route::post('/place/del',[PlaceController::class, 'remove']);
-
-    Route::get('/shopcategory/index',[ShopcategoryController::class, 'index']);
-    Route::post('/shopcategory/index',[ShopcategoryController::class, 'create']);
-    Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete']);
-    Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove']); 
-
-    Route::get('/favorite/index',[FavoriteController::class, 'index']);
-    Route::get('/favorite/del',[FavoriteController::class, 'delete']);
-    Route::post('/favorite/del',[FavoriteController::class, 'remove']);
-
-    Route::get('/post/index',[PostController::class, 'index']);
-    Route::get('/post/del',[PostController::class, 'delete']);
-    Route::post('/post/del',[PostController::class, 'remove']);
-
-    Route::get('/shop/index',[ShopController::class, 'index']);
-    Route::post('/shop/index',[ShopController::class, 'create']);
-    Route::get('/shop/del',[ShopController::class, 'delete']);
-    Route::post('/shop/del',[ShopController::class, 'remove']);
-    Route::get('/shop/edit',[ShopController::class, 'edit']);
-    Route::post('/shop/edit',[ShopController::class, 'update']);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/guest/del',[GuestController::class, 'delete'])->name('guest.del');
 });
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/place/index',[PlaceController::class, 'index'])->name('place.index');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/place/del',[PlaceController::class, 'delete'])->name('place.del');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/shopcategory/index',[ShopcategoryController::class, 'index'])->name('shopcategory.index');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete'])->name('shopcategory.del');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/favorite/index',[FavoriteController::class, 'index'])->name('faavorite.index');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/favorite/del',[FavoriteController::class, 'delete'])->name('favorite.del');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/post/index',[PostController::class, 'index'])->name('post.index');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/post/del',[PostController::class, 'delete'])->name('post.del');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/shop/index',[ShopController::class, 'index'])->name('shop.index');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/shop/del',[ShopController::class, 'delete'])->name('shop.del');
+});
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/shop/edit',[ShopController::class, 'edit'])->name('shop.edit');
+});
+
+
+Route::post('/guest/del',[GuestController::class, 'remove']);
+Route::post('/place/index',[PlaceController::class, 'create']);
+Route::post('/place/del',[PlaceController::class, 'remove']);
+Route::post('/shopcategory/index',[ShopcategoryController::class, 'create']);
+Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove']); 
+Route::post('/favorite/del',[FavoriteController::class, 'remove']);
+Route::post('/post/del',[PostController::class, 'remove']);
+Route::post('/shop/index',[ShopController::class, 'create']);
+Route::post('/shop/del',[ShopController::class, 'remove']);
+Route::post('/shop/edit',[ShopController::class, 'update']);
+
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/guest/edit',[GuestController::class, 'edit']);
-    Route::post('/guest/edit',[GuestController::class, 'update']);
-    Route::get('/guest/guestpage',[GuestController::class, 'show']);
-    Route::get('/post/add',[PostController::class, 'add']);
-    Route::post('/post/add',[PostController::class, 'create']);
-    Route::get('/post/addresult',[PostController::class, 'addresult']);
-    Route::get('/favorite/add',[FavoriteController::class, 'add']);
-    Route::post('/favorite/add',[FavoriteController::class, 'create']);
+    Route::get('/guest/edit',[GuestController::class, 'edit'])->name('guest.edit');
 });
+Route::middleware(['auth'])->group(function () {
+    Route::post('/guest/edit',[GuestController::class, 'update']);
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/guest/guestpage',[GuestController::class, 'show'])->name('guest.page');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/post/add',[PostController::class, 'add'])->name('post.add');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/post/addresult',[PostController::class, 'addresult'])->name('post.addresult');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/favorite/add',[FavoriteController::class, 'add'])->name('favorite.add');
+});
+
+    Route::post('/post/add',[PostController::class, 'create']);
+    Route::post('/favorite/add',[FavoriteController::class, 'create']);
 
 /*
 |--------------------------------------------------------------------------
@@ -139,8 +167,6 @@ Route::group(['prefix' => 'admin'], function () {
         // ダッシュボード
         Route::get('dashboard', fn() => view('admin.auth.dashboard'))
             ->name('admin.dashboard');
-
-            
     });
 
     

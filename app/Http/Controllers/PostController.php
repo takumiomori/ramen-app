@@ -11,6 +11,14 @@ use Illuminate\View\View;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin')->only(['post.index','post.del']);
+
+        $this->middleware('auth')->only(['post.add', 'post.addresult']);
+        $this->middleware('user')->only(['post.add', 'post.addresult']);
+    }
+
     public function index(Request $request):View{
         $items = Post::all();
         return view('post.index',['items' => $items]);

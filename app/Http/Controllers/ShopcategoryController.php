@@ -9,6 +9,11 @@ use Illuminate\View\View;
 
 class ShopcategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin')->only(['shopcategory.index','shopcategory.del']);
+    }
+
     public function index(Request $request):View{
         $items = Shopcategory::all();
         $msg = session('msg');

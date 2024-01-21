@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Auth;
 
 class GuestController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin')->only(['guest.del']);
+
+        $this->middleware('auth')->only(['guest.edit', 'guest.page']);
+        $this->middleware('user')->only(['guest.edit', 'guest.page']);
+    }
+
     public function index(Request $request):View{
         $items = User::all();
         $msg = session('msg');

@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin')->only(['faavorite.index','favorite.del']);
+
+        $this->middleware('auth')->only(['favorite.add']);
+        $this->middleware('user')->only(['favorite.add']);
+    }
+
     public function index(Request $request):View{
         $items = Favorite::all();
         return view('favorite.index',['items' => $items]);

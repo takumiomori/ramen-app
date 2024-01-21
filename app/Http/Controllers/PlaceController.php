@@ -9,6 +9,11 @@ use Illuminate\View\View;
 
 class PlaceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin')->only(['place.index','place.del']);
+    }
+
     public function index(Request $request):View{
         $items = Place::all();
         $msg = session('msg');

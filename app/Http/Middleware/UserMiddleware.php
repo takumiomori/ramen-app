@@ -17,13 +17,10 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = Auth::user();
-        foreach($user->roles as $role){
-            if($role->name=='user'){
-                return $next($request);
-            }else{
-                abort(404);
-            }
+        if (auth()->check()) {
+            return $next($request);
         }
+    
+        return redirect()->route('login');
     }
 }
