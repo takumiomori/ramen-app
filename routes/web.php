@@ -57,7 +57,7 @@ Route::post('/guest/add',[GuestController::class, 'create']);
 
 Route::get('/shop/adminsearch',function(){return view('shop.adminsearch');});
 Route::post('/shop/adminsearch',[ShopController::class, 'adminsearch']);
-Route::get('/shop/searchresult',[ShopController::class, 'searchresult']);
+
 
 Route::get('/shop/search',[ShopController::class, 'search']);
 Route::get('/shop/findname',function(){return view('shop.findname');});
@@ -72,44 +72,47 @@ Route::get('/shop/shoppage',[ShopController::class, 'show']);
 
 Route::get('/',[ShopController::class, 'ranking']);
 
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/guest/index',[GuestController::class, 'index'])->name('guest.index');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/guest/del',[GuestController::class, 'delete'])->name('guest.del');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/place/index',[PlaceController::class, 'index'])->name('place.index');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/place/del',[PlaceController::class, 'delete'])->name('place.del');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/shopcategory/index',[ShopcategoryController::class, 'index'])->name('shopcategory.index');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete'])->name('shopcategory.del');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/favorite/index',[FavoriteController::class, 'index'])->name('faavorite.index');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/favorite/del',[FavoriteController::class, 'delete'])->name('favorite.del');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/post/index',[PostController::class, 'index'])->name('post.index');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/post/del',[PostController::class, 'delete'])->name('post.del');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/shop/index',[ShopController::class, 'index'])->name('shop.index');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/shop/del',[ShopController::class, 'delete'])->name('shop.del');
 });
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/shop/edit',[ShopController::class, 'edit'])->name('shop.edit');
+});
+Route::middleware(['admin'])->group(function () {
+    Route::get('/shop/searchresult',[ShopController::class, 'searchresult'])->name('shop.searchresult');
 });
 
 

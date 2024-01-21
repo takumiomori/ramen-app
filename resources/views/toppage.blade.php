@@ -108,6 +108,7 @@
         .login_btn:hover{opacity: 0.5 ;}
         .register_btn{margin-right: 10px;}
         .search_nav:hover{opacity: 0.5 ;}
+        .menu_area{white-space: pre-wrap;}
 
 
     </style>

@@ -34,7 +34,7 @@
     <label for="open_time" class="label">営業時間を記入</label><br>
     <input class="form-control form-control-lg" type="text" placeholder="例）11：00〜15：00" name="open_time" value="{{old('open_time')}}"><br>
     <label for="menu" class="label">メニューを記入</label><br>
-    <input class="form-control form-control-lg" type="text" placeholder="例）醤油ラーメン：800円" name="menu" value="{{old('menu')}}"><br>
+    <textarea class="posttext mb" placeholder="例）醤油ラーメン：800円"  rows="5" cols="80" name="menu" value="{{old('menu')}}" ></textarea><br>
     <input class="btn" type="submit" value="登録">
 </form>
 

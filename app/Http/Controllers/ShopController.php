@@ -16,7 +16,7 @@ class ShopController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin')->only(['shop.index','shop.del','shop.edit']);
+        $this->middleware('admin')->only(['shop.index','shop.del','shop.edit','shop.searchresult']);
     }
 
     public function index(Request $request):View{

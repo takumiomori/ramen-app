@@ -31,7 +31,7 @@
       <tr><th>電話番号</th><td><input class="form-control form-control-lg" type="tel" name="tel" value="{{$form->tel}}"></td></tr>
       <tr><th>住所</th><td><input class="form-control form-control-lg" type="text" name="address" value="{{$form->address}}"></td></tr>
       <tr><th>営業時間</th><td><input class="form-control form-control-lg" type="text" name="open_time" value="{{$form->open_time}}"></td></tr>
-      <tr><th>メニュー</th><td><input class="form-control form-control-lg" type="text" name="menu" value="{{$form->menu}}"></td></tr>
+      <tr><th>メニュー</th><td><textarea class="posttext mb" placeholder="メニュー内容を記入"  rows="5" cols="80" name="menu" >{{$form->menu}}</textarea></td></tr>
       </table>
     <input class="btn" type="submit" value="更新">
 </form>
