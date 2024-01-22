@@ -17,7 +17,7 @@ class Shop extends Model
         'place_id' => 'required',
         'shopcategory_id' => 'required',
         'holiday' => 'required',
-        'tel' => ['required', 'regex:/^[0-9-]+$/'],
+        'tel' => 'required',
         'address' => 'required',
         'open_time' => 'required',
         'menu' => 'required',
