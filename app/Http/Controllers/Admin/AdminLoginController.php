@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class AdminLoginController extends Controller
 {
@@ -22,7 +23,7 @@ class AdminLoginController extends Controller
         $credentials = $request->only(['email', 'password']);
 
         if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->route('admin.dashboard')->with([
+            return redirect('/admin/dashboard')->with([
                 'login_msg' => 'ログインしました。',
             ]);
         }
@@ -30,5 +31,15 @@ class AdminLoginController extends Controller
         return back()->withErrors([
             'login' => ['ログインに失敗しました'],
         ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // ログアウトしたらログインフォームにリダイレクト
+        return redirect('/');
     }
 }

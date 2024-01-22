@@ -16,9 +16,11 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->check() && auth()->user()->is_admin) {
+        if (auth()->guard('admin')->check()) {
             return $next($request);
         }
+
+        session(['url.intended' => $request->url()]);
     
         return redirect('/admin/login');
     }

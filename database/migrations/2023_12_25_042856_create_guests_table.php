@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('icon');
             $table->string('guest_name')->unique();
-            $table->string('mail')->unique();
+            $table->string('email')->unique();
             $table->timestamp('mail_verified_at')->nullable();
             $table->string('tel');
             $table->string('password');

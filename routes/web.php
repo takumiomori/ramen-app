@@ -93,7 +93,7 @@ Route::middleware(['admin'])->group(function () {
 Route::middleware(['admin'])->group(function () {
     Route::get('/favorite/index',[FavoriteController::class, 'index'])->name('faavorite.index');
 });
-Route::middleware(['admin'])->group(function () {
+Route::middleware([ 'admin'])->group(function () {
     Route::get('/favorite/del',[FavoriteController::class, 'delete'])->name('favorite.del');
 });
 Route::middleware(['admin'])->group(function () {
@@ -167,6 +167,8 @@ Route::group(['prefix' => 'admin'], function () {
         ->name('admin.login');
 
     Route::post('login', [AdminLoginController::class, 'login']);
+
+    Route::get('logout', [AdminLoginController::class, 'logout'])->name('admin.login.logout');
 
     // 以下の中は認証必須のエンドポイントとなる
     Route::middleware(['auth:admin'])->group(function () {

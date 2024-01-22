@@ -19,7 +19,7 @@ class GuestsTableSeeder extends Seeder
             'name' => $faker->name(),
             'icon' => 'default.png',
             'guest_name' => $faker->userName(),
-            'mail' => $faker->email(),
+            'email' => $faker->email(),
             'tel' => $faker->phoneNumber(),
             'password' => $faker->password(),
             'status' => 'ノーマル',

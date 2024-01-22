@@ -23,8 +23,8 @@
     <input class="form-control form-control-lg" type="text" placeholder="ユーザーID" name="guest_name" value="{{$form->guest_name}}"><br>
     <label for="icon" class="label">アイコン画像データをアップロード</label><br>
     <input class="form-control form-control-lg" type="file" placeholder="アイコン画像データをアップロード" name="icon" accept="image/*"><br>
-    <label for="mail" class="label">メールアドレス</label><br>
-    <input class="form-control form-control-lg" type="email" placeholder="メールアドレス " name="mail" value="{{$form->mail}}"><br>
+    <label for="email" class="label">メールアドレス</label><br>
+    <input class="form-control form-control-lg" type="email" placeholder="メールアドレス " name="email" value="{{$form->mail}}"><br>
     <label for="tel" class="label">電話番号</label><br>
     <input class="form-control form-control-lg" type="tel" placeholder="電話番号" name="tel" value="{{$form->tel}}"><br>
     <label for="password" class="label">パスワード</label><br>

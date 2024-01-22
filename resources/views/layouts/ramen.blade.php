@@ -67,6 +67,7 @@
         .head_title{color:black; border:1px solid black; padding:10px 30px 10px 30px; border-radius: 100px;text-align: center;  font-weight:bold; font-size:20px; display: table-cell; vertical-align: middle; margin:auto 10px auto 20px;} 
         .btn-group{margin:auto 10px auto 20px;}
         .head_menu{font-size:20px; border:0.5px solid gainsboro;}
+        .btn_logout{margin-left: 30px;}
 
     </style>
     
@@ -86,6 +87,7 @@
       <a href="/shopcategory/index"><button type="button" class="btn head_menu">カテゴリー
       </button></a>
       <a href="/place/index"><button type="button" class="btn head_menu">市町村</button></a>
+      <a href="/admin/logout"><button type="button" class="btn head_menu btn_logout">Logout</button></a>
     </div>
   </div>
     <h1>@yield('title')</h1>

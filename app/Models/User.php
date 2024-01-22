@@ -22,7 +22,7 @@ class User extends Authenticatable
     public static $rules = array(
         'name' => 'required',
         'guest_name' => ['required','string','min:8','regex:/^[A-Za-z0-9!@#$%^&*()_+]+$/'],
-        'mail' => ['required','regex:/^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/'],
+        'email' => ['required','regex:/^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/'],
         'tel' => ['required', 'regex:/^[0-9-]+$/'],
         'password' => ['required','string','min:8','regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/']
     );
@@ -30,7 +30,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'guest_name',
-        'mail',
+        'email',
         'tel',
         'password',
     ];

@@ -151,7 +151,7 @@ return [
     'attributes' => [
         'name' => '名前',
         'guest_name' => 'ユーザーID',
-        'mail' => 'メールアドレス',
+        'email' => 'メールアドレス',
         'tel' => '電話番号',
         'password' => 'パスワード',
         'holiday' => '定休日',

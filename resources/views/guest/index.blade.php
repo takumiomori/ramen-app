@@ -27,7 +27,7 @@
         <td>{{$item->guest_name}}</td>
         <td><img src="{{ url('storage', ['images', 'icon', $item->icon]) }}" alt="" class="icon"></td>
         <td>{{$item->status}}</td>
-        <td>{{$item->mail}}</td>
+        <td>{{$item->email}}</td>
         <td>{{$item->tel}}</td>
         <td><a href="/guest/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
       </tr>
