@@ -12,6 +12,7 @@
     </ul>
 </div>
 @endif
+<div class="label_front">新規ユーザ登録</div>
 <div class="content_area">
     <form action="register" method="post" enctype="multipart/form-data">
     @csrf

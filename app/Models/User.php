@@ -27,13 +27,25 @@ class User extends Authenticatable
         'password' => ['required','string','min:8','regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/']
     );
 
+    public static $updateRules = array(
+        'name' => 'required',
+        'guest_name' => ['required','string','min:8','regex:/^[A-Za-z0-9!@#$%^&*()_+]+$/'],
+        'email' => ['required','regex:/^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/'],
+        'tel' => ['required', 'regex:/^[0-9-]+$/'],
+    );
+
+    public static $updatePassRules = array(
+        'password' => ['string','min:8','regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/']
+    );
+
     protected $fillable = [
         'name',
         'guest_name',
         'email',
         'tel',
         'password',
-        'status'
+        'status',
+        'icon'
     ];
 
     /**

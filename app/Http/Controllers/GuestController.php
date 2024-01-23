@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Favorite;
+use App\Models\Guest;
+
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash;
 
 
 class GuestController extends Controller
@@ -68,30 +70,38 @@ class GuestController extends Controller
     }
 
     public function edit(Request $request){
-        $guest=User::find($request->id);
+        $user_id = Auth::id();
+        $guest=User::find($user_id);
         return view('guest.edit',['form'=>$guest]);
     }
 
     public function update(Request $request){
-        $this->validate($request,User::$rules);
+        $this->validate($request,User::$updateRules);
+        $this->validate($request,User::$updatePassRules);
+        $id = $request->id;
         $request->validate([
             'icon' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+        $rules = ['password' => ['string','min:8','regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/']];
+
+        $user = User::find($id);
+
+        $user->update(['name' => $request->name]);
+        $user->update(['guest_name' => $request->guest_name]);
+        $user->update(['email' => $request->email]);
+        $user->update(['tel' => $request->tel]);
+        
         $uploadedFile = $request->file('icon');
         if($uploadedFile){
             $fileName = $uploadedFile->getClientOriginalName();
         $uploadedFile->storeAs('public/images/icon',$fileName,);
-        }else{
-            $fileName = 'default.png';
+        $user->update(['icon' => $fileName]);
         }
-        
-        $id = $request->id;
 
-        $user = User::find($id);
-        $form = $request->all();
-        unset($form['_token'],$form['icon']);
-        $user->icon = $fileName;
-        $user->fill($form)->save();
+        $password = $request->password;
+        if(!empty($password)){
+            $user->update(['password' => Hash::make($password)]);
+        }
 
         return redirect('/guest/guestpage')->with(['msg'=>'更新が完了しました']);
 
