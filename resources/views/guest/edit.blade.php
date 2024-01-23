@@ -24,7 +24,7 @@
     <label for="icon" class="label">アイコン画像データをアップロード</label><br>
     <input class="form-control form-control-lg" type="file" placeholder="アイコン画像データをアップロード" name="icon" accept="image/*"><br>
     <label for="email" class="label">メールアドレス</label><br>
-    <input class="form-control form-control-lg" type="email" placeholder="メールアドレス " name="email" value="{{$form->mail}}"><br>
+    <input class="form-control form-control-lg" type="email" placeholder="メールアドレス " name="email" value="{{$form->email}}"><br>
     <label for="tel" class="label">電話番号</label><br>
     <input class="form-control form-control-lg" type="tel" placeholder="電話番号" name="tel" value="{{$form->tel}}"><br>
     <label for="password" class="label">パスワード</label><br>
