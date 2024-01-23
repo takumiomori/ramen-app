@@ -6,6 +6,15 @@
 @if(isset($msg))
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
+@if(count($errors)>0)
+<div class="alert alert-danger" role="alert">
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <div class="label_front">店舗情報 新規登録</div>
 <form action="/shop/index" method="post" enctype="multipart/form-data">
     @csrf

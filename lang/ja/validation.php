@@ -92,7 +92,7 @@ return [
     ],
     'not_in'               => '選択された:attributeは、有効ではありません。',
     'not_regex'            => ':attributeの形式が無効です。',
-    'numeric'              => ':attributeには、数字を指定してください。',
+    'numeric'              => ':attributeから、星の数を選択してください。',
     'password'             => ':attributeが間違っています',
     'present'              => ':attributeが存在している必要があります。',
     'regex'                => ':attributeの入力内容が適切ではありません。入力条件をご確認の上、再度記入してください。',
@@ -158,5 +158,7 @@ return [
         'address' => '住所',
         'open_time' => '営業時間',
         'menu' => 'メニュー',
+        'star' => '星評価',
+        'post_text' => '投稿内容'
     ],
 ];

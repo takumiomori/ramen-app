@@ -8,6 +8,7 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -41,7 +42,8 @@ class PostController extends Controller
         $this->validate($request,Post::$rules);
 
         $shop_id = $request->shop_id;
-        
+        $user_id = $request->user_id;
+
         $post = new Post;
         $form = $request->all();
         unset($form['_token']);
@@ -59,18 +61,44 @@ class PostController extends Controller
 
         Shop::find($shop_id)->update(['star' => $newAvgStar]);
 
-        $postsCount = Post::where('user_id', '=', $request->user_id)->count();
-        $updateGuest = User::find($request->user_id);
-        if($postsCount >= 10 && $postsCount < 30){
-            $updateGuest->update(['status' => 'ブロンズ']);
-        }elseif ($postsCount >= 30 && $postsCount < 50) {
-            $updateGuest->update(['status' => 'シルバー']);
-        }elseif ($postsCount >= 50) {
-            $updateGuest->update(['status' => 'ゴールド']);
-        }
+        $postCount = Post::where('user_id', $user_id)->count();
+        $user = User::find($user_id);
+
+            if ($postCount >= 50) {
+                $user->update(['status' => 'ゴールド']);
+            }elseif (($postCount >= 30) && ($postCount < 50)){
+                $user->update(['status' => 'シルバー']);
+            }elseif (($postCount >= 10) && ($postCount < 30)){
+                $user->update(['status' => 'ブロンズ']);
+            }
 
         return  redirect('/post/addresult')->with(['msg'=>'投稿が完了しました']);
 
+    }
+
+    protected static function boot(){
+        parent::boot();
+
+        static::create(function () {
+            $user_id = Auth::id();
+            $postCount = Post::where('user_id', $user_id)->count();
+
+            dd($postCount);
+
+            if ($postCount >= 50) {
+                $user = User::find($user_id);
+                $user->status = 'ゴールド';
+                $user->save();
+            }elseif ($postCount >= 30 && $postCount < 50){
+                $user = User::find($user_id);
+                $user->status = 'シルバー';
+                $user->save();
+            }elseif ($postCount >= 10 && $postCount < 30){
+                $user = User::find($user_id);
+                $user->status = 'ブロンズ';
+                $user->save();
+            }
+        });
     }
 
     public function delete(Request $request){
