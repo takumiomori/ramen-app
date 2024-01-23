@@ -15,12 +15,12 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/mencomi_apple-touch-icon180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/mencomi_favicon32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/mencomi_favicon16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/mencomi_favicon.ico">
     <link rel="manifest" href="/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
+    <meta name="msapplication-TileImage" content="/assets/img/favicons/mencomi_mstile150.png">
     <meta name="theme-color" content="#ffffff">
 
 
@@ -109,6 +109,8 @@
         .register_btn{margin-right: 10px;}
         .search_nav:hover{opacity: 0.5 ;}
         .menu_area{white-space: pre-wrap;}
+        .post_content{white-space: pre-wrap;}
+        .card-img-top{height: 161.02px; object-fit: cover;}
 
 
     </style>

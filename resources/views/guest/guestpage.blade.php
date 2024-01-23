@@ -51,7 +51,8 @@
           </div>
         </div>
       @endforeach
-    
+      </div>
+    </div>
 @endsection
 
 @section('footer')

@@ -30,7 +30,7 @@
           </div>
         </div>
       @endforeach
-    
+      </div>
 @endsection
 
 @section('footer')
