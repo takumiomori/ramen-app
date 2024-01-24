@@ -76,31 +76,6 @@ class PostController extends Controller
 
     }
 
-    protected static function boot(){
-        parent::boot();
-
-        static::create(function () {
-            $user_id = Auth::id();
-            $postCount = Post::where('user_id', $user_id)->count();
-
-            dd($postCount);
-
-            if ($postCount >= 50) {
-                $user = User::find($user_id);
-                $user->status = 'ゴールド';
-                $user->save();
-            }elseif ($postCount >= 30 && $postCount < 50){
-                $user = User::find($user_id);
-                $user->status = 'シルバー';
-                $user->save();
-            }elseif ($postCount >= 10 && $postCount < 30){
-                $user = User::find($user_id);
-                $user->status = 'ブロンズ';
-                $user->save();
-            }
-        });
-    }
-
     public function delete(Request $request){
         $guest=Post::find($request->id);
         return view('post.del',['form'=>$guest]);

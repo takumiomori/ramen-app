@@ -77,12 +77,10 @@ class GuestController extends Controller
 
     public function update(Request $request){
         $this->validate($request,User::$updateRules);
-        $this->validate($request,User::$updatePassRules);
         $id = $request->id;
         $request->validate([
             'icon' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-        $rules = ['password' => ['string','min:8','regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/']];
 
         $user = User::find($id);
 
@@ -99,7 +97,8 @@ class GuestController extends Controller
         }
 
         $password = $request->password;
-        if(!empty($password)){
+        if($password){
+            $this->validate($request,User::$updatePassRules);
             $user->update(['password' => Hash::make($password)]);
         }
 
