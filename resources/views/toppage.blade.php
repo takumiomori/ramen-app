@@ -48,7 +48,11 @@
         .user_name{font-size: 28px;}
         .user_id{font-size: 16px;}
         .user_status{font-size: 16px; border: 1px solid gray; color: gray; ;padding:2px 10px;
-        border-radius: 22px;text-align: center; width: 140px; margin:5px 0 10px 0}
+        border-radius: 22px;text-align: center; width: 140px; margin:5px 0 10px 0;}
+        .normal_style{border: 1px solid gray; color: gray;}
+        .gold_style{border: 1px solid #DBB400; color: white; background-color:#DBB400;}
+        .silver_style{border: 1px solid #C0C0C0; color: white; background-color:#C0C0C0;}
+        .bronze_style{border: 1px solid #b87333; color: white; background-color:#b87333;}
         .shop_image{width:100px;}
         .btn{background-color: #f7981b; color: whitesmoke; font-weight: bold;}
         .label{font-weight: bold; 
@@ -111,6 +115,7 @@
         .menu_area{white-space: pre-wrap;}
         .post_content{white-space: pre-wrap;}
         .card-img-top{height: 161.02px; object-fit: cover;}
+        
         @media screen and (max-width: 480px) {
           .logo{width:200px;}
           .text-danger{font-size:40px;}

@@ -45,6 +45,7 @@ class User extends Authenticatable
         'tel',
         'password',
         'status',
+        'status_style',
         'icon'
     ];
 

@@ -13,7 +13,7 @@
         <div class="prof_info">
           <div class="user_name">{{$item->name}}</div>
           <div class="user_id">@ {{$item->guest_name}}</div>
-          <div class="user_status">{{$item->status}}</div>
+          <div class="user_status {{$item->status_style}}">{{$item->status}}</div>
         <div class="prof_btn"><a href="/guest/edit"><button class="btn mb search_btn">ユーザ登録情報を変更</button></a></div>
         </div>
         

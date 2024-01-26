@@ -53,6 +53,7 @@ class GuestController extends Controller
         unset($form['_token'],$form['icon']);
         $guest->icon = $fileName;
         $guest->status = 'ノーマル';
+        $guest->status_style = 'normal_style';
         $guest->fill($form)->save();
 
         return view('guest.add',['msg'=>'登録が完了しました']);

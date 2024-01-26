@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('tel');
             $table->string('password');
             $table->string('status');
+            $table->string('status_style');
             $table->rememberToken();
             $table->timestamps();
         });

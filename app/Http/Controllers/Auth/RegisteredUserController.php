@@ -52,6 +52,7 @@ class RegisteredUserController extends Controller
         unset($form['_token'],$form['icon'],$form['password']);
         $user->icon = $fileName;
         $user->status = 'ノーマル';
+        $user->status_style = 'normal_style';
         $user->password = Hash::make($request->password);
         $user->fill($form)->save();
 

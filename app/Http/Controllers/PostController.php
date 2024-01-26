@@ -65,11 +65,11 @@ class PostController extends Controller
         $user = User::find($user_id);
 
             if ($postCount >= 50) {
-                $user->update(['status' => 'ゴールド']);
+                $user->update(['status' => 'ゴールド', 'status_style' => 'gold_style']);
             }elseif (($postCount >= 30) && ($postCount < 50)){
-                $user->update(['status' => 'シルバー']);
+                $user->update(['status' => 'シルバー', 'status_style' => 'silver_style']);
             }elseif (($postCount >= 10) && ($postCount < 30)){
-                $user->update(['status' => 'ブロンズ']);
+                $user->update(['status' => 'ブロンズ', 'status_style' => 'bronze_style']);
             }
 
         return  redirect('/post/addresult')->with(['msg'=>'投稿が完了しました']);
