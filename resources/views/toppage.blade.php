@@ -43,8 +43,8 @@
         .icon{width:50px;}
         .prof_space,.ranking_space,.shop_space{display:flex;flex-wrap:wrap; margin-top: 50px;}
         .prof_info{width:70%; display:flex; flex-flow: column;margin-left: 30px;}
-        .image_sp{width:20%;}
-        .prof_icon{width:100%; border-radius: 200px;}
+        .image_sp{width:15vw;}
+        .prof_icon{width:100%; border-radius: 200px; height: 15vw; object-fit: cover;}
         .user_name{font-size: 28px;}
         .user_id{font-size: 16px;}
         .user_status{font-size: 16px; border: 1px solid gray; color: gray; ;padding:2px 10px;
@@ -75,8 +75,8 @@
         .rankshop_image{width: 100%;}
         .rank_txt{position: absolute; top: 70px; right: 10px; font-size: 30px; font-style: normal; color: gray;}
         .card_wrap{display:flex;flex-wrap:wrap; margin-top: 50px; flex-direction:row;}
-        .card_userimg{width:15%; display:flex; flex-flow: column; margin: 10px 0 0 10px;}
-        .user_icon{width:100%; border-radius: 200px; }
+        .card_userimg{width:5vw; display:flex; flex-flow: column; margin: 10px 0 0 10px;}
+        .user_icon{width:100%; border-radius: 200px;  height: 5vw; object-fit: cover;}
         .post_user{font-size:20px;}
         .card_rightcontent{display:flex; flex-flow: column; width:60%;}
         .shop_img{width:35%;}
@@ -140,6 +140,8 @@
           }
           .card{margin:10px auto 20px auto;}
           .post_card,.prof_space{margin:10px 20px;}
+          .card_userimg{width:15vw;}
+          .user_icon{height: 15vw; object-fit: cover;}
           .prof_space{margin-bottom:80px; flex-flow:column;}
           .label_front{margin:10px 20px; width:90%;}
           .menu_area{margin:0 20px 80px 20px; padding:10px; width:100%;}
@@ -158,7 +160,8 @@
           .main{margin-bottom:120px;}
           .prof_info{width:90%; margin:20px; text-align:center;}
           .user_status{margin:10px auto}
-          .image_sp {width: 50%; margin:0px auto;}
+          .image_sp {width: 50vw; margin:0px auto;}
+          .prof_icon{height: 50vw; object-fit: cover;}
           .sp_form{margin-left:10px;}
           .sp_btn_area{width:100%;}
           .posttext{width:100%;}
