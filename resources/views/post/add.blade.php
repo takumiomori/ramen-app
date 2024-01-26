@@ -14,7 +14,7 @@
 @endif
 <div class="label_front">{{$shop->name}}の口コミを投稿</div>
 <div class="content_area">
-    <form action="/post/add" method="post" enctype="multipart/form-data">
+    <form action="/post/add" method="post" enctype="multipart/form-data" class="sp_form">
     @csrf
     <label for="star" class="label">星評価</label><br>
     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="star">
@@ -30,7 +30,7 @@
     <textarea class="posttext mb" placeholder="投稿内容を入力"  rows="5" cols="80" name="post_text" value="" >{{old('post_text')}}</textarea><br>
     <input class="form-control form-control-lg" type="hidden" name="user_id" value="{{ Auth::user()->id }}"><br>
     <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$shop_id}}"><br>
-    <input class="btn" type="submit" value="投稿">
+    <input class="btn search_btn" type="submit" value="投稿">
 </form>
 </div>
 

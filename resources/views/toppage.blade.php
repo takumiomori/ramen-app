@@ -111,6 +111,58 @@
         .menu_area{white-space: pre-wrap;}
         .post_content{white-space: pre-wrap;}
         .card-img-top{height: 161.02px; object-fit: cover;}
+        @media screen and (max-width: 480px) {
+          .logo{width:200px;}
+          .text-danger{font-size:40px;}
+          .row{flex-flow:column;
+          }
+          .search_nav{width:100%;}
+          .nav_area_wrap,.shop_space{flex-flow:column;}
+          .nav_info{margin:0px auto 10px auto;}
+          .sp_nav{font-size:25px; margin-bottom:14px;}
+          .btn{font-size:20px;}
+          .login_btn,.sp_nav_btn{margin:0px auto 0px auto;}
+          .sp_btn{width:100%;}
+          .content{width:100%;}
+          .ranking_space{flex-flow:column; width:90%; margin:0px auto 0px auto;}
+          .rank{margin:0px auto 0px auto;}
+          .rank_img,.rank_info {width:100%;margin-left:0px; margin-bottom:10px;}
+          .rank_info{margin-bottom:80px;}
+          .star_space{margin-bottom:10px;}
+          .shop_name{font-size:25px; margin-bottom:14px;}
+          .place{font-size:22px;}
+          .category{font-size:20px;}
+          .card-label{font-size:20px;}
+          .footer_credit{margin:0px auto 0px auto;}
+          body{width:100%;margin:0px;}
+          .card_group{
+            width:100%;
+          }
+          .card{margin:10px auto 20px auto;}
+          .post_card,.prof_space{margin:10px 20px;}
+          .prof_space{margin-bottom:80px; flex-flow:column;}
+          .label_front{margin:10px 20px; width:90%;}
+          .menu_area{margin:0 20px 80px 20px; padding:10px; width:100%;}
+          .shop_side{margin-bottom:80px; margin-left:0px; padding:14px; width:100%;}
+          .shop_img{width:90%; margin:10px auto;}
+          .btn_area{width:100%;}
+          .shop_space{margin-top:0px; padding:10px;}
+          .info{font-size:18px;}
+          .form-control{margin:10px;}
+          .content_area{margin:10px; width:90%;}
+          .search_btn{margin:30px auto 0px auto; display:flex;}
+          form{width:100%;}
+          .custom-select{width:100%; margin:10px;}
+          .sp_mt{margin-top:80px;}
+          .container{margin:0px;}
+          .main{margin-bottom:120px;}
+          .prof_info{width:90%; margin:20px; text-align:center;}
+          .user_status{margin:10px auto}
+          .image_sp {width: 50%; margin:0px auto;}
+          .sp_form{margin-left:10px;}
+          .sp_btn_area{width:100%;}
+          .posttext{width:100%;}
+        }
 
 
     </style>
@@ -129,28 +181,29 @@
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
               <div class="nav_area_wrap">
-              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/#search"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
-              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/guest/guestpage"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
+              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/#search" class="sp_nav"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
+              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/guest/guestpage" class="sp_nav"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
             </div>
             </div>
             @guest
             <!-- ログインしていない場合の表示 -->
             
             
-            <div class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-              <a href="{{ route('register') }}">
+            <div class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0 sp_btn">
+              <a href="{{ route('register') }}" class="sp_nav_btn">
               <button class="shadow-warning btn-white btn login_btn register_btn"> 会員登録</button></a>
             </div>
 
-            <div class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-              <a href="{{ route('login') }}">
+            <div class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0 sp_btn">
+              <a href="{{ route('login') }}"  class="sp_nav_btn">
               <button class="shadow-warning btn-white btn login_btn" > <i class="fas fa-user me-2"></i>Login</button></a>
             </div>
             
             
             @else
-            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0" method="POST" action="{{ route('logout') }}">
-                @csrf
+            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0 sp_btn sp_nav_btn" method="POST" action="{{ route('logout') }}">
+              @csrf
+                
               <button class="shadow-warning btn-white btn login_btn " type="submit"> <i class="fas fa-user me-2"></i>Logout</button>
             </form>
             @endguest
@@ -183,7 +236,7 @@
           <div class="row flex-center pb-3">
             <div class="col-md-6 order-0">
               <p class="text-200 text-center text-md-start">All rights Reserved &copy; mencomi, 2024</p>
-              <br><span style="margin:15px 15px 15px 15px"><a href="https://developer.yahoo.co.jp/sitemap/" class="credit">Web Services by Yahoo! JAPAN</a></span>
+              <br><span style="margin:15px 15px 15px 15px" class="footer_credit"><a href="https://developer.yahoo.co.jp/sitemap/" class="credit">Web Services by Yahoo! JAPAN</a></span>
             </div>
             <div class="col-md-6 order-1">
               <p class="text-200 text-center text-md-end"> Made with&nbsp;

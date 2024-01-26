@@ -14,7 +14,7 @@
 @endif
 <div class="label_front">ユーザ登録情報の編集</div>
 <div class="content_area">
-    <form action="/guest/edit" method="post" enctype="multipart/form-data">
+    <form action="/guest/edit" method="post" enctype="multipart/form-data" class="sp_form">
     @csrf
     <input type="hidden" name="id" value="{{$form->id}}">
     <input type="hidden" name="status" value="{{$form->status}}">
@@ -31,7 +31,7 @@
     <input class="form-control form-control-lg" type="tel" placeholder="電話番号" name="tel" value="{{$form->tel}}"><br>
     <label for="password" class="label">パスワード</label><br><span>半角英大文字・半角英小文字・半角数字（0〜9）・半角記号（「?」「@」「_」「&」「$」など）を各１字以上組み合わせて最低８文字以上を入力。</span><br>
     <input class="form-control form-control-lg" type="password" placeholder="新しいパスワードを入力" name="password" value="{{old('password')}}"><br>
-    <input class="btn" type="submit" value="更新">
+    <input class="btn search_btn" type="submit" value="更新">
 </form>
 </div>
 

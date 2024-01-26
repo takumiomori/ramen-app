@@ -26,8 +26,8 @@
     <div class="info">営業時間：{{$item->open_time}}</div>
     <div class="info">定休日：{{$item->holiday}}</div>
     <div class="btn_area">
-  <a href="/post/add?shop_id={{$item->id}}"><button type="button" class="btn post_btn">口コミを書く</button></a>
-  <a href="/favorite/add?shop_id={{$item->id}}"><button type="button" class="btn post_btn">お気に入り登録</button></a>
+  <a href="/post/add?shop_id={{$item->id}}" class="sp_nav_btn"><button type="button" class="btn post_btn">口コミを書く</button></a>
+  <a href="/favorite/add?shop_id={{$item->id}}" class="sp_nav_btn"><button type="button" class="btn post_btn">お気に入り登録</button></a>
 </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
     <div class="label_front">お店の口コミ</div>
     <div class="card_group">
       @foreach($posts as $post)
-      <div class="card card_wrap" style="width: 30rem;">
+      <div class="card card_wrap post_card" style="width: 30rem;">
         <div class="card_userimg"><img src="{{ url('storage', ['images', 'icon', $post->user->icon]) }}" alt="" class="user_icon"></div>
         <div class="card-body card_rightcontent">
           <div class="post_user">{{$post->user->guest_name}}</div>

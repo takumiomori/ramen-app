@@ -14,7 +14,7 @@
 @endif
 <div class="label_front">新規ユーザ登録</div>
 <div class="content_area">
-    <form action="register" method="post" enctype="multipart/form-data">
+    <form action="register" method="post" enctype="multipart/form-data" class="sp_form">
     @csrf
     <label for="name" class="label">お名前</label><br>
     <input class="form-control form-control-lg" type="text" placeholder="例）田中太郎" name="name" value="{{old('name')}}"><br>
@@ -28,7 +28,7 @@
     <input class="form-control form-control-lg" type="tel" placeholder="例）012-3456-7890" name="tel" value="{{old('tel')}}"><br>
     <label for="password" class="label">パスワード</label><br><span>半角英大文字・半角英小文字・半角数字（0〜9）・半角記号（「?」「@」「_」「&」「$」など）を各１字以上組み合わせて最低８文字以上を入力。</span><br>
     <input class="form-control form-control-lg" type="password" placeholder="例）Abc?01dE@$ など" name="password" value="{{old('password')}}"><br>
-    <input class="btn" type="submit" value="登録">
+    <input class="btn search_btn" type="submit" value="登録">
 </form>
 </div>
 

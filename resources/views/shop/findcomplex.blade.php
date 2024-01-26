@@ -31,7 +31,7 @@
         <option value="{{$place->id}}">{{$place->name}}</option>
         @endforeach
       </select><br>
-    <input class="btn mt" type="submit" value="検索">
+    <input class="btn mt search_btn" type="submit" value="検索">
 </form>
 </div>
 

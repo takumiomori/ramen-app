@@ -14,7 +14,7 @@
           <div class="user_name">{{$item->name}}</div>
           <div class="user_id">@ {{$item->guest_name}}</div>
           <div class="user_status">{{$item->status}}</div>
-        <div class="prof_btn"><a href="/guest/edit"><button class="btn mb">ユーザ登録情報を変更</button></a></div>
+        <div class="prof_btn"><a href="/guest/edit"><button class="btn mb search_btn">ユーザ登録情報を変更</button></a></div>
         </div>
         
         
@@ -36,12 +36,12 @@
     </div>
   @endforeach
 
-    <div class="label_front">投稿した口コミ</div>
+    <div class="label_front sp_mt">投稿した口コミ</div>
       <div class="card_group">
         @foreach($posts as $post)
-        <div class="card" style="width: 30rem;">
+        <div class="card post_card" style="width: 30rem;">
           <div class="card-body">
-            <h5 class="card-title">{{$post->shop->first()->name}}</h5>
+            <h5 class="card-title">@foreach($post->shop as $obj){{$obj->name}}@endforeach</h5>
             <p class="card-text">
               <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$post->star}}</div><br>
             </p></div>

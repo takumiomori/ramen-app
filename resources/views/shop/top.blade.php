@@ -99,6 +99,7 @@
     </div>
     <a href="/shop/shoppage?id={{$item->id}}" class="btn">店舗ページ</a>
   </div>
+</div>
    @endforeach
   </div>
 </div>

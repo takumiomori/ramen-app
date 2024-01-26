@@ -7,7 +7,7 @@
     <form action="/favorite/del" method="post" >
     @csrf
     <table>
-        <tr><th>お気に入り店</th><td>{{$form->shop->first()->name}}</td></tr>
+        <tr><th>お気に入り店</th><td>@foreach($form->shop as $obj){{$obj->name}}@endforeach</td></tr>
     </table>
     
     <input class="form-control form-control-lg" type="hidden" name="id" value="{{$form->id}}"><br>
