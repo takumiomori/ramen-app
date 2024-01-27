@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-7 col-lg-6 py-8 text-md-start text-center">
         <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light">奈良のラーメン<br>食べるなら</h1>
-        <h1 class="text-800 mb-5 fs-4" font-size=22px>ラーメン好きのための<br>奈良のラーメン口コミ情報サイト<br class="d-none d-xxl-block" /></h1>
+        <h1 class="text-800 mb-5 fs-4" font-size=22px><p class="top_catch">ラーメン好きのための<br>奈良のラーメン口コミ情報サイト</p><br class="d-none d-xxl-block" /></h1>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
           <div class="row justify-content-center g-0">
             <div class="col-xl-9">
               <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
-                <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">お店を探す</h5>
+                <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6 top_title"><p class="top_title">お店を探す</p></h5>
               </div>
               <div class="row center">
 

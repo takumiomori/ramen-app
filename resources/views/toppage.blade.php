@@ -118,6 +118,9 @@
         
         @media screen and (max-width: 480px) {
           .logo{width:200px;}
+          .display-1{font-size:200%;}
+          .top_catch{font-size:80%;}
+          .top_title{font-size:150%;}
           .text-danger{font-size:40px;}
           .row{flex-flow:column;
           }
@@ -137,7 +140,7 @@
           .shop_name{font-size:25px; margin-bottom:14px;}
           .place{font-size:22px;}
           .category{font-size:20px;}
-          .card-label{font-size:20px;}
+          .card-label{font-size:18px;}
           .footer_credit{margin:0px auto 0px auto;}
           body{width:100%;margin:0px;}
           .card_group{
