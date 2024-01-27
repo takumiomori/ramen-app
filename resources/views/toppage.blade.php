@@ -30,6 +30,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ secure_asset('assets/css/theme.css') }}" rel="stylesheet" />
     <link href="../css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <style>
         body{font-size: 16pt; margin: 16px;}
         .mt{margin-top: 15px;}
