@@ -22,7 +22,7 @@
     <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$item->id}}">
     <input class="btn favo_btn search_btn" type="submit" value="お気に入り登録する">
   </form>
-  <div class="sp_btn_area"><a href="/shop/shoppage?id={{$item->id}}"><button type="button" class="btn post_btn search_btn">店舗ページに戻る</button></a></div>
+  <div class="sp_btn_area"><a href="{{ route('shop.shoppage', ['id' => $item->id]) }}"><button type="button" class="btn post_btn search_btn">店舗ページに戻る</button></a></div>
   
   </div>
   </div>

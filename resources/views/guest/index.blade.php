@@ -29,7 +29,7 @@
         <td>{{$item->status}}</td>
         <td>{{$item->email}}</td>
         <td>{{$item->tel}}</td>
-        <td><a href="/guest/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
+        <td><a href="{{ route('guest.del', ['id' => $item->id]) }}"><button class="btn">削除</button></a></td>
       </tr>
       @endforeach
     </tbody>

@@ -27,7 +27,7 @@
         <td scope="row">{{$item->post_text}}</td>
         <td scope="row">@foreach($item->shop as $obj){{$obj->name}}@endforeach</td>
         <td scope="row">{{$item->star}}</td>
-        <td scope="row"><a href="/post/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
+        <td scope="row"><a href="{{ route('post.del', ['id' => $item->id]) }}"><button class="btn">削除</button></a></td>
       </tr>
       @endforeach
     </tbody>

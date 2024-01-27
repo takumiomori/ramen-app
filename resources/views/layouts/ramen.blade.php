@@ -75,19 +75,19 @@
 </head>
 <body>
   <div class="head_nav">
-    <div class="head_logo"><img class="d-inline-block logo" src="/assets/img/gallery/NARAmencomi_logo02.png" alt="logo" /></div>
+    <div class="head_logo"><img class="d-inline-block logo" src="{{ secure_asset('assets/img/gallery/NARAmencomi_logo02.png') }}" alt="logo" /></div>
   
   <p class="head_title">サイト管理</p>
     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-      <a href="/guest/index"><button type="button" class="btn head_menu">利用者</button></a>
-      <a href="/post/index"><button type="button" class="btn head_menu">投稿</button></a>
-      <a href="/favorite/index"><button type="button" class="btn head_menu">お気に入り</button></a>
-      <a href="/shop/index"><button type="button" class="btn head_menu">店舗一覧・新規追加</button></a>
-      <a href="/shop/adminsearch"><button type="button" class="btn head_menu">店舗検索</button></a>
-      <a href="/shopcategory/index"><button type="button" class="btn head_menu">カテゴリー
+      <a href="{{ route('guest.index') }}"><button type="button" class="btn head_menu">利用者</button></a>
+      <a href="{{ route('post.index') }}"><button type="button" class="btn head_menu">投稿</button></a>
+      <a href="{{ route('favorite.index') }}"><button type="button" class="btn head_menu">お気に入り</button></a>
+      <a href="{{ route('shop.index') }}"><button type="button" class="btn head_menu">店舗一覧・新規追加</button></a>
+      <a href="{{ route('shop.adminsearch') }}"><button type="button" class="btn head_menu">店舗検索</button></a>
+      <a href="{{ route('shopcategory.index') }}"><button type="button" class="btn head_menu">カテゴリー
       </button></a>
-      <a href="/place/index"><button type="button" class="btn head_menu">市町村</button></a>
-      <a href="/admin/logout"><button type="button" class="btn head_menu btn_logout">Logout</button></a>
+      <a href="{{ route('place.index') }}"><button type="button" class="btn head_menu">市町村</button></a>
+      <a href="{{ route('admin.logout') }}"><button type="button" class="btn head_menu btn_logout">Logout</button></a>
     </div>
   </div>
     <h1>@yield('title')</h1>

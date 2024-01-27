@@ -27,7 +27,7 @@
       <tr>
         <td>{{$item->id}}</td>
         <td>{{$item->name}}</td>
-        <td><a href="/shopcategory/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
+        <td><a href="{{ route('shopcategory.del', ['id' => $item->id]) }}/"><button class="btn">削除</button></a></td>
       </tr>
       @endforeach
     </tbody>

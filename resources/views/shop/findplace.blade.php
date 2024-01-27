@@ -14,7 +14,7 @@
 </div>
 @endif
 <div class="content_area">
-    <form action="/shop/findplace" method="post" enctype="multipart/form-data">
+    <form action="{{ route('shop.post.findplace') }}" method="post" enctype="multipart/form-data">
     @csrf
     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="place_id">
     <option selected>市町村を選択</option>

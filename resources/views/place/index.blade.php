@@ -27,7 +27,7 @@
       <tr>
         <td scope="row">{{$item->id}}</td>
         <td>{{$item->name}}</td>
-        <td><a href="/place/del?id={{$item->id}}"><button class="btn">削除</button></a></td>
+        <td><a href="{{ route('place.del', ['id' => $item->id]) }}"><button class="btn">削除</button></a></td>
       </tr>
       @endforeach
     </tbody>

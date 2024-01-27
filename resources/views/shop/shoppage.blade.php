@@ -26,8 +26,8 @@
     <div class="info">営業時間：{{$item->open_time}}</div>
     <div class="info">定休日：{{$item->holiday}}</div>
     <div class="btn_area">
-  <a href="/post/add?shop_id={{$item->id}}" class="sp_nav_btn"><button type="button" class="btn post_btn">口コミを書く</button></a>
-  <a href="/favorite/add?shop_id={{$item->id}}" class="sp_nav_btn"><button type="button" class="btn post_btn">お気に入り登録</button></a>
+  <a href="{{ route('post.add', ['shop_id' => $item->id]) }}" class="sp_nav_btn"><button type="button" class="btn post_btn">口コミを書く</button></a>
+  <a href="{{ route('favorite.add', ['shop_id' => $item->id]) }}" class="sp_nav_btn"><button type="button" class="btn post_btn">お気に入り登録</button></a>
 </div>
   </div>
 </div>

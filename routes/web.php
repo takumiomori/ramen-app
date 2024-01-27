@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
 
-Route::get('/shop/adminsearch',function(){return view('shop.adminsearch');});
+Route::get('/shop/adminsearch',function(){return view('shop.adminsearch');})->name('shop.adminsearch');
 Route::post('/shop/adminsearch',[ShopController::class, 'adminsearch']);
 
 
@@ -63,7 +63,7 @@ Route::get('/shop/search',[ShopController::class, 'search'])->name('shop.search'
 Route::get('/shop/findname',function(){return view('shop.findname');})->name('shop.findname');
 Route::post('/shop/findname',[ShopController::class, 'searchname']);
 Route::get('/shop/findplace',[ShopController::class, 'findplace'])->name('shop.findplace');
-Route::post('/shop/findplace',[ShopController::class, 'searchplace']);
+Route::post('/shop/findplace',[ShopController::class, 'searchplace'])->name('shop.post.findplace');
 Route::get('/shop/findcategory',[ShopController::class, 'findcategory'])->name('shop.findcategory');
 Route::post('/shop/findcategory',[ShopController::class, 'searchcategory']);
 Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex'])->name('shop.findcomplex');
@@ -169,7 +169,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::post('login', [AdminLoginController::class, 'login']);
 
-    Route::get('logout', [AdminLoginController::class, 'logout'])->name('admin.login.logout');
+    Route::get('logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 
     // 以下の中は認証必須のエンドポイントとなる
     Route::middleware(['auth:admin'])->group(function () {

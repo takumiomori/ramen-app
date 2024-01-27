@@ -44,9 +44,9 @@
         <td scope="row">{{$item->open_time}}</td>
         <td scope="row">{{$item->menu}}</td>
         <td scope="row">{{$item->star}}</td>
-        <td scope="row"><a href="/shop/shoppage?id={{$item->id}}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">店舗ページ</button></a></td>
-        <td scope="row"><a href="/shop/del?id={{$item->id}}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">削除</button></div></a></td>
-        <td scope="row"><a href="/shop/edit?id={{$item->id}}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">更新</button></div></a></td>
+        <td scope="row"><a href="{{ route('shop.shoppage', ['id' => $item->id]) }}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">店舗ページ</button></a></td>
+        <td scope="row"><a href="{{ route('shop.del', ['id' => $item->id]) }}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">削除</button></div></a></td>
+        <td scope="row"><a href="{{ route('shop.edit', ['id' => $item->id]) }}"><div class="btn-group" role="group" aria-label="Basic example"><button type="button" class="btn">更新</button></div></a></td>
       </tr>
       @endforeach
     </tbody>

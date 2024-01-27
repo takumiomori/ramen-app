@@ -14,7 +14,7 @@
           <div class="user_name">{{$item->name}}</div>
           <div class="user_id">@ {{$item->guest_name}}</div>
           <div class="user_status {{$item->status_style}}">{{$item->status}}</div>
-        <div class="prof_btn"><a href="/guest/edit"><button class="btn mb search_btn">ユーザ登録情報を変更</button></a></div>
+        <div class="prof_btn"><a href="{{ route('guest.edit') }}"><button class="btn mb search_btn">ユーザ登録情報を変更</button></a></div>
         </div>
         
         
@@ -31,7 +31,7 @@
           <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$favorite->shop->first()->star}}</div><br>
         </p></div>
           <br>
-        <a href="/shop/shoppage?id={{$favorite->shop->first()->id}}" class="btn ">店舗ページ</a>
+        <a href="{{ route('shop.shoppage', ['id' => $favorite->shop->first()->id]) }}" class="btn ">店舗ページ</a>
       </div>
     </div>
   @endforeach
