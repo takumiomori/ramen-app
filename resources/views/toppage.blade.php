@@ -15,12 +15,12 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/mencomi_apple-touch-icon180.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/mencomi_favicon32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/mencomi_favicon16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/mencomi_favicon.ico">
-    <link rel="manifest" href="/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="/assets/img/favicons/mencomi_mstile150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ secure_asset('assets/img/favicons/mencomi_apple-touch-icon180.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ secure_asset('assets/img/favicons/mencomi_favicon32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ secure_asset('assets/img/favicons/mencomi_favicon16.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ secure_asset('assets/img/favicons/mencomi_favicon.ico') }}">
+    <link rel="manifest" href="{{ secure_asset('/assets/img/favicons/manifest.json') }}">
+    <meta name="msapplication-TileImage" content="{{ secure_asset('assets/img/favicons/mencomi_mstile150.png') }}">
     <meta name="theme-color" content="#ffffff">
 
 
@@ -187,7 +187,7 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-inline-flex" href="/"><img class="d-inline-block logo" src="/assets/img/gallery/NARAmencomi_logo02.png" alt="logo" /></a>
+        <div class="container"><a class="navbar-brand d-inline-flex" href="/"><img class="d-inline-block logo" src="{{ secure_asset('assets/img/gallery/NARAmencomi_logo02.png') }}" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
