@@ -68,7 +68,7 @@ Route::get('/shop/findcategory',[ShopController::class, 'findcategory'])->name('
 Route::post('/shop/findcategory',[ShopController::class, 'searchcategory']);
 Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex'])->name('shop.findcomplex');
 Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex']);
-Route::get('/shop/shoppage/{id}',[ShopController::class, 'show'])->name('shop.shoppage');
+Route::get('/shop/shoppage',[ShopController::class, 'show'])->name('shop.shoppage');
 
 Route::get('/',[ShopController::class, 'ranking'])->name('top');
 
