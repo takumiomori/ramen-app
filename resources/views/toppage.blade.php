@@ -117,7 +117,7 @@
         .card-img-top{height: 161.02px; object-fit: cover;}
         
         @media screen and (max-width: 480px) {
-          .logo{width:200px;}
+          .logo{width:180px;}
           .display-1{font-size:200%;}
           .top_catch{font-size:80%;}
           .top_title{font-size:150%;}
