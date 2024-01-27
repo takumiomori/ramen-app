@@ -97,7 +97,7 @@
       <div class="card-label">星評価：
       </div><div class="star">{{$item->star}}</div>
     </div>
-    <a href="route('shop.shoppage', ['id' => {{$item->id}}])" class="btn">店舗ページ</a>
+    <a href="{{route('shop.shoppage', ['id' => {{$item->id}}])}}" class="btn">店舗ページ</a>
   </div>
 </div>
    @endforeach
