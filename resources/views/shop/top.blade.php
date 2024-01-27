@@ -6,7 +6,7 @@
 <section class="py-5 overflow-hidden bg-primary" id="home">
   <div class="container">
     <div class="row flex-center">
-      <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0"><a class="img-landing-banner" href="#!"><img class="img-fluid" src="/assets/img/gallery/hero-header.png" alt="hero-header" /></a>
+      <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0"><a class="img-landing-banner" href="#!"><img class="img-fluid" src="{{ secure_asset('assets/img/gallery/hero-header.png') }}" alt="hero-header" /></a>
       </div>
       <div class="col-md-7 col-lg-6 py-8 text-md-start text-center">
         <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light">奈良のラーメン<br>食べるなら</h1>
@@ -34,7 +34,7 @@
 
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findname">
-                  <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/shop_icon.png" height="112" alt="..." />
+                  <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/shop_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">店名で探す</h5>
                     <p class="mb-md-0">気になる店舗名を入力して検索できます</p>
                   </div>
@@ -43,7 +43,7 @@
                 
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findcategory">
-                  <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/ramen_icon.png" height="112" alt="..." />
+                  <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/ramen_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">カテゴリーで探す</h5>
                     <p class="mb-md-0">「醤油」「豚骨」「味噌」「塩」といったラーメンの種類を選んで検索できます</p>
                   </div>
@@ -53,7 +53,7 @@
               
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findplace">
-                  <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/nara_icon.png" height="112" alt="..." />
+                  <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/nara_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">市町村で探す</h5>
                     <p class="mb-md-0">奈良県内39市町村ごとのラーメンの情報を探すことができます</p>
                   </div>
@@ -62,7 +62,7 @@
               
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
                   <a href="/shop/findcomplex">
-                  <div class="text-center"><img class="shadow-icon" src="/assets/img/gallery/complex_icon.png" height="112" alt="..." />
+                  <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/complex_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">複合検索</h5>
                     <p class="mb-md-0">ラーメンの種類と市町村名を指定して、ピンポイントにラーメンの情報を検索できます</p>
                   </div>
