@@ -28,7 +28,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../public/assets/css/theme.css" rel="stylesheet" />
+    <link href="/assets/css/theme.css" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         body{font-size: 16pt; margin: 16px;}
