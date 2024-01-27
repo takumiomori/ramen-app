@@ -188,13 +188,13 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-inline-flex" href="/"><img class="d-inline-block logo" src="{{ secure_asset('assets/img/gallery/NARAmencomi_logo02.png') }}" alt="logo" /></a>
+        <div class="container"><a class="navbar-brand d-inline-flex" href="{{ route('top') }}"><img class="d-inline-block logo" src="{{ secure_asset('assets/img/gallery/NARAmencomi_logo02.png') }}" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
               <div class="nav_area_wrap">
-              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/#search" class="sp_nav"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
-              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="/guest/guestpage" class="sp_nav"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
+              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="https://mencomi.sakura.ne.jp/mencominara/#search" class="sp_nav"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
+              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="{{ route('guest.guestpage') }}" class="sp_nav"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
             </div>
             </div>
             @guest

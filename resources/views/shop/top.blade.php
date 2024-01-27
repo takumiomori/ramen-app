@@ -33,7 +33,7 @@
               <div class="row center">
 
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
-                  <a href="/shop/findname">
+                  <a href="{{ route('shop.findname') }}">
                   <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/shop_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">店名で探す</h5>
                     <p class="mb-md-0">気になる店舗名を入力して検索できます</p>
@@ -42,7 +42,7 @@
                 </div>
                 
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
-                  <a href="/shop/findcategory">
+                  <a href="{{ route('shop.findcategory') }}">
                   <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/ramen_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">カテゴリーで探す</h5>
                     <p class="mb-md-0">「醤油」「豚骨」「味噌」「塩」といったラーメンの種類を選んで検索できます</p>
@@ -52,7 +52,7 @@
               
               
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
-                  <a href="/shop/findplace">
+                  <a href="{{ route('shop.findplace') }}">
                   <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/nara_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">市町村で探す</h5>
                     <p class="mb-md-0">奈良県内39市町村ごとのラーメンの情報を探すことができます</p>
@@ -61,7 +61,7 @@
                 </div>
               
                 <div class="col-sm-6 col-md-3 mb-6 search_nav">
-                  <a href="/shop/findcomplex">
+                  <a href="{{ route('shop.findcomplex') }}">
                   <div class="text-center"><img class="shadow-icon" src="{{ secure_asset('assets/img/gallery/complex_icon.png') }}" height="112" alt="..." />
                     <h5 class="mt-4 fw-bold">複合検索</h5>
                     <p class="mb-md-0">ラーメンの種類と市町村名を指定して、ピンポイントにラーメンの情報を検索できます</p>
@@ -97,7 +97,7 @@
       <div class="card-label">星評価：
       </div><div class="star">{{$item->star}}</div>
     </div>
-    <a href="/shop/shoppage?id={{$item->id}}" class="btn">店舗ページ</a>
+    <a href="route('shop.shoppage', ['id' => {{$item->id}}])" class="btn">店舗ページ</a>
   </div>
 </div>
    @endforeach

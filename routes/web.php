@@ -59,18 +59,19 @@ Route::get('/shop/adminsearch',function(){return view('shop.adminsearch');});
 Route::post('/shop/adminsearch',[ShopController::class, 'adminsearch']);
 
 
-Route::get('/shop/search',[ShopController::class, 'search']);
-Route::get('/shop/findname',function(){return view('shop.findname');});
+Route::get('/shop/search',[ShopController::class, 'search'])->name('shop.search');
+Route::get('/shop/findname',function(){return view('shop.findname');})->name('shop.findname');
 Route::post('/shop/findname',[ShopController::class, 'searchname']);
-Route::get('/shop/findplace',[ShopController::class, 'findplace']);
+Route::get('/shop/findplace',[ShopController::class, 'findplace'])->name('shop.findplace');
 Route::post('/shop/findplace',[ShopController::class, 'searchplace']);
-Route::get('/shop/findcategory',[ShopController::class, 'findcategory']);
+Route::get('/shop/findcategory',[ShopController::class, 'findcategory'])->name('shop.findcategory');
 Route::post('/shop/findcategory',[ShopController::class, 'searchcategory']);
-Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex']);
+Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex'])->name('shop.findcomplex');
 Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex']);
-Route::get('/shop/shoppage',[ShopController::class, 'show']);
+Route::get('/shop/shoppage/{id}',[ShopController::class, 'show'])->name('shop.shoppage');
 
-Route::get('/',[ShopController::class, 'ranking']);
+Route::get('/',[ShopController::class, 'ranking'])->name('top');
+
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/guest/index',[GuestController::class, 'index'])->name('guest.index');
@@ -91,7 +92,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/shopcategory/del',[ShopcategoryController::class, 'delete'])->name('shopcategory.del');
 });
 Route::middleware(['admin'])->group(function () {
-    Route::get('/favorite/index',[FavoriteController::class, 'index'])->name('faavorite.index');
+    Route::get('/favorite/index',[FavoriteController::class, 'index'])->name('favorite.index');
 });
 Route::middleware([ 'admin'])->group(function () {
     Route::get('/favorite/del',[FavoriteController::class, 'delete'])->name('favorite.del');
