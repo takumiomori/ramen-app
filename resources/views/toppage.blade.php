@@ -194,7 +194,7 @@
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
               <div class="nav_area_wrap">
               <p class="mb-0 fw-bold text-lg-center nav_info"><a href="https://mencomi.sakura.ne.jp/mencominara/#search" class="sp_nav"><i class="fas fa-search text-warning mx-2"></i>お店を探す </a></p>
-              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="{{ route('guest.guestpage') }}" class="sp_nav"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
+              <p class="mb-0 fw-bold text-lg-center nav_info"><a href="{{ route('guest.page') }}" class="sp_nav"><i class="fas fa-user text-warning mx-2"></i>会員情報 </p></a>
             </div>
             </div>
             @guest
