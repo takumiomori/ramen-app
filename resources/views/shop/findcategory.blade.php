@@ -14,7 +14,7 @@
 </div>
 @endif
 <div class="content_area">
-    <form action="/shop/findcategory" method="post" enctype="multipart/form-data">
+    <form action="{{ route('shop.post.findcategory') }}" method="post" enctype="multipart/form-data">
     @csrf
     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="shopcategory_id">
     <option selected>カテゴリーを選択</option>

@@ -14,7 +14,7 @@
 @endif
 <div class="label_front">{{$shop->name}}の口コミを投稿</div>
 <div class="content_area">
-    <form action="/post/add" method="post" enctype="multipart/form-data" class="sp_form">
+    <form action="{{ route('post.post.add') }}" method="post" enctype="multipart/form-data" class="sp_form">
     @csrf
     <label for="star" class="label">星評価</label><br>
     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="star">

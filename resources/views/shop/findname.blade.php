@@ -14,7 +14,7 @@
 </div>
 @endif
 <div class="content_area">
-    <form action="/shop/findname" method="post" enctype="multipart/form-data">
+    <form action="{{ route('shop.post.findname') }}" method="post" enctype="multipart/form-data">
     @csrf
     <input class="form-control form-control-lg" type="text" placeholder="例）〇〇ラーメン" name="name" value="{{old('name')}}">
     <input class="btn mt search_btn" type="submit" value="検索">

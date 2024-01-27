@@ -16,13 +16,13 @@
                     <div>{{ Auth::user()->name }}</div>
 
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <a href="/guest/index"><button type="button" class="btn head_menu">利用者</button></a>
-                        <a href="/post/index"><button type="button" class="btn head_menu">投稿</button></a>
-                        <a href="/favorite/index"><button type="button" class="btn head_menu">お気に入り</button></a>
-                        <a href="/shop/index"><button type="button" class="btn head_menu">店舗一覧</button></a>
-                        <a href="/shopcategory/index"><button type="button" class="btn head_menu">カテゴリー
+                        <a href="{{ route('guest.index') }}"><button type="button" class="btn head_menu">利用者</button></a>
+                        <a href="{{ route('post.index') }}"><button type="button" class="btn head_menu">投稿</button></a>
+                        <a href="{{ route('favorite.index') }}"><button type="button" class="btn head_menu">お気に入り</button></a>
+                        <a href="{{ route('shop.index') }}"><button type="button" class="btn head_menu">店舗一覧</button></a>
+                        <a href="{{ route('shopcategory.index') }}"><button type="button" class="btn head_menu">カテゴリー
                         </button></a>
-                        <a href="/place/index"><button type="button" class="btn head_menu">市町村</button></a>
+                        <a href="{{ route('place.index') }}"><button type="button" class="btn head_menu">市町村</button></a>
                       </div>
 
                 </div>

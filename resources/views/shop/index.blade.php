@@ -16,7 +16,7 @@
 </div>
 @endif
 <div class="label_front">店舗情報 新規登録</div>
-<form action="/shop/index" method="post" enctype="multipart/form-data">
+<form action="{{ route('shop.post.index') }}" method="post" enctype="multipart/form-data">
     @csrf
     <label for="name" class="label">店舗名を記入</label><br>
     <input class="form-control form-control-lg" type="text" placeholder="例）〇〇ラーメン××店" name="name" value="{{old('name')}}"><br>

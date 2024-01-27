@@ -8,7 +8,7 @@
 @endif
 
 <div class="content_area">
-  <form action="/shop/adminsearch" method="post" enctype="multipart/form-data">
+  <form action="{{ route('shop.post.adminsearch') }}" method="post" enctype="multipart/form-data">
   @csrf
   <input class="form-control form-control-lg" type="text" placeholder="例）〇〇ラーメン" name="name" value="{{old('name')}}"><br>
   <input class="btn mt" type="submit" value="検索">

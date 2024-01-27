@@ -8,7 +8,7 @@
 @endif
 
     <div class="label">市町村情報の新規登録</div>
-    <form action="/place/index" method="post">
+    <form action="{{ route('place.post.index') }}" method="post">
     @csrf
     <input class="form-control form-control-lg" type="text" placeholder="市町村名" name="name" value="{{old('name')}}"><br>
     <input class="btn" type="submit" value="登録">

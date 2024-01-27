@@ -56,18 +56,18 @@ Route::get('/guest/add',[GuestController::class, 'add']);
 Route::post('/guest/add',[GuestController::class, 'create']);
 
 Route::get('/shop/adminsearch',function(){return view('shop.adminsearch');})->name('shop.adminsearch');
-Route::post('/shop/adminsearch',[ShopController::class, 'adminsearch']);
+Route::post('/shop/adminsearch',[ShopController::class, 'adminsearch'])->name('shop.post.adminsearch');
 
 
 Route::get('/shop/search',[ShopController::class, 'search'])->name('shop.search');
 Route::get('/shop/findname',function(){return view('shop.findname');})->name('shop.findname');
-Route::post('/shop/findname',[ShopController::class, 'searchname']);
+Route::post('/shop/findname',[ShopController::class, 'searchname'])->name('shop.post.findname');
 Route::get('/shop/findplace',[ShopController::class, 'findplace'])->name('shop.findplace');
 Route::post('/shop/findplace',[ShopController::class, 'searchplace'])->name('shop.post.findplace');
 Route::get('/shop/findcategory',[ShopController::class, 'findcategory'])->name('shop.findcategory');
-Route::post('/shop/findcategory',[ShopController::class, 'searchcategory']);
+Route::post('/shop/findcategory',[ShopController::class, 'searchcategory'])->name('shop.post.findcategory');
 Route::get('/shop/findcomplex',[ShopController::class, 'findcomplex'])->name('shop.findcomplex');
-Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex']);
+Route::post('/shop/findcomplex',[ShopController::class, 'searchcomplex'])->name('shop.post.findcomplex');
 Route::get('/shop/shoppage',[ShopController::class, 'show'])->name('shop.shoppage');
 
 Route::get('/',[ShopController::class, 'ranking'])->name('top');
@@ -117,23 +117,23 @@ Route::middleware(['admin'])->group(function () {
 });
 
 
-Route::post('/guest/del',[GuestController::class, 'remove']);
-Route::post('/place/index',[PlaceController::class, 'create']);
-Route::post('/place/del',[PlaceController::class, 'remove']);
-Route::post('/shopcategory/index',[ShopcategoryController::class, 'create']);
-Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove']); 
-Route::post('/favorite/del',[FavoriteController::class, 'remove']);
-Route::post('/post/del',[PostController::class, 'remove']);
-Route::post('/shop/index',[ShopController::class, 'create']);
-Route::post('/shop/del',[ShopController::class, 'remove']);
-Route::post('/shop/edit',[ShopController::class, 'update']);
+Route::post('/guest/del',[GuestController::class, 'remove'])->name('guest.post.del');
+Route::post('/place/index',[PlaceController::class, 'create'])->name('place.post.index');
+Route::post('/place/del',[PlaceController::class, 'remove'])->name('place.post.del');
+Route::post('/shopcategory/index',[ShopcategoryController::class, 'create'])->name('shopcategory.post.index');
+Route::post('/shopcategory/del',[ShopcategoryController::class, 'remove'])->name('shopcategory.post.del'); 
+Route::post('/favorite/del',[FavoriteController::class, 'remove'])->name('favorite.post.del');
+Route::post('/post/del',[PostController::class, 'remove'])->name('post.post.del');
+Route::post('/shop/index',[ShopController::class, 'create'])->name('shop.post.index');
+Route::post('/shop/del',[ShopController::class, 'remove'])->name('shop.post.del');
+Route::post('/shop/edit',[ShopController::class, 'update'])->name('shop.post.edit');
 
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/guest/edit',[GuestController::class, 'edit'])->name('guest.edit');
 });
 Route::middleware(['auth'])->group(function () {
-    Route::post('/guest/edit',[GuestController::class, 'update']);
+    Route::post('/guest/edit',[GuestController::class, 'update'])->name('guest.post.edit');
 });
 Route::middleware(['auth'])->group(function () {
     Route::get('/guest/guestpage',[GuestController::class, 'show'])->name('guest.page');
@@ -148,8 +148,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/favorite/add',[FavoriteController::class, 'add'])->name('favorite.add');
 });
 
-    Route::post('/post/add',[PostController::class, 'create']);
-    Route::post('/favorite/add',[FavoriteController::class, 'create']);
+    Route::post('/post/add',[PostController::class, 'create'])->name('post.post.add');
+    Route::post('/favorite/add',[FavoriteController::class, 'create'])->name('favorite.post.add');
 
 /*
 |--------------------------------------------------------------------------

@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="content_area">
-    <form action="/shopcategory/del" method="post" >
+    <form action="{{ route('shopcategory.post.del') }}" method="post" >
     @csrf
     <table>
         <tr><th>店舗カテゴリーID</th><td>{{$form->id}}</td></tr>

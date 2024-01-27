@@ -17,7 +17,7 @@
 @if(isset($msg))
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
-    <form action="/shop/findcomplex" method="post" enctype="multipart/form-data">
+    <form action="{{ route('shop.post.findcomplex') }}" method="post" enctype="multipart/form-data">
     @csrf
     <select class="custom-select mr-sm-2 mt" id="inlineFormCustomSelect" name="shopcategory_id">
     <option selected>カテゴリーを選択</option>

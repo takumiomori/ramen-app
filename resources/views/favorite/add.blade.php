@@ -17,7 +17,7 @@
   <div class="card-body">
     {{$item->name}}をお気に入り登録しますか？
     <div class="btn_area">
-    <form action="/favorite/add" method="post" enctype="multipart/form-data">
+    <form action="{{ route('favorite.post.add') }}" method="post" enctype="multipart/form-data">
     @csrf
     <input class="form-control form-control-lg" type="hidden" name="shop_id" value="{{$item->id}}">
     <input class="btn favo_btn search_btn" type="submit" value="お気に入り登録する">

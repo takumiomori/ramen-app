@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="content_area">
-    <form action="/favorite/del" method="post" >
+    <form action="{{ route('favorite.post.del') }}" method="post" >
     @csrf
     <table>
         <tr><th>お気に入り店</th><td>@foreach($form->shop as $obj){{$obj->name}}@endforeach</td></tr>

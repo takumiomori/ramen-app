@@ -8,7 +8,7 @@
 @endif
 
     <div class="label">店舗カテゴリーの新規登録</div>
-    <form action="/shopcategory/index" method="post">
+    <form action="{{ route('shopcategory.post.index') }}" method="post">
     @csrf
     <input class="form-control form-control-lg" type="text" placeholder="店舗カテゴリー名" name="name" value="{{old('name')}}">
     <input class="btn" type="submit" value="登録">

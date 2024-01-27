@@ -14,7 +14,7 @@
 @endif
 <div class="label_front">ユーザ登録情報の編集</div>
 <div class="content_area">
-    <form action="/guest/edit" method="post" enctype="multipart/form-data" class="sp_form">
+    <form action="{{ route('guest.post.edit') }}" method="post" enctype="multipart/form-data" class="sp_form">
     @csrf
     <input type="hidden" name="id" value="{{$form->id}}">
     <input type="hidden" name="status" value="{{$form->status}}">

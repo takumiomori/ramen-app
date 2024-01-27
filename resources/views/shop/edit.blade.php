@@ -7,7 +7,7 @@
 <div class="alert alert-primary" role="alert">{{$msg}}</div>
 @endif
 
-<form action="/shop/edit" method="post" enctype="multipart/form-data">
+<form action="{{ route('shop.post.edit') }}" method="post" enctype="multipart/form-data">
     @csrf
     <table>
         <input type="hidden" name="id" value="{{$form->id}}">
