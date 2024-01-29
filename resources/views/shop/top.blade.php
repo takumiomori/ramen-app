@@ -83,7 +83,7 @@
 @endif
 
 <div class="container center_contents">
-  <div class="label_front">新着店舗</div>
+  <div class="label_front"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/horn.png') }}"/></div>新着店舗</div>
     <div class="card_group">
       @foreach($newshops as $newshop)
       <div class="card sp_newshop">
@@ -104,7 +104,7 @@
       @endforeach
     </div>
 
-  <div class="label_front ranking_mt">星評価ランキングTOP5</div>
+  <div class="label_front ranking_mt"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/ranking.png') }}"/></div>星評価ランキングTOP5</div>
    @foreach($items as $item)
   <div class="ranking_space">
     <div class="rank"><div class="rank_num">{{++$i}}<div class="rank_txt">位</div></div></div>

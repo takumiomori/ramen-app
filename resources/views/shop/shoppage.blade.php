@@ -35,10 +35,10 @@
 
 
 
-<div class="label_front">メニュー</div>
+<div class="label_front"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/ramen_icon.png') }}"/></div>メニュー</div>
 <div class="menu_area">{{$item->menu}}</div>
 
-    <div class="label_front">お店の口コミ</div>
+    <div class="label_front"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/comments.png') }}"/></div>お店の口コミ</div>
     <div class="card_group">
       @foreach($posts as $post)
       <div class="card card_wrap post_card" style="width: 30rem;">

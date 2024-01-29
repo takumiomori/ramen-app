@@ -59,7 +59,7 @@
         .label{font-weight: bold; 
             text-decoration:underline 12px solid #f7981b;  text-underline-offset:-6px; }
         .label_front{font-weight: bold; 
-            border-bottom: 4px solid #f7981b;   font-size: 28px; margin: 80px 0 14px 0; width: 100%; }
+            border-bottom: 4px solid #f7981b;   font-size: 28px; margin: 80px 0 14px 0; width: 100%; display:flex;}
 
         .card_group{display:flex;flex-wrap:wrap;}
         .card{ margin:5px 10px 10px 0px;}
@@ -118,6 +118,8 @@
         .card-img-top{height: 161.02px; object-fit: cover;}
         .sp_newshop{width:18rem;}
         .ranking_mt{margin-top:200px;}
+        .label_icon{width:30px; margin-right:10px;}
+        .icon_img{width:100%;}
         
         @media screen and (max-width: 480px) {
           .logo{width:180px;}

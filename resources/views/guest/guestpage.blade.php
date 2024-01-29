@@ -20,7 +20,7 @@
         
       </div>
 
-  <div class="label_front">お気に入り店舗一覧</div>
+  <div class="label_front"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/shop_icon.png') }}"/></div>お気に入り店舗一覧</div>
   <div class="card_group">
     @foreach($favorites as $favorite)
     <div class="card" style="width: 18rem;">
@@ -36,7 +36,7 @@
     </div>
   @endforeach
 
-    <div class="label_front sp_mt">投稿した口コミ</div>
+    <div class="label_front sp_mt"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/comments.png') }}"/></div>投稿した口コミ</div>
       <div class="card_group">
         @foreach($posts as $post)
         <div class="card post_card" style="width: 30rem;">
