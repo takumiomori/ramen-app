@@ -83,7 +83,28 @@
 @endif
 
 <div class="container center_contents">
-  <div class="label_front">星評価ランキングTOP5</div>
+  <div class="label_front">新着店舗</div>
+    <div class="card_group">
+      @foreach($newshops as $newshop)
+      <div class="card sp_newshop">
+          <img src="{{ url('storage', ['images','shop', $newshop->image]) }}" class="card-img-top" alt="" >
+          <div class="card-body">
+            <h5 class="card-title">{{$newshop->name}}</h5>
+            <p class="card-text">
+              <div class="place">{{$newshop->place->name}}</div><br>
+              <div class="category_space">
+              @foreach($newshop->shopcategory as $obj)<div class="category">{{$obj->name}}</div>@endforeach
+            </div>
+              <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$newshop->star}}</div><br>
+            </p></div>
+              <br>
+            <a href="{{ route('shop.shoppage', ['id' => $newshop->id]) }}" class="btn ">店舗ページ</a>
+          </div>
+        </div>
+      @endforeach
+    </div>
+
+  <div class="label_front ranking_mt">星評価ランキングTOP5</div>
    @foreach($items as $item)
   <div class="ranking_space">
     <div class="rank"><div class="rank_num">{{++$i}}<div class="rank_txt">位</div></div></div>

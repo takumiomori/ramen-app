@@ -116,6 +116,8 @@
         .menu_area{white-space: pre-wrap;}
         .post_content{white-space: pre-wrap;}
         .card-img-top{height: 161.02px; object-fit: cover;}
+        .sp_newshop{width:11.5rem;}
+        .ranking_mt{margin-top:200px;}
         
         @media screen and (max-width: 480px) {
           .logo{width:180px;}
@@ -174,6 +176,8 @@
           .sp_form{margin-left:10px;}
           .sp_btn_area{width:100%;}
           .posttext{width:100%;}
+          .sp_newshop{width:80%;}
+          .ranking_mt{margin-top:130px;}
         }
 
 
