@@ -179,7 +179,7 @@
           .sp_btn_area{width:100%;}
           .posttext{width:100%;}
           .sp_newshop{width:80%;}
-          .ranking_mt{margin-top:130px;}
+          .ranking_mt{margin-top:130px; font-size: 22.5px; padding-bottom: 3px;}
         }
 
 
