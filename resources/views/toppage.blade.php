@@ -118,7 +118,7 @@
         .card-img-top{height: 161.02px; object-fit: cover;}
         .sp_newshop{width:18rem;}
         .ranking_mt{margin-top:200px;}
-        .label_icon{width:30px; margin-right:10px;}
+        .label_icon{width:30px; margin:auto 10px auto 0;}
         .icon_img{width:100%;}
         
         @media screen and (max-width: 480px) {
