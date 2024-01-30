@@ -27,9 +27,13 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/css/6-1-6.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ secure_asset('assets/css/theme.css') }}" rel="stylesheet" />
+    <link href="{{ secure_asset('assets/css/slider.css') }}" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet">
     <style>
         body{font-size: 16pt; margin: 16px;}
@@ -180,6 +184,7 @@
           .posttext{width:100%;}
           .sp_newshop{width:80%;}
           .ranking_mt{margin-top:130px; font-size: 22.5px; padding-bottom: 3px;}
+          .slick-slide{width:90%;}
         }
 
 
@@ -290,6 +295,12 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="/{{ secure_asset('vendors/fontawesome/all.min.js') }}"></script>
     <script src="{{ secure_asset('assets/js/theme.js') }}"></script>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/js/6-1-6.js"></script>
+    <script src="{{ secure_asset('assets/js/slider.js') }}"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
 

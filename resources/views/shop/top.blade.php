@@ -84,9 +84,10 @@
 
 <div class="container center_contents">
   <div class="label_front"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/horn.png') }}"/></div>新着店舗</div>
-    <div class="card_group">
+  <ul class="slider">
+    
       @foreach($newshops as $newshop)
-      <div class="card sp_newshop">
+      <li><div class="card sp_newshop">
           <img src="{{ url('storage', ['images','shop', $newshop->image]) }}" class="card-img-top" alt="" >
           <div class="card-body">
             <h5 class="card-title">{{$newshop->name}}</h5>
@@ -100,9 +101,10 @@
               <br>
             <a href="{{ route('shop.shoppage', ['id' => $newshop->id]) }}" class="btn ">店舗ページ</a>
           </div>
-        </div>
+        </div></li>
       @endforeach
-    </div>
+    
+  </ul>
 
   <div class="label_front ranking_mt"><div class="label_icon"><img class="icon_img" src="{{ secure_asset('assets/img/gallery/ranking.png') }}"/></div>星評価ランキングTOP5</div>
    @foreach($items as $item)
