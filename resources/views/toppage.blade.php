@@ -121,7 +121,7 @@
         .menu_area{white-space: pre-wrap;}
         .post_content{white-space: pre-wrap;}
         .card-img-top{height: 161.02px; object-fit: cover;}
-        .sp_newshop{width:18rem; height:100%;}
+        .sp_newshop{width:18rem; height:90%;}
         .ranking_mt{margin-top:200px;}
         .label_icon{width:30px; margin:auto 10px auto 0;}
         .icon_img{width:100%;}
