@@ -66,7 +66,7 @@
             border-bottom: 4px solid #f7981b;   font-size: 28px; margin: 80px 0 14px 0; width: 100%; display:flex;}
 
         .card_group{display:flex;flex-wrap:wrap;}
-        .card{ margin:5px 10px 10px 0px;}
+        .card{ margin:5px 10px 10px 0px; box-shadow:0px 1px 3px -1px rgba(0,0,0,0.5);}
         .card-text{font-size: 12px;}
         .place{margin-bottom: 2px; font-size: 18px;}
         .category_space{display:flex;flex-wrap:wrap;}
@@ -124,6 +124,7 @@
         .ranking_mt{margin-top:200px;}
         .label_icon{width:30px; margin:auto 10px auto 0;}
         .icon_img{width:100%;}
+        .custom-select{border:1.5px solid gainsboro; border-radius: 5px; padding-left: 10px;}
         
         @media screen and (max-width: 480px) {
           .logo{width:180px;}
@@ -185,6 +186,7 @@
           .sp_newshop{width:80%;}
           .ranking_mt{margin-top:130px; font-size: 22.5px; padding-bottom: 3px;}
           .slick-slide{width:90%;}
+          .custom-select{border:1.5px solid gainsboro; border-radius: 20px; padding-left: 10px;}
         }
 
 
