@@ -66,14 +66,14 @@
             border-bottom: 4px solid #f7981b;   font-size: 28px; margin: 80px 0 14px 0; width: 100%; display:flex;}
 
         .card_group{display:flex;flex-wrap:wrap;}
-        .card{ margin:5px 10px 10px 0px; box-shadow:0px 1px 3px -1px rgba(0,0,0,0.5);}
+        .card{ margin:5px 20px 14px 0px; box-shadow:0px 1px 3px -1px rgba(0,0,0,0.5);}
         .card-text{font-size: 12px;}
         .place{margin-bottom: 2px; font-size: 18px;}
         .category_space{display:flex;flex-wrap:wrap;}
         .category{margin: 0 10px 10px 0; border: 1px solid #f7981b; color: #f7981b;padding:2px 10px;
         border-radius: 22px;text-align: center; float: left;
         font-size: 16px;}
-        .star_space{display: inline-block;}
+        .star_space{display: inline-block; margin:10px 0;}
         .card-label{display: inline-block; font-size:16px;}
         .star{display: inline-block;font-weight: bold;color: red;}
         .ranking_space{width:70vw;}
