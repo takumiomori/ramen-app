@@ -18,13 +18,13 @@
           <img src="{{ url('storage', ['images','shop', $item->image]) }}" class="card-img-top" alt="" >
           <div class="card-body">
             <h5 class="card-title">{{$item->name}}</h5>
-            
+            <p class="card-text">
               <div class="place">{{$item->place->name}}</div><br>
               <div class="category_space">
               @foreach($item->shopcategory as $obj)<div class="category">{{$obj->name}}</div>@endforeach
             </div>
               <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$item->star}}</div><br>
-            </div>
+            </p></div>
               <br>
             <a href="{{ route('shop.shoppage', ['id' => $item->id]) }}" class="btn ">店舗ページ</a>
           </div>

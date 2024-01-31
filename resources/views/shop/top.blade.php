@@ -88,20 +88,21 @@
     
       @foreach($newshops as $newshop)
       <li><div class="card sp_newshop">
-          <img src="{{ url('storage', ['images','shop', $newshop->image]) }}" class="card-img-top" alt="" >
-          <div class="card-body">
-            <h5 class="card-title">{{$newshop->name}}</h5>
-            
-              <div class="place">{{$newshop->place->name}}</div><br>
-              <div class="category_space">
-              @foreach($newshop->shopcategory as $obj)<div class="category">{{$obj->name}}</div>@endforeach
-            </div>
-              <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$newshop->star}}</div><br>
+            <img src="{{ url('storage', ['images','shop', $newshop->image]) }}" class="card-img-top" alt="" >
+            <div class="card-body">
+              <h5 class="card-title">{{$newshop->name}}</h5>
+              <p class="card-text">
+                <div class="place">{{$newshop->place->name}}</div><br>
+                 <div class="category_space">
+                  @foreach($newshop->shopcategory as $obj)<div class="category">{{$obj->name}}</div>@endforeach
+                </div>
+                <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$newshop->star}}</div><br>
+              </p>
             </div>
               <br>
             <a href="{{ route('shop.shoppage', ['id' => $newshop->id]) }}" class="btn ">店舗ページ</a>
           </div>
-        </div></li>
+        </li>
       @endforeach
     
   </ul>

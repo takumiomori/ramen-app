@@ -42,9 +42,9 @@
         <div class="card post_card" style="width: 30rem;">
           <div class="card-body">
             <h5 class="card-title">@foreach($post->shop as $obj){{$obj->name}}@endforeach</h5>
-            
+            <p class="card-text">
               <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$post->star}}</div><br>
-            </div>
+            </p></div>
               <br>
               <div class="post_content">{{$post->post_text}}</div>
             </a>
