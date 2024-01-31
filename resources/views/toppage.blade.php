@@ -66,15 +66,15 @@
             border-bottom: 4px solid #f7981b;   font-size: 28px; margin: 80px 0 14px 0; width: 100%; display:flex;}
 
         .card_group{display:flex; flex-wrap:wrap;}
-        .card{ margin:5px 10px 10px 0px;}
-        .card-text{font-size: 12px; display: flex; flex-direction: column; }
+        .card{ margin:5px 16px 16px 0px; box-shadow:0px 1px 3px -1px rgba(0,0,0,0.5);}
+        
         .card-body{flex-grow: 1;}
-        .place{margin-bottom: 2px; font-size: 18px;}
+        .place{margin-bottom: 10px; font-size: 18px;}
         .category_space{display:flex;flex-wrap:wrap;}
         .category{margin: 0 10px 10px 0; border: 1px solid #f7981b; color: #f7981b;padding:2px 10px;
         border-radius: 22px;text-align: center; float: left;
         font-size: 16px;}
-        .star_space{display: inline-block;}
+        .star_space{display: inline-block; margin:10px 0px;}
         .card-label{display: inline-block; font-size:16px;}
         .star{display: inline-block;font-weight: bold;color: red;}
         .ranking_space{width:70vw;}
@@ -127,6 +127,7 @@
         .icon_img{width:100%;}
         .custom-select{border:1.5px solid gainsboro; border-radius: 5px; padding-left: 10px;}
         .top_catch{text-align: left; padding-left:0px;}
+        .card_btn{margin:0px auto; width:100%;}
         
         @media screen and (max-width: 480px) {
           .logo{width:180px;}
@@ -148,9 +149,9 @@
           .rank{margin:0px auto 0px auto;}
           .rank_img,.rank_info {width:100%;margin-left:0px; margin-bottom:10px;}
           .rank_info{margin-bottom:80px;}
-          .star_space{margin-bottom:10px;}
+          .star_space{margin:10px 0px;}
           .shop_name{font-size:25px; margin-bottom:14px;}
-          .place{font-size:22px;}
+          .place{font-size:18px;}
           .category{font-size:20px;}
           .card-label{font-size:18px;}
           .footer_credit{margin:0px auto 0px auto;}
@@ -159,6 +160,7 @@
             width:100%;
           }
           .card{margin:10px auto 20px auto;}
+          .card-title{font-size:24px;}
           .post_card,.prof_space{margin:10px 20px;}
           .card_userimg{width:15vw;}
           .user_icon{height: 15vw; object-fit: cover;}

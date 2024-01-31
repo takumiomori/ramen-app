@@ -27,11 +27,11 @@
       <img src="{{ url('storage', ['images','shop', $favorite->shop->first()->image]) }}" class="card-img-top" alt="" >
       <div class="card-body">
         <h5 class="card-title">{{$favorite->shop->first()->name}}</h5>
-        <p class="card-text">
+        
           <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$favorite->shop->first()->star}}</div><br>
-        </p></div>
+        </div>
           <br>
-        <a href="{{ route('shop.shoppage', ['id' => $favorite->shop->first()->id]) }}" class="btn ">店舗ページ</a>
+        <a href="{{ route('shop.shoppage', ['id' => $favorite->shop->first()->id]) }}" class="btn  card_btn">店舗ページ</a>
       </div>
     </div>
   @endforeach
