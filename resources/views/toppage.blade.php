@@ -125,7 +125,7 @@
         .label_icon{width:30px; margin:auto 10px auto 0;}
         .icon_img{width:100%;}
         .custom-select{border:1.5px solid gainsboro; border-radius: 5px; padding-left: 10px;}
-        .top_catch{text-align: left;}
+        .top_catch{text-align: left; padding-left:0px;}
         
         @media screen and (max-width: 480px) {
           .logo{width:180px;}
