@@ -195,6 +195,7 @@
           .slick-slide{width:90%;}
           .custom-select{border:1.5px solid gainsboro; border-radius: 20px; padding-left: 10px;}
           .newshop_star,.star_shopcard{margin-bottom: 26px;}
+          .star_shopcard{margin-bottom: 50px;}
         }
 
 
