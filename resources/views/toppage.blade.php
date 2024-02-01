@@ -129,6 +129,7 @@
         .top_catch{text-align: left; padding-left:0px;}
         .card_btn_area{width: 100%; margin-top: 14px;}
         .card_btn{margin:0px auto; width:90%; position: absolute; bottom: 14px;}
+        .newshop_star{margin-bottom: 26px;}
         
         @media screen and (max-width: 480px) {
           .logo{width:180px;}

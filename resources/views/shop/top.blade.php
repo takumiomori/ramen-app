@@ -96,7 +96,7 @@
                  <div class="category_space">
                   @foreach($newshop->shopcategory as $obj)<div class="category">{{$obj->name}}</div>@endforeach
                 </div>
-                <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$newshop->star}}</div><br>
+                <div class="star_space newshop_star"><div class="card-label">星評価：</div><div class="star">{{$newshop->star}}</div><br>
               
             </div>
               <br>
