@@ -76,7 +76,7 @@
         font-size: 16px;}
         .star_space{display: inline-block; margin:10px 0px; margin-bottom: 26px;}
         .card-label{display: inline-block; font-size:16px;}
-        .star{display: inline-block;font-weight: bold;color: red;}
+        .star{display: inline-block;font-weight: bold;color: red; margin-bottom: 26px;}
         .ranking_space{width:70vw;}
         .rank{width:100px; display:flex; flex-flow: column;margin-left: 30px;}
         .rank_img{width:30%; display:flex; flex-flow: column;margin-left: 30px;}
@@ -128,7 +128,7 @@
         .custom-select{border:1.5px solid gainsboro; border-radius: 5px; padding-left: 10px;}
         .top_catch{text-align: left; padding-left:0px;}
         .card_btn_area{width: 100%; margin-top: 14px;}
-        .card_btn{margin:0px auto; width:100%;}
+        .card_btn{margin:0px auto; width:90%; position: absolute; bottom: 14px;}
         .card_btn_newshop{ width:90%; position: absolute; bottom: 14px;}
         .newshop_star{margin-bottom: 26px;}
         
