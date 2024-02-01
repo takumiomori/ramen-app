@@ -45,9 +45,9 @@
         <div class="card_userimg"><img src="{{ url('storage', ['images', 'icon', $post->user->icon]) }}" alt="" class="user_icon"></div>
         <div class="card-body card_rightcontent">
           <div class="post_user">{{$post->user->guest_name}}</div>
-          <p class="card-text">
+          
             <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$post->star}}</div>
-          </p></div>
+          </div>
             <div class="post_content">{{$post->post_text}}</div>
           </a>
         </div>
