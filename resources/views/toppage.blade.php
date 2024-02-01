@@ -194,7 +194,7 @@
           .ranking_mt{margin-top:130px; font-size: 22.5px; padding-bottom: 3px;}
           .slick-slide{width:90%;}
           .custom-select{border:1.5px solid gainsboro; border-radius: 20px; padding-left: 10px;}
-          .newshop_star{margin-bottom: 26px;}
+          .newshop_star,.star_shopcard{margin-bottom: 26px;}
         }
 
 
