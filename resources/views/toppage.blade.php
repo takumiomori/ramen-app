@@ -127,7 +127,8 @@
         .icon_img{width:100%;}
         .custom-select{border:1.5px solid gainsboro; border-radius: 5px; padding-left: 10px;}
         .top_catch{text-align: left; padding-left:0px;}
-        .card_btn{margin:0px auto; width:100%;}
+        .card_btn_area{width: 100%; margin-top: 14px;}
+        .card_btn{margin:0px auto; width:90%; position: absolute; bottom: 14px;}
         
         @media screen and (max-width: 480px) {
           .logo{width:180px;}

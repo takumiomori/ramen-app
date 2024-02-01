@@ -100,9 +100,9 @@
               
             </div>
               <br>
-              
+              <div class="card_btn_area">
                 <a href="{{ route('shop.shoppage', ['id' => $newshop->id]) }}" class="btn card_btn">店舗ページ</a>
-              
+              </div>
             
           </div>
         </li>
