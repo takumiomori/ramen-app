@@ -100,7 +100,7 @@
               
             </div>
               <br>
-              <div class="card_btn_area">
+              <div class="card_btn_area card_btn_newshop">
                 <a href="{{ route('shop.shoppage', ['id' => $newshop->id]) }}" class="btn card_btn">店舗ページ</a>
               </div>
             
