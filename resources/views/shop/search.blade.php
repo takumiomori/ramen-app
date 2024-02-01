@@ -23,7 +23,7 @@
               <div class="category_space">
               @foreach($item->shopcategory as $obj)<div class="category">{{$obj->name}}</div>@endforeach
             </div>
-              <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$item->star}}</div><br>
+              <div class="star_space"><div class="card-label">星評価：</div><div class="star star_shopcard">{{$item->star}}</div><br>
             </div>
               <br>
             <a href="{{ route('shop.shoppage', ['id' => $item->id]) }}" class="btn card_btn">店舗ページ</a>

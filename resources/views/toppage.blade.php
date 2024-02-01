@@ -76,7 +76,8 @@
         font-size: 16px;}
         .star_space{display: inline-block; margin:10px 0px; margin-bottom: 26px;}
         .card-label{display: inline-block; font-size:16px;}
-        .star{display: inline-block;font-weight: bold;color: red; margin-bottom: 26px;}
+        .star{display: inline-block;font-weight: bold;color: red;}
+        .star_shopcard{ margin-bottom: 26px;}
         .ranking_space{width:70vw;}
         .rank{width:100px; display:flex; flex-flow: column;margin-left: 30px;}
         .rank_img{width:30%; display:flex; flex-flow: column;margin-left: 30px;}

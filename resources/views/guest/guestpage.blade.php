@@ -28,7 +28,7 @@
       <div class="card-body">
         <h5 class="card-title">{{$favorite->shop->first()->name}}</h5>
         
-          <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$favorite->shop->first()->star}}</div><br>
+          <div class="star_space"><div class="card-label">星評価：</div><div class="star star_shopcard">{{$favorite->shop->first()->star}}</div><br>
         </div>
           <br>
         <a href="{{ route('shop.shoppage', ['id' => $favorite->shop->first()->id]) }}" class="btn  card_btn">店舗ページ</a>
@@ -42,9 +42,9 @@
         <div class="card post_card" style="width: 30rem;">
           <div class="card-body">
             <h5 class="card-title">@foreach($post->shop as $obj){{$obj->name}}@endforeach</h5>
-            <p class="card-text">
+            
               <div class="star_space"><div class="card-label">星評価：</div><div class="star">{{$post->star}}</div><br>
-            </p></div>
+            </div>
               <br>
               <div class="post_content">{{$post->post_text}}</div>
             </a>
