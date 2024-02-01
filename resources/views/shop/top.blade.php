@@ -89,7 +89,7 @@
       @foreach($newshops as $newshop)
       <li><div class="card sp_newshop">
             <img src="{{ url('storage', ['images','shop', $newshop->image]) }}" class="card-img-top" alt="" >
-            <div class="card-body">
+            < class="card-body">
               <h5 class="card-title">{{$newshop->name}}</h5>
               
                 <div class="place">{{$newshop->place->name}}</div>
@@ -100,9 +100,9 @@
               
             </div>
               <br>
-              <div class="card_btn_area card_btn_newshop">
+              
                 <a href="{{ route('shop.shoppage', ['id' => $newshop->id]) }}" class="btn card_btn">店舗ページ</a>
-              </div>
+              
             
           </div>
         </li>
