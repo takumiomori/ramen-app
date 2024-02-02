@@ -120,6 +120,7 @@
         .register_btn{margin-right: 10px;}
         .search_nav:hover{opacity: 0.5 ;}
         .menu_area{white-space: pre-wrap;}
+        .posttext{border:1.5px solid gainsboro; padding:10px; border-radius: 10px;}
         .post_content{white-space: pre-wrap;}
         .card-img-top{height: 161.02px; object-fit: cover;}
         .sp_newshop{width:18rem; height:95%;}
@@ -189,7 +190,7 @@
           .prof_icon{height: 50vw; object-fit: cover;}
           .sp_form{margin-left:10px;}
           .sp_btn_area{width:100%;}
-          .posttext{width:100%;}
+          .posttext{width:100%; border:1.5px solid gainsboro; padding:10px; border-radius: 10px;}
           .sp_newshop{width:94%;}
           .ranking_mt{margin-top:130px; font-size: 22.5px; padding-bottom: 3px;}
           .slick-slide{width:90%;}
