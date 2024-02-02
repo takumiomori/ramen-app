@@ -180,7 +180,7 @@
           .content_area{margin:10px; width:90%;}
           .search_btn{margin:30px auto 0px auto; display:flex;}
           form{width:100%;}
-          .custom-select{width:100%; margin:10px;}
+          .custom-select{width:100%; margin:10px 10px 10px 0px;}
           .sp_mt{margin-top:80px;}
           .container{margin:0px;}
           .main{margin-bottom:120px;}
