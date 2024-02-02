@@ -190,7 +190,7 @@
           .sp_form{margin-left:10px;}
           .sp_btn_area{width:100%;}
           .posttext{width:100%;}
-          .sp_newshop{width:80%;}
+          .sp_newshop{width:94%;}
           .ranking_mt{margin-top:130px; font-size: 22.5px; padding-bottom: 3px;}
           .slick-slide{width:90%;}
           .custom-select{border:1.5px solid gainsboro; border-radius: 20px; padding-left: 10px;}

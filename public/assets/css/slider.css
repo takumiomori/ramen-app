@@ -8,7 +8,8 @@
  
  .slider img {
      width:100%;/*スライダー内の画像を横幅100%に*/
-     height:auto;
+     height: 147.5px;
+     object-fit: cover;
  }
  
  /*slickのJSで書かれるタグ内、スライド左右の余白調整*/

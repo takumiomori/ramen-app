@@ -222,7 +222,7 @@ class ShopController extends Controller
     }
 
     public function ranking(Request $request){
-        $newshops = Shop::orderBy('created_at', 'desc')->take(8)->get();
+        $newshops = Shop::orderBy('created_at', 'desc')->take(9)->get();
         $top5Shops = Shop::orderBy('star', 'desc')->take(5)->get();
         $i = 0;
         return view('shop.top',['items'=>$top5Shops, 'i'=>$i, 'newshops'=>$newshops]);
